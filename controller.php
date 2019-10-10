@@ -15,6 +15,7 @@ function loadFile($array_words){
 
     fclose($fp);
     return $array_words;
+
 }
 
 function printArray($array_words){
