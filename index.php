@@ -9,8 +9,10 @@ $array_words = loadFile($array_words);
 // printArray($array_words);
 
 $array_select_words = selectRandomWords($array_words);
-printArray($array_select_words);
+// printArray($array_select_words);
 
-// generateString();
+$string = generateSymbolsString();
+echo $string . "<br />" . strlen($string);
 
+$string = includeWords($string);
  ?>

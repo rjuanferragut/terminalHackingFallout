@@ -68,12 +68,14 @@ function printArray($array_words){
 }
 
 
-function generateString(){
+function generateSymbolsString(){
     $symbols = ".,='+-$<>(){}[]$@:%#?!/|*";
     $string = "";
     for ($i = 0; $i < 16; $i++) {
-        $random = rand(0, strlen($symbols));
-        echo $symbols[$random] . "<br />";
+        for ($j = 0; $j < 24; $j++) {
+            $random = rand(0, (strlen($symbols) - 1));
+            $string = $string . $symbols[$random];
+        }
     }
 
     return $string;
