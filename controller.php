@@ -86,16 +86,26 @@
 
         for ($i = 0; $i  < 6; $i ++) {
             $word = $array[$i];
-            $random = rand(0, ($max_length_string) - 6);
+            $positionString = rand(0, ($max_length_string) - 6);
 
-            $pos = 0;
-            for ($j = $random; $j < ($random + 5); $j++) {
-                $string[$j] = $word[$pos];
-                $pos++;
+            if(!hasLetter()){
+                $pos = 0;
+                for ($j = $positionString; $j < ($positionString + 5); $j++) {
+                    $string[$j] = $word[$pos];
+                    $pos++;
+                }
             }
         }
 
         echo $string . "<br />" . strlen($string);
+    }
+
+    function hasLetter($string, $pos){
+        $match = "QWERTYUIOPASDFGHJKLZXCVBNM";
+
+        for ($i = 0; $i < ; $i++) {
+
+        }
     }
 
  ?>
