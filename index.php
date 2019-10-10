@@ -26,5 +26,12 @@
  </head>
  <body>
  	<!--falta agregar divs y meter el texto dentro y codigos de memoria-->
+ 	<div id="divTable1">
+ 		<table>
+ 			
+
+
+ 		</table>
+ 	</div>
  </body>
  </html>
