@@ -95,7 +95,8 @@
             }
         }
 
-        echo $string . "<br />" . strlen($string);
+        //echo $string . "<br />" . strlen($string);
+        echo $string . "<br />";
     }
 
  ?>
