@@ -29,13 +29,32 @@ function loadFile($array){
 */
 function selectRandomWords($array){
     $select = array();
+    $count = 0;
 
-    for ($i = 0; $i < 6; $i++) {
+    while($count != 6){
         $random = rand(0, 19);
-        $select[$i] = $array[$random];
+        if(!existInArray($select, $array[$random])){
+          $select[$count] = $array[$random];
+          $count++;
+        }
     }
 
     return $select;
+}
+
+
+/*
+* Método que comprueba si la palabra ya está añadida en el array
+* @return un boolean que indica si lo ha encontrado o no.
+*/
+function existInArray($array, $word){
+    for ($i = 0; $i < count($array); $i++) {
+        if($array[$i] == $word){
+            return true;
+        }
+    }
+
+    return false;
 }
 
 /*
@@ -44,8 +63,19 @@ function selectRandomWords($array){
 */
 function printArray($array_words){
     for ($i = 0; $i < count($array_words); $i++) {
-        echo $array_words[$i] . "<br>";
+        echo $array_words[$i] . "<br />";
     }
 }
 
+
+function generateString(){
+    $symbols = ".,='+-$<>(){}[]$@:%#?!/|*";
+    $string = "";
+    for ($i = 0; $i < 16; $i++) {
+        $random = rand(0, strlen($symbols));
+        echo $symbols[$random] . "<br />";
+    }
+
+    return $string;
+}
  ?>
