@@ -97,7 +97,8 @@
             }
         }
 
-        echo $string . "<br />" . strlen($string);
+        //echo $string . "<br />" . strlen($string);
+        echo $string . "<br />";
     }
 
     function hasLetter($string, $pos){
