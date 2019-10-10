@@ -1,26 +1,50 @@
 <?php
 /*
-* @author Alexis Mengual
+* @author Alexis Mengual, Rafa Juan
 */
 
-function loadFile($array_words){
+/*
+* Método que hace la lectura del archivo y recoge el contenido
+* @return un array con todas las palabras del archivo
+*/
+function loadFile($array){
     $count = 0;
-    $fp = fopen("words.txt", "r");
+    $fileOpen = fopen("words.txt", "r");
 
-    while (!feof($fp) AND $count != 6){
-        $linea = fgets($fp);
-        $array_words[$count] = $linea;
+    while (!feof($fileOpen)){
+        $linea = fgets($fileOpen);
+        $array[$count] = $linea;
         $count++;
     }
 
-    fclose($fp);
-    return $array_words;
+    fclose($fileOpen);
+    return $array;
 
 }
 
+/*
+* Método que selecciona de manera aleatoria 6 palabras
+* del Array que le pasamos.
+* @return pasamos un nuevo array con 6 palabras aleatorias.
+*/
+function selectRandomWords($array){
+    $select = array();
+
+    for ($i = 0; $i < 6; $i++) {
+        $random = rand(0, 19);
+        $select[$i] = $array[$random];
+    }
+
+    return $select;
+}
+
+/*
+* Método para ver el contenido del array con las
+* palabras seleccionadas del archivo
+*/
 function printArray($array_words){
     for ($i = 0; $i < count($array_words); $i++) {
-        echo $array_words[$i];
+        echo $array_words[$i] . "<br>";
     }
 }
 
