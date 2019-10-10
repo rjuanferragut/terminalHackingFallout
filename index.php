@@ -12,7 +12,7 @@ $array_select_words = selectRandomWords($array_words);
 // printArray($array_select_words);
 
 $string = generateSymbolsString();
-echo $string . "<br />" . strlen($string);
+// echo $string . "<br />" . strlen($string);
 
-$string = includeWords($string);
+$string = setWords($array_select_words, $string);
  ?>
