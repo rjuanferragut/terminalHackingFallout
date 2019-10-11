@@ -83,8 +83,8 @@
 
     function setWords($array, $string){
         $max_length_string = strlen($string);
-
         $i = 0;
+        
         while($i < 6){
             $word = $array[$i];
             $positionString = rand(0, ($max_length_string) - 6);
