@@ -84,45 +84,50 @@
     function setWords($array, $string){
         $max_length_string = strlen($string);
         $i = 0;
-        
+
         while($i < 6){
             $word = $array[$i];
-            $positionString = rand(0, ($max_length_string) - 6);
+            $initString = rand(0, ($max_length_string) - 6);
+            $lastString = $initString + 5;
 
-            if(!hasLetter($string, $positionString)){
+            if(!hasLetter($string, $initString, $lastString)){
                 $pos = 0;
-                for ($j = $positionString; $j < ($positionString + 5); $j++) {
+                // echo "Inicio: " . $initString;
+                for ($j = $initString; $j < $lastString; $j++) {
                     $string[$j] = $word[$pos];
-                    $pos++;
+                    // echo $word[$pos];
+                    $pos = $pos + 1;
                 }
                 $i++;
             }
+
+
         }
 
-        // echo "<span style='color: yellow'>" . $string . "</span><br />";
+        echo "<span style='color: yellow'>" . $string . "</span><br />";
         return $string;
     }
 
-    function hasLetter($string, $pos){
-        if($pos != 0){
-            $get_init = $pos - 1;
+    function hasLetter($string, $init, $last){
+        // Si la posición es mayor que 0, compruebo que la posición
+        // anterior al inicio no sea un caracter.
+        if($init > 0){
+            $before = $init - 1;
 
-            if(ctype_alpha($string[$get_init])){
-              echo $string[$get_init]  . " antes";
-              return true;
-            }
-
-            $get_last = $pos + 1;
-
-            if(ctype_alpha($string[$get_last])){
-              echo $string[$get_last] . " después";
-              return true;
+            if(ctype_alpha($string[$before])){
+                return true;
             }
         }
 
-        for ($i = $pos; $i < ($pos + 5); $i++) {
+        // Compruebo si la posición de después contiene una letra.
+        $after = $last + 1;
+        if(ctype_alpha($string[$after])){
+            return true;
+        }
+
+        for ($i = $init; $i <= $last; $i++) {
             if(ctype_alpha($string[$i])){
-                return true;
+              return true;
             }
         }
 

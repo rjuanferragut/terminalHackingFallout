@@ -1,7 +1,4 @@
- Welcome to ROBCO Industries (TM) Termlink ===================================== Password is required Attempts remaining: 
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html>
  <head>
  	<title>fallout terminal</title>
