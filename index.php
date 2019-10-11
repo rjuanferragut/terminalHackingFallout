@@ -21,9 +21,10 @@
 		$string = generateSymbolsString();
 		// echo $string . "<br />" . strlen($string);
 
-		$string = setWords($array_select_words, $string);
+		// $string = setWords($array_select_words, $string);
 
-    echo getPassword($array_select_words);
+    printArray($array_select_words);
+    echo "<br />Seleccion: " . getPassword($array_select_words);
 
 
  	?>
@@ -33,18 +34,15 @@
 
  	<div id="divTable">
  		<table>
-
-<<<<<<< HEAD
-=======
  			<?php
  			//creación de las filas y columnas de la tabla
  				$horizontalLines = 16;
  				$verticalLines = 4;
 
- 				for ($i = 0; $i < intval($horizontalLines); $i++){
+ 				for ($i = 0; $i < $horizontalLines; $i++){
  					echo "<tr>";
 
- 						for ($j = 0; $j < int($verticalLines); $j++){
+ 						for ($j = 0; $j < $verticalLines; $j++){
  							if ($j % 2 == 0){
  								//columnas de code hexadecimal
  								echo "<td class='Hexade'>";
@@ -63,10 +61,6 @@
 
 
  			 ?>
-
->>>>>>> 34d40b455ba5414a767c59ee39fc1090f6724501
-
-
  		</table>
  	</div>
  </body>
