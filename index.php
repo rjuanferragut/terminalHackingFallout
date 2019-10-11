@@ -21,6 +21,10 @@
 		// echo $string . "<br />" . strlen($string);
 
 		$string = setWords($array_select_words, $string);
+
+    // echo getPassword($array_select_words);
+
+
  	?>
 
  </head>
@@ -28,7 +32,7 @@
  	<!--falta agregar divs y meter el texto dentro y codigos de memoria-->
  	<div id="divTable1">
  		<table>
- 			
+
 
 
  		</table>
