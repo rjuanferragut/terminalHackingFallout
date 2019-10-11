@@ -2,4 +2,18 @@ body{
 	background-image: url("../img/foterminal.jpg");
  	background-color: black;
  	background-size: 100%;
+ 	background-repeat: no-repeat;
+}
+p, table, tr, td{
+	color: #00F501;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 100%;
+
+
+}
+#divTable{
+	margin:0 auto;
+	width: 40%;
+	margin-top: 15% !important;
+
 }

@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+
+ <!DOCTYPE html>
+>>>>>>> 65e953dd6965040e542bf9a6297e6e28869590e9
  <html>
  <head>
  	<title>fallout terminal</title>
  	 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+ 	 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet"> 
  	 <meta name="viewport" content="width=device-width, user-scalable=no">
+
  	<?php
 
 		require_once('controller.php');
@@ -29,8 +36,6 @@
     // printArray($array_select_words);
     $password = getPassword($array_select_words);
 
-
-
  	?>
 
  </head>
@@ -39,7 +44,12 @@
       <input type="hidden" name="password" id="password" value="<?php echo $password ?>">
       <span id="string" style="display: none"><?php echo $string?></span>
   </div>
+
  	<div id="divTable">
+ 		<p>Welcome to ROBCO Industries (TM) Termlink ===================================== <br />
+ 			Password is required <br />
+ 			Attempts remaining:
+ 		</p>
  		<table>
  			<?php
  			//creación de las filas y columnas de la tabla
