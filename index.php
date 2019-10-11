@@ -23,20 +23,20 @@
 
 		$string = setWords($array_select_words, $string);
 
-    // echo getPassword($array_select_words);
+    echo getPassword($array_select_words);
 
 
  	?>
 
  </head>
  <body>
- 	
+
  	<div id="divTable">
  		<table>
 
 <<<<<<< HEAD
 =======
- 			<?php 
+ 			<?php
  			//creación de las filas y columnas de la tabla
  				$horizontalLines = 16;
  				$verticalLines = 4;
@@ -51,7 +51,7 @@
  								echo "</td>";
 
  							}else{
- 								//columnas de code 
+ 								//columnas de code
  								echo "<td class='code'>";
  								echo "</td>";
 
