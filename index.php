@@ -43,7 +43,10 @@
   </div>
 
  	<div id="divTable">
- 		<p> </p>
+ 		<p>Welcome to ROBCO Industries (TM) Termlink ===================================== <br />
+ 			Password is required <br />
+ 			Attempts remaining:
+ 		</p>
  		<table>
  			<?php
  			//creación de las filas y columnas de la tabla
