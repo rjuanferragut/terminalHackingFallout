@@ -85,7 +85,7 @@
         $max_length_string = strlen($string);
 
         $i = 0;
-        while($i != 6){
+        while($i < 6){
             $word = $array[$i];
             $positionString = rand(0, ($max_length_string) - 6);
 
@@ -93,20 +93,33 @@
                 $pos = 0;
                 for ($j = $positionString; $j < ($positionString + 5); $j++) {
                     $string[$j] = $word[$pos];
-                    echo "<span style='color: yellow'>" . $word[$pos] . "</span>";
                     $pos++;
                 }
-
-                echo "<br />";
-
                 $i++;
             }
         }
 
-        echo $string . "<br />";
+        // echo "<span style='color: yellow'>" . $string . "</span><br />";
+        return $string;
     }
 
     function hasLetter($string, $pos){
+        if($pos != 0){
+            $get_init = $pos - 1;
+
+            if(ctype_alpha($string[$get_init])){
+              echo $string[$get_init]  . " antes";
+              return true;
+            }
+
+            $get_last = $pos + 1;
+
+            if(ctype_alpha($string[$get_last])){
+              echo $string[$get_last] . " después";
+              return true;
+            }
+        }
+
         for ($i = $pos; $i < ($pos + 5); $i++) {
             if(ctype_alpha($string[$i])){
                 return true;
@@ -114,6 +127,10 @@
         }
 
         return false;
+    }
+
+    function getPassword($array){
+        return $array[rand(0, (count($array) - 1))];
     }
 
  ?>
