@@ -21,17 +21,20 @@
 		$string = generateSymbolsString();
 		// echo $string . "<br />" . strlen($string);
 
-		// $string = setWords($array_select_words, $string);
+		$string = setWords($array_select_words, $string);
 
-    printArray($array_select_words);
-    echo "<br />Seleccion: " . getPassword($array_select_words);
+    // printArray($array_select_words);
+    $password = getPassword($array_select_words);
 
 
  	?>
 
  </head>
  <body>
-
+  <div>
+      <input type="hidden" name="password" id="password" value="<?php echo $password ?>">
+      <span id="string" style="display: none"><?php echo $string?></span>
+  </div>
  	<div id="divTable">
  		<table>
  			<?php

@@ -99,7 +99,8 @@
             }
         }
 
-        echo "<span style='color: yellow'>" . $string . "</span><br />";
+        // echo "<span style='color: yellow'>" . $string . "</span><br />";
+        return $string;
     }
 
     function hasLetter($string, $pos){
