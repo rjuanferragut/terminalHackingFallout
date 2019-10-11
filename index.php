@@ -1,5 +1,3 @@
- Welcome to ROBCO Industries (TM) Termlink ===================================== Password is required Attempts remaining: 
-
 
  <!DOCTYPE html>
  <html>
@@ -43,7 +41,9 @@
       <input type="hidden" name="password" id="password" value="<?php echo $password ?>">
       <span id="string" style="display: none"><?php echo $string?></span>
   </div>
+
  	<div id="divTable">
+ 		<p> </p>
  		<table>
  			<?php
  			//creación de las filas y columnas de la tabla
