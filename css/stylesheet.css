@@ -3,3 +3,9 @@ body{
  	background-color: black;
  	background-size: 100%;
 }
+table, tr, td{
+	color: #00F501;
+    font-family: 'Share Tech Mono', monospace;
+
+
+}

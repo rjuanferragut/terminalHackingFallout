@@ -4,6 +4,7 @@
  <head>
  	<title>fallout terminal</title>
  	 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+ 	 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet"> 
  	 <meta name="viewport" content="width=device-width, user-scalable=no">
  	<?php
 
