@@ -84,29 +84,36 @@
     function setWords($array, $string){
         $max_length_string = strlen($string);
 
-        for ($i = 0; $i  < 6; $i ++) {
+        $i = 0;
+        while($i != 6){
             $word = $array[$i];
             $positionString = rand(0, ($max_length_string) - 6);
 
-            if(!hasLetter()){
+            if(!hasLetter($string, $positionString)){
                 $pos = 0;
                 for ($j = $positionString; $j < ($positionString + 5); $j++) {
                     $string[$j] = $word[$pos];
+                    echo "<span style='color: yellow'>" . $word[$pos] . "</span>";
                     $pos++;
                 }
+
+                echo "<br />";
+
+                $i++;
             }
         }
 
-        //echo $string . "<br />" . strlen($string);
         echo $string . "<br />";
     }
 
     function hasLetter($string, $pos){
-        $match = "QWERTYUIOPASDFGHJKLZXCVBNM";
-
-        for ($i = 0; $i < ; $i++) {
-
+        for ($i = $pos; $i < ($pos + 5); $i++) {
+            if(ctype_alpha($string[$i])){
+                return true;
+            }
         }
+
+        return false;
     }
 
  ?>
