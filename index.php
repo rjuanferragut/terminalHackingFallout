@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-=======
-
  <!DOCTYPE html>
->>>>>>> 65e953dd6965040e542bf9a6297e6e28869590e9
  <html>
  <head>
  	<title>fallout terminal</title>
