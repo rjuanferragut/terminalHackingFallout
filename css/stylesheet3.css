@@ -1,5 +1,5 @@
 body{
-	background-image: url("../img/foterminal.jpg");
+	/*background-image: url("../img/foterminal.jpg");*/
  	background-color: black;
  	background-size: cover;
  	background-repeat: no-repeat;
@@ -16,9 +16,9 @@ p, table, tr, td{
 }
 
 .table{
-	
-	float: left;
-
+	/*
+	float: center;
+*/
 }
 
 #container{
@@ -29,9 +29,3 @@ p, table, tr, td{
 	margin-top: 13%;
 
 }
-
-.span{
-	background-color: #00F501;
-	color: black;
-}
-

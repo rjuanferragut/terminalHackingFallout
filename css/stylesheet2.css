@@ -7,7 +7,7 @@ body{
 p, table, tr, td{
 	color: #00F501;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 100%;
+    font-size: 90%;
 
 
 }
@@ -29,9 +29,3 @@ p, table, tr, td{
 	margin-top: 13%;
 
 }
-
-.span{
-	background-color: #00F501;
-	color: black;
-}
-

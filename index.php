@@ -2,7 +2,13 @@
  <html>
  <head>
  	<title>fallout terminal</title>
- 	 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+ 	 <link rel="stylesheet" media="(min-width: 16in)" type="text/css" href="css/stylesheet.css">
+
+ 	 <link rel="stylesheet" media="(max-width: 16in) and (min-width: 13in)" type="text/css" href="css/stylesheet2.css">
+
+ 	 <link rel="stylesheet" media="(max-width:13in)" type="text/css" href="css/stylesheet2.css">
+
+ 	 
 
  	 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
  	 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=device-dpi, width=device-width, user-scalable=no">
@@ -48,7 +54,7 @@
 	 		</p>
 	 		<p id="lifeCount">	Attempts remaining:</p>
 
-        <div class="table" style="float: left; width: 33%">
+        <div class="table">
             <table>
                 <?php
                     //creación de las filas y columnas de la tabla
@@ -80,7 +86,7 @@
             </table>
         </div>
 
-        <div class="table" style="float: left; width: 33%">
+        <div class="table">
             <table>
                 <?php
                     //creación de las filas y columnas de la tabla
