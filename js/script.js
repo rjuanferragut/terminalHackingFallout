@@ -15,8 +15,13 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 	for (countLine; countLine <= 32; countLine++){
 		var str = "";
-		//variable donde se guarda el string de 12 caracteres
+		// Variable donde se guarda el string de 12 caracteres
 		str = stringjs.slice(countChar, countLastChar);
+
+		if(str.match(/[a-zA-Z ]+/)){
+				
+		}
+
 		countChar = countLastChar;
 		countLastChar += 12;
 		document.getElementById(countLine).innerHTML = str;
