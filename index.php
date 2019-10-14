@@ -34,7 +34,7 @@
 
  </head>
  <body>
-
+ <div id="container">
  	<div>
       <input type="hidden" name="password" id="password" value="<?php echo $password ?>">
       <span id="string" style="display: none"><?php echo $string?></span>
@@ -46,7 +46,7 @@
   	-->
 
  	<div id="divTable">
-
+ 	
  		<p>Welcome to ROBCO Industries (TM) Termlink ===============================<br />
  			Password is required <br />
  		</p>
@@ -90,5 +90,6 @@
  			 ?>
  		</table>
  	</div>
+ </div>
  </body>
  </html>
