@@ -19,12 +19,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 		str = stringjs.slice(countChar, countLastChar);
 		countChar = countLastChar;
 		countLastChar += 12;
-<<<<<<< HEAD
-
-		document.getElementById(countLine).innerHTML = churro;
-=======
-		
 		document.getElementById(countLine).innerHTML = str;
->>>>>>> ad4e313f2447742e1cb3d7d0292916cc5ab7b578
 	}
 });
