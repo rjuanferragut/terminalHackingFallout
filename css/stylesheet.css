@@ -16,9 +16,11 @@ p, table, tr, td{
 }
 #divTable{
 	margin:0 auto;
-	width: 40%;
+	width: 100%;
 	margin-top: 15% !important;
-	padding-left:20px;
+	padding-left:30%;
+	/*display:flex;*/
+	flex-grow: 1;
 
 }
 
@@ -26,6 +28,66 @@ p, table, tr, td{
 #container{
 	display:flex;
 	width: 100%;
-	
 
+}
+@media all (max-width:13in){
+body{
+	/*background-image: url("../img/foterminal.jpg");*/
+ 	background-color: black;
+ 	background-size: cover;
+ 	background-repeat: no-repeat;
+ 	width: 50%;
+}
+p, table, tr, td{
+	color: #00F501;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 70%;
+
+}
+.code{
+	padding-right: 15px;
+}
+#divTable{
+	margin:0 auto;
+	width: 100%;
+}
+
+
+#container{
+	display:flex;
+	width: 100%;
+	padding
+}
+}
+
+@media all (max-width: 1050px) and(min-width:13in){
+body{
+	background-image: url("../img/foterminal.jpg");
+ 	background-color: black;
+ 	background-size: cover;
+ 	background-repeat: no-repeat;
+}
+p, table, tr, td{
+	color: #00F501;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: absolute;
+
+
+}
+.code{
+	padding-right: 15px;
+}
+#divTable{
+	margin:0 auto;
+	width: 100%;
+	margin-top: 15% !important;
+	padding-left:30%;
+
+}
+
+
+#container{
+	width: 100%;
+
+}
 }
