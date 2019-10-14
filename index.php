@@ -35,16 +35,24 @@
 
  </head>
  <body>
-  <div>
+ 	
+ 	<div>
       <input type="hidden" name="password" id="password" value="<?php echo $password ?>">
       <span id="string" style="display: none"><?php echo $string?></span>
-  </div>
+  	</div>
+  	<!--
+    <div id="divImage">
+  			<img src="img/foterminal.jpg" alt="TerminalFalloutImage"/>
+  	</div>
+  	-->
 
  	<div id="divTable">
+ 		
  		<p>Welcome to ROBCO Industries (TM) Termlink ===================================== <br />
  			Password is required <br />
- 			Attempts remaining:
  		</p>
+ 		<p id="lifeCount">	Attempts remaining:</p>
+ 		
  		<table>
  			<?php
  			//creación de las filas y columnas de la tabla
