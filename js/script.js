@@ -14,12 +14,17 @@ document.addEventListener("DOMContentLoaded", function(event){
 	//contador de caracteres
 
 	for (countLine; countLine <= 32; countLine++){
-		var churro = "";
+		var str = "";
 		//variable donde se guarda el string de 12 caracteres
-		churro = stringjs.slice(countChar, countLastChar);
-		countChar = countLastChar + 1;
+		str = stringjs.slice(countChar, countLastChar);
+		countChar = countLastChar;
 		countLastChar += 12;
+<<<<<<< HEAD
 
 		document.getElementById(countLine).innerHTML = churro;
+=======
+		
+		document.getElementById(countLine).innerHTML = str;
+>>>>>>> ad4e313f2447742e1cb3d7d0292916cc5ab7b578
 	}
 });
