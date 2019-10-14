@@ -1,8 +1,9 @@
 body{
 	background-image: url("../img/foterminal.jpg");
  	background-color: black;
- 	background-size: 100%;
+ 	background-size: cover;
  	background-repeat: no-repeat;
+ 	background-attachment: fixed;
 }
 p, table, tr, td{
 	color: #00F501;
