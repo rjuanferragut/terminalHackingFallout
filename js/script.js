@@ -3,10 +3,9 @@
 //las td en las que va el codigo van con un id del 1 al 32
 //total 384 char
 document.addEventListener("DOMContentLoaded", function(event){
-	var stringjs = document.getElementById("string").innerHTML;
-	
+	var stringjs = document.getElementById("string").innerText;
 	var passwd = document.getElementById("password").value;
-	
+
 
 	var countLine = 1;
 	//contador de lineas de codigo, ha de coincidir
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 		str = stringjs.slice(countChar, countLastChar);
 		countChar = countLastChar;
 		countLastChar += 12;
-		
 		document.getElementById(countLine).innerHTML = str;
 	}
 });
