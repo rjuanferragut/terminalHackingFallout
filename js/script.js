@@ -64,6 +64,7 @@ function getTerminal(){
     }
 }
 
+// Método para obtener la primera posición de la letra en el string
 function getPositionLetter(td_string){
     for (var i = 0; i < td_string.length; i++) {
         if(td_string[i].match(/[a-zA-Z ]+/)){
@@ -74,6 +75,7 @@ function getPositionLetter(td_string){
     return -1;
 }
 
+// Método para obtener la última posición de la letra en el string
 function getLastPositionLetter(td_string, firstPosition){
     for (var i = firstPosition; i < td_string.length; i++) {
         if((i + 1) < td_string.length){

@@ -48,43 +48,66 @@
 	 		</p>
 	 		<p id="lifeCount">	Attempts remaining:</p>
 
-	 		<table>
-	 			<?php
-	 			//creación de las filas y columnas de la tabla
-	 				$horizontalLines = 16;
-	 				$verticalLines = 4;
-	 				$countLineCode = 1;
-	 			//empieza en el 1 para que coincida con el total de las strings de codigo
+        <div class="table" style="float: left; width: 33%">
+            <table>
+                <?php
+                    //creación de las filas y columnas de la tabla
+                    $horizontalLines = 16;
+                    $verticalLines = 2;
+                    $countLineCode = 1;
+                    //empieza en el 1 para que coincida con el total de las strings de codigo
 
-	 				$countHexacode = 0;
-	 			//contador para seleccionar el índice del array_hexadecicmal
+                    $countHexacode = 0;
 
+                    for ($i=0; $i < $horizontalLines; $i++) {
+                        echo "<tr>";
 
+                            for ($j = 0; $j < $verticalLines; $j++) {
+                                if($j % 2 == 0){
+                                    echo "<td class='Hexade' id=".$array_hexadecimal[$countHexacode].">".$array_hexadecimal[$countHexacode];
+                                    $countHexacode++;
+                                }else{
+                                    echo "<td class='code' id=".$countLineCode." >";
+                                    $countLineCode++;
+                                }
 
-	 				for ($i = 0; $i < $horizontalLines; $i++){
-	 					echo "<tr>";
+                                echo "</td>";
+                            }
 
-	 						for ($j = 0; $j < $verticalLines; $j++){
-	 							if ($j % 2 == 0){
-	 								//columnas de code hexadecimal
-	 								//poner id en los codigos Hexade, con el mismo codigo
-	 								echo "<td class='Hexade' id=".$array_hexadecimal[$countHexacode].">".$array_hexadecimal[$countHexacode]."</td>";
-	 								$countHexacode++;
+                        echo "</tr>";
+                    }
+                ?>
+            </table>
+        </div>
 
-	 							}else{
-	 								//columnas de code
-	 								echo "<td class='code' id=".$countLineCode." >";
+        <div class="table" style="float: left; width: 33%">
+            <table>
+                <?php
+                    //creación de las filas y columnas de la tabla
+                    $horizontalLines = 16;
+                    $verticalLines = 2;
+                    //empieza en el 1 para que coincida con el total de las strings de codigo
 
-	 								echo "</td>";
-	 								$countLineCode++;
+                    for ($i=0; $i < $horizontalLines; $i++) {
+                        echo "<tr>";
 
-	 							}
-	 						}
-	 					echo "</tr>";
-	 				}
+                            for ($j = 0; $j < $verticalLines; $j++) {
+                                if($j % 2 == 0){
+                                    echo "<td class='Hexade' id=".$array_hexadecimal[$countHexacode].">".$array_hexadecimal[$countHexacode];
+                                    $countHexacode++;
+                                }else{
+                                    echo "<td class='code' id=".$countLineCode." >";
+                                    $countLineCode++;
+                                }
 
-	 			 ?>
-	 		</table>
+                                echo "</td>";
+                            }
+
+                        echo "</tr>";
+                    }
+                ?>
+            </table>
+        </div>
 	 	</div>
 
  	</div>
