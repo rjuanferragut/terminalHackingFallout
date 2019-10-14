@@ -61,6 +61,7 @@
     * Método para ver el contenido del array con las
     * palabras seleccionadas del archivo
     */
+
     function printArray($array_words){
         for ($i = 0; $i < count($array_words); $i++) {
             echo $array_words[$i] . "<br />";
