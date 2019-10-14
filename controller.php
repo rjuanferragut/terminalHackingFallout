@@ -69,7 +69,8 @@
 
 
     function generateSymbolsString(){
-        $symbols = ".,='+-$<>(){}[]$@:%#?!/|*";
+        // Se han quitado los símbolos <> porque dan problemas al pasar el string *e imprimirlo
+        $symbols = ".,='+-$!(){}[]$@:%#?/|";
         $string = "";
         for ($i = 0; $i < 16; $i++) {
             for ($j = 0; $j < 24; $j++) {
@@ -77,7 +78,6 @@
                 $string = $string . $symbols[$random];
             }
         }
-
         return $string;
     }
 
