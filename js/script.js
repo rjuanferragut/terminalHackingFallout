@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function(event){
 	var stringFromPHP = document.getElementById("string").innerText;
 	var passwd = document.getElementById("password").value;
 
-	// var countLine = 1;
+	var countLine = 1;
 	// //contador de lineas de codigo, ha de coincidir
-	// var countChar = 0;
-	// var countLastChar = 12;
-	// //contador de caracteres
+	var countChar = 0;
+	var countLastChar = 12;
+	//contador de caracteres
 
 	var getFirst = 0;
 	var getLast = 0;
@@ -32,18 +32,19 @@ document.addEventListener("DOMContentLoaded", function(event){
 					}
 			}
 	}
-
-	// for (countLine; countLine <= 32; countLine++){
-	// 	var str = "";
-	// 	// Variable donde se guarda el string de 12 caracteres
-	// 	str = stringjs.slice(countChar, countLastChar);
-	//
-	// 	if(str.match(/[a-zA-Z ]+/)){
-	//
-	// 	}
-	//
-	// 	countChar = countLastChar;
-	// 	countLastChar += 12;
-	// 	document.getElementById(countLine).innerHTML = str;
-	// }
+	/*
+	for (countLine; countLine <= 32; countLine++){
+		var str = "";
+		// Variable donde se guarda el string de 12 caracteres
+		str = stringjs.slice(countChar, countLastChar);
+	
+		if(str.match(/[a-zA-Z ]+/)){
+	
+		}
+	
+		countChar = countLastChar;
+		countLastChar += 12;
+		document.getElementById(countLine).innerHTML = str;
+	}
+	*/
 });
