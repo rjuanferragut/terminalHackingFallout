@@ -2,9 +2,9 @@
  <html>
  <head>
  	<title>fallout terminal</title>
- 	 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+ 	 <link rel="stylesheet" media="all" type="text/css" href="css/stylesheet.css">
  	 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
- 	 <meta name="viewport" content="width=device-width, user-scalable=no">
+ 	 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=device-dpi, width=device-width, user-scalable=no">
  	  <script src="js/script.js"></script>
 
  	<?php
@@ -34,7 +34,7 @@
 
  </head>
  <body>
-
+ <div id="container">
  	<div>
       <input type="hidden" name="password" id="password" value="<?php echo $password ?>">
       <span id="string" style="display: none"><?php echo $string?></span>
@@ -46,8 +46,8 @@
   	-->
 
  	<div id="divTable">
-
- 		<p>Welcome to ROBCO Industries (TM) Termlink ===================================== <br />
+ 	
+ 		<p>Welcome to ROBCO Industries (TM) Termlink ===============================<br />
  			Password is required <br />
  		</p>
  		<p id="lifeCount">	Attempts remaining:</p>
@@ -90,5 +90,6 @@
  			 ?>
  		</table>
  	</div>
+ </div>
  </body>
  </html>

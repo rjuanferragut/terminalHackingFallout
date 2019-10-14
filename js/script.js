@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 	var passwd = document.getElementById("password").value;
 
 	var countLine = 1;
+
 	//contador de lineas de codigo, ha de coincidir
 	var countChar = 0;
 	var countLastChar = 12;
@@ -21,6 +22,23 @@ document.addEventListener("DOMContentLoaded", function(event){
 	var anotherLine = false;
 
 	calculatePositions();
+
+	/*
+	for (countLine; countLine <= 32; countLine++){
+		var str = "";
+		// Variable donde se guarda el string de 12 caracteres
+		str = stringjs.slice(countChar, countLastChar);
+	
+		if(str.match(/[a-zA-Z ]+/)){
+	
+		}
+	
+		countChar = countLastChar;
+		countLastChar += 12;
+		document.getElementById(countLine).innerHTML = str;
+	}
+	*/
+
 
 	for (var x = 0; x < positions.length; x++) {
 			if(x % 2 == 0){
@@ -54,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 			countLastChar += 12;
 			document.getElementById(countLine).innerHTML = str;
 	}
+
 });
 
 function calculatePositions(){

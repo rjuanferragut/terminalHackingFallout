@@ -10,7 +10,6 @@ p, table, tr, td{
     font-size: absolute;
 
 
-
 }
 .code{
 	padding-right: 15px;
@@ -18,11 +17,15 @@ p, table, tr, td{
 #divTable{
 	margin:0 auto;
 	width: 40%;
-	margin-top: 10% !important;
+	margin-top: 15% !important;
+	padding-left:20px;
 
 }
-/*
-#divImage{
-	background-size: 100%
+
+
+#container{
+	display:flex;
+	width: 100%;
+	
+
 }
-*/
