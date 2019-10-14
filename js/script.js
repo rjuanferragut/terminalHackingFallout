@@ -19,33 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 	var countLastChar = 12;
 	//contador de caracteres
 
-	var anotherLine = false;
-
 	calculatePositions();
-
-	/*
-	for (countLine; countLine <= 32; countLine++){
-		var str = "";
-		// Variable donde se guarda el string de 12 caracteres
-		str = stringjs.slice(countChar, countLastChar);
-	
-		if(str.match(/[a-zA-Z ]+/)){
-	
-		}
-	
-		countChar = countLastChar;
-		countLastChar += 12;
-		document.getElementById(countLine).innerHTML = str;
-	}
-	*/
-
-
-	for (var x = 0; x < positions.length; x++) {
-			if(x % 2 == 0){
-					firstNum = positions[x];
-					lastNum = firstNum + 4;
-			}
-	}
 
 	var getAlphabet = false;
 
@@ -64,7 +38,12 @@ document.addEventListener("DOMContentLoaded", function(event){
 			}
 
 			if(getAlphabet){
-				str = str.substring(0, posStr) + "¿" + str.substring(posStr, str.length);
+				if(posStr != 0){
+					str = str.substring(0, posStr) + '<span style="background: #00F501; color: black">' + str.substring(posStr, str.length);
+				}else{
+					str.substring(0, posStr) + '<span style="background: #00F501; color: black">' + str.substring(posStr, 5) + '</span>' + str.substring(posStr + 4, str.length);
+				}
+
 				getAlphabet = false;
 			}
 
