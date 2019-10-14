@@ -3,19 +3,22 @@ body{
  	background-color: black;
  	background-size: cover;
  	background-repeat: no-repeat;
- 	background-attachment: fixed;
 }
 p, table, tr, td{
 	color: #00F501;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 100%;
+    font-size: absolute;
 
 
+
+}
+.code{
+	padding-right: 15px;
 }
 #divTable{
 	margin:0 auto;
 	width: 40%;
-	margin-top: 15% !important;
+	margin-top: 10% !important;
 
 }
 /*
