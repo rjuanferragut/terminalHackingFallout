@@ -105,7 +105,7 @@
 
         }
 
-        echo "<span style='color: yellow'>" . $string . "</span><br />";
+        // echo "<span style='color: yellow'>" . $string . "</span><br />";
         return $string;
     }
 
@@ -122,8 +122,10 @@
 
         // Compruebo si la posición de después contiene una letra.
         $after = $last + 1;
-        if(ctype_alpha($string[$after])){
+        if($after < 384){
+          if(ctype_alpha($string[$after])){
             return true;
+          }
         }
 
         for ($i = $init; $i <= $last; $i++) {
