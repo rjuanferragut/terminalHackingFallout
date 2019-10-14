@@ -1,60 +1,27 @@
-//churro con id = string
-//id = password en value.
-//las td en las que va el codigo van con un id del 1 al 32
-//total 384 char
-var positions = [];
-var stringFromPHP;
+// *******************************
+// Script creado por Alexis Mengual y Rafa Juan
+// *******************************
 
-var getFirst = 0;
-var getLast = 0;
+var stringFromPHP, password;
+var positionsLetters = [];
 
-document.addEventListener("DOMContentLoaded", function(event){
-	stringFromPHP = document.getElementById("string").innerText;
-	var passwd = document.getElementById("password").value;
+window.addEventListener("load", function(event) {
 
-	var countLine = 1;
+    stringFromPHP = document.getElementById('string').innerText;
+    password = document.getElementById('password').value;
 
-	//contador de lineas de codigo, ha de coincidir
-	var countChar = 0;
-	var countLastChar = 12;
-	//contador de caracteres
+    // Método que obtiene la posición de inicio y final de cada palabra en el String.
+    calculatePositions();
 
-	calculatePositions();
-
-	var getAlphabet = false;
-
-	for (countLine; countLine <= 32; countLine++){
-			var str = "";
-			// Variable donde se guarda el string de 12 caracteres
-			str = stringFromPHP.slice(countChar, countLastChar);
-			var posStr = 0;
-			for (var i = 0; i < str.length; i++) {
-					if(str[i].match(/[a-zA-Z ]+/)){
-							if(!getAlphabet){
-								posStr = i;
-								getAlphabet = true;
-							}
-					}
-			}
-
-			if(getAlphabet){
-				if(posStr != 0){
-					str = str.substring(0, posStr) + '<span style="background: #00F501; color: black">' + str.substring(posStr, str.length);
-				}else{
-					str.substring(0, posStr) + '<span style="background: #00F501; color: black">' + str.substring(posStr, 5) + '</span>' + str.substring(posStr + 4, str.length);
-				}
-
-				getAlphabet = false;
-			}
-
-			countChar = countLastChar;
-			countLastChar += 12;
-			document.getElementById(countLine).innerHTML = str;
-	}
+    getTerminal();
 
 });
 
+
 function calculatePositions(){
+    var getFirst = 0;
+    var getLast = 0;
+
 		for (var i = 0; i < stringFromPHP.length; i++) {
 				if(stringFromPHP[i].match(/[a-zA-Z ]+/)){
 						if(getFirst == 0){
@@ -62,12 +29,59 @@ function calculatePositions(){
 						}else{
 								if(!stringFromPHP[i + 1].match(/[a-zA-Z ]+/)){
 										getLast = i;
-										positions.push(getFirst);
-										positions.push(getLast);
+										positionsLetters.push(getFirst);
+										positionsLetters.push(getLast);
 
 										getFirst = 0;
 								}
 						}
 				}
 		}
+}
+
+
+function getTerminal(){
+    var countLine = 1;
+    var countChar = 0;
+  	var countLastChar = 12;
+
+    for (countLine; countLine <= 32; countLine++){
+        var td_string = stringFromPHP.slice(countChar, countLastChar);
+        getFirstPosition = getPositionLetter(td_string);
+
+        // Si es mayor o igual a 0, es que ha encontrado una letra.
+        if(getFirstPosition >= 0){
+            // Si cumple con este requisito, busco cual es la última posición
+            getLastPosition = getLastPositionLetter(td_string, getFirstPosition);
+            console.log("Primera Posición: " + getFirstPosition + "\nÚltima Posición: " + getLastPosition + "\nCadena: " + td_string)
+            td_string = td_string.substring(0, getFirstPosition) + '<span style="background: #00F501; color: black">' + td_string.substring(getFirstPosition, getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length)
+            console.log("\nResultado con spans incluidos: " + td_string);
+        }
+
+        countChar = countLastChar;
+  			countLastChar += 12;
+        document.getElementById(countLine).innerHTML = td_string;
+    }
+}
+
+function getPositionLetter(td_string){
+    for (var i = 0; i < td_string.length; i++) {
+        if(td_string[i].match(/[a-zA-Z ]+/)){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+function getLastPositionLetter(td_string, firstPosition){
+    for (var i = firstPosition; i < td_string.length; i++) {
+        if((i + 1) < td_string.length){
+            if(!td_string[i + 1].match(/[a-zA-Z ]+/)){
+              return i;
+            }
+        }
+    }
+
+    return td_string.length;
 }
