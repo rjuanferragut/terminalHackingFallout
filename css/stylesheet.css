@@ -28,9 +28,9 @@ p, table, tr, td{
 
 #container{
 	display:flex;
-	width: 70%;
+	width: 100%;
 	margin: 0 auto;
-	margin-left: 30%;
+	margin-left: 35%;
 	margin-top: 12%;
 
 
@@ -42,16 +42,17 @@ p, table, tr, td{
 }
 
 #promptTable{
-
 	height:100%;
 }
 
 .tdTable{
     vertical-align:bottom;
 }
+
 #prompt{
-	margin-top:11%;
+	margin-top:1%;
 }
+
 
 
 

@@ -31,7 +31,6 @@ p, table, tr, td{
 	width: 70%;
 	margin: 0 auto;
 	margin-left: 30%;
-	/*margin-top: 13%;*/
 
 }
 
@@ -40,13 +39,13 @@ p, table, tr, td{
 	color: black;
 }
 #promptTable{
-
 	height:100%;
+
 }
 
 .tdTable{
     vertical-align:bottom;
 }
 #prompt{
-	margin-top:11%;
+	margin-top:1%;
 }
