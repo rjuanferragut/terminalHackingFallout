@@ -93,12 +93,17 @@
 
             if(!hasLetter($string, $initString, $lastString)){
                 $pos = 0;
-                // echo "Inicio: " . $initString;
-                for ($j = $initString; $j < $lastString; $j++) {
-                    $string[$j] = $word[$pos];
-                    // echo $j . "<br />";
-                    $pos = $pos + 1;
+
+                try{
+                    for ($j = $initString; $j < $lastString; $j++) {
+                        $string[$j] = $word[$pos];
+                        $pos = $pos + 1;
+                    }
+                }catch(Exception $e){
+                  echo "Posición de j: " . $j . "\nLetra de j:" . $string[$j];
                 }
+
+
                 $i++;
             }
 
