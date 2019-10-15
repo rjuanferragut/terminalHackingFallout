@@ -23,9 +23,15 @@ p, table, tr, td{
 
 #container{
 	display:flex;
-	width: 100%;
+	width: 70%;
 	margin: 0 auto;
 	margin-left: 30%;
 	margin-top: 13%;
 
+
 }
+.span{
+	background-color: #00F501;
+	color: black;
+}
+
