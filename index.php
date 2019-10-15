@@ -54,14 +54,6 @@
 
 		 	<div id="divTable">
 		 		<div id="text">
-<<<<<<< HEAD
-			 		<p>Welcome to ROBCO Industries (TM) Termlink 
-			 			<br />===============================<br />
-			 			Password is required <br />
-			 		</p>
-			 		<p id="lifeCount">	Attempts remaining:</p>
-		 		</div>
-=======
 		 		<p>Welcome to ROBCO Industries (TM) Termlink
 		 			<br />===============================<br />
 		 			Password is required <br />
@@ -99,7 +91,6 @@
 	                ?>
 	            </table>
 	        </div>
->>>>>>> 716a15072ac823ca9cca127e597438f5f5744a98
 
 	        	<div class="table">
 		            <table>
