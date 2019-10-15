@@ -21,7 +21,7 @@ p, table, tr, td{
 }
 
 .table{
-	
+
 	float: left;
 
 }
@@ -32,13 +32,13 @@ p, table, tr, td{
 	margin: 0 auto;
 	margin-left: 30%;
 	margin-top: 13%;
-
-
 }
+
 .span{
 	background-color: #00F501;
 	color: black;
 }
+
 #promptTable{
 	margin-left:-50%;
 	height:100%;

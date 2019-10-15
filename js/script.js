@@ -48,7 +48,7 @@ function getTerminal(){
         var td_string = stringFromPHP.slice(countChar, countLastChar);
         getFirstPosition = getPositionLetter(td_string);
 
-        console.log(getFirstPosition);
+        // console.log(getFirstPosition);
         for (var i = 0; i < getFirstPosition.length; i++) {
           // Si es mayor o igual a 0, es que ha encontrado una letra.
             if(getFirstPosition[i] >= 0){
@@ -56,10 +56,14 @@ function getTerminal(){
                 getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
 
                 if(getFirstPosition.length > 1){
-                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span style="background: #00F501; color: black">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span style="background: #00F501; color: black;">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+                    console.log("Primera posición de la primera letra: " + getFirstPosition[i]);
+                    console.log("Última posición de la primera letra: " + getLastPosition);
+                    console.log("Primra posición de la segunda letra: " + getFirstPosition[i + 1])
+                    console.log(getFirstPosition[i + 1] - getLastPosition)
+                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
                     i++;
                 }else{
-                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span style="background: #00F501; color: black">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length)
+                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length)
                 }
             }
         }
