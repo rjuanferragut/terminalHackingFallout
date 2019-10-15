@@ -12,7 +12,6 @@ window.addEventListener("load", function(event) {
 
     // Método que obtiene la posición de inicio y final de cada palabra en el String.
     calculatePositions();
-
     getTerminal();
 
 });
@@ -49,13 +48,20 @@ function getTerminal(){
         var td_string = stringFromPHP.slice(countChar, countLastChar);
         getFirstPosition = getPositionLetter(td_string);
 
-        // Si es mayor o igual a 0, es que ha encontrado una letra.
-        if(getFirstPosition >= 0){
-            // Si cumple con este requisito, busco cual es la última posición
-            getLastPosition = getLastPositionLetter(td_string, getFirstPosition);
-            console.log("Primera Posición: " + getFirstPosition + "\nÚltima Posición: " + getLastPosition + "\nCadena: " + td_string)
-            td_string = td_string.substring(0, getFirstPosition) + '<span style="background: #00F501; color: black">' + td_string.substring(getFirstPosition, getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length)
-            console.log("\nResultado con spans incluidos: " + td_string);
+        console.log(getFirstPosition);
+        for (var i = 0; i < getFirstPosition.length; i++) {
+          // Si es mayor o igual a 0, es que ha encontrado una letra.
+            if(getFirstPosition[i] >= 0){
+                // Si cumple con este requisito, busco cual es la última posición
+                getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
+
+                if(getFirstPosition.length > 1){
+                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span style="background: #00F501; color: black">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span style="background: #00F501; color: black;">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+                    i++;
+                }else{
+                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span style="background: #00F501; color: black">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length)
+                }
+            }
         }
 
         countChar = countLastChar;
@@ -66,13 +72,18 @@ function getTerminal(){
 
 // Método para obtener la primera posición de la letra en el string
 function getPositionLetter(td_string){
-    for (var i = 0; i < td_string.length; i++) {
+    var array_first_positions = [];
+    var i = 0;
+    while(i < td_string.length){
         if(td_string[i].match(/[a-zA-Z ]+/)){
-            return i;
+            array_first_positions.push(i);
+            i += 5;
+        }else{
+            i++;
         }
     }
 
-    return -1;
+    return array_first_positions;
 }
 
 // Método para obtener la última posición de la letra en el string
