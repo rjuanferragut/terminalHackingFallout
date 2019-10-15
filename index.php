@@ -54,7 +54,7 @@
 
 		 	<div id="divTable">
 		 		<div id="text">
-		 		<p>Welcome to ROBCO Industries (TM) Termlink 
+		 		<p>Welcome to ROBCO Industries (TM) Termlink
 		 			<br />===============================<br />
 		 			Password is required <br />
 		 		</p>

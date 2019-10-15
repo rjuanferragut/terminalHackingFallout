@@ -96,7 +96,7 @@
                 // echo "Inicio: " . $initString;
                 for ($j = $initString; $j < $lastString; $j++) {
                     $string[$j] = $word[$pos];
-                    // echo $word[$pos];
+                    // echo $j . "<br />";
                     $pos = $pos + 1;
                 }
                 $i++;
