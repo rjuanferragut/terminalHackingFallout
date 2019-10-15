@@ -1,3 +1,8 @@
+/*
+// *******************************
+// Script creado por Alexis Mengual y Rafa Juan
+// *******************************
+*/
 body{
 	/*background-image: url("../img/foterminal.jpg");*/
  	background-color: black;
@@ -33,4 +38,15 @@ p, table, tr, td{
 .span{
 	background-color: #00F501;
 	color: black;
+}
+#promptTable{
+
+	height:100%;
+}
+
+.tdTable{
+    vertical-align:bottom;
+}
+#prompt{
+	margin-top:11%;
 }

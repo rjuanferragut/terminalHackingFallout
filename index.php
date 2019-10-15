@@ -1,6 +1,11 @@
  <!DOCTYPE html>
  <html>
  <head>
+ 	<!--
+// *******************************
+// Script creado por Alexis Mengual y Rafa Juan
+// *******************************
+	-->
  	<title>fallout terminal</title>
  	 <link rel="stylesheet" media="(min-width: 16in)" type="text/css" href="css/stylesheet.css">
 
@@ -48,13 +53,13 @@
 	  	</div>
 
 		 	<div id="divTable">
-
+		 		<div id="text">
 		 		<p>Welcome to ROBCO Industries (TM) Termlink 
 		 			<br />===============================<br />
 		 			Password is required <br />
 		 		</p>
 		 		<p id="lifeCount">	Attempts remaining:</p>
-
+		 	</div>
 	        	<div class="table">
 	            <table>
 	                <?php
@@ -118,11 +123,40 @@
 	 	</div>
 	 	<div id="prompt">
 	 		<table id="promptTable">
-	 			<tr></tr>
-	 			<tr></tr>
-	 			<tr></tr>
-	 			<tr></tr>
-	 			<tr></tr>
+	 			<tr id="tr5">
+	 				<td class="tdTable">>>prompt 5 <br/>
+	 					>>aaa<br/>
+	 					>>aaa<br/>
+	 				</td>
+	 			</tr>
+
+	 			<tr id="tr4">
+	 				<td class="tdTable">>>prompt 4 <br/>
+	 					>>aaa<br/>
+	 					>>aaa<br/>
+	 				</td>
+	 			</tr>
+
+	 			<tr id="tr3">
+	 				<td class="tdTable">>>prompt 3 <br/>
+	 					>>aaa<br/>
+	 					>>aaa<br/>
+	 				</td>
+	 			</tr>
+
+	 			<tr id="tr2">
+	 				<td class="tdTable">>>prompt 2 <br/>
+	 					>>aaa<br/>
+	 					>>aaa<br/>
+	 				</td>
+	 			</tr>
+
+	 			<tr id="tr1">
+	 				<td class="tdTable">>>prompt 1 <br/>
+	 					>>aaa<br/>
+	 					>>aaa<br/>
+	 				</td>
+	 			</tr>
 	 		</table>
 
 	 	</div>
