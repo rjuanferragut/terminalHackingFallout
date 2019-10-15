@@ -8,9 +8,9 @@
 	-->
 	<meta charset="utf-8">
  	<title>fallout terminal</title>
- 	 <link rel="stylesheet" media="(min-width: 16in)" type="text/css" href="css/stylesheet.css">
- 	 
- 	 <link rel="stylesheet" media="(max-width: 16in) and (min-width: 13in)" type="text/css" href="css/stylesheet2.css">
+ 	 <link rel="stylesheet" media="(min-width: 14in)" type="text/css" href="css/stylesheet.css">
+
+ 	 <link rel="stylesheet" media="(max-width: 14in) and (min-width: 13in)" type="text/css" href="css/stylesheet2.css">
 
  	 <link rel="stylesheet" media="(max-width:13in)" type="text/css" href="css/stylesheet3.css">
 
