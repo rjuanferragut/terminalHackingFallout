@@ -16,20 +16,25 @@ p, table, tr, td{
 }
 
 .table{
-	/*
-	float: center;
-*/
+	
+	float:left;
+
 }
 
 #container{
 	display:flex;
-	width: 100%;
+	width: 70%;
 	margin: 0 auto;
 	margin-left: 30%;
 	margin-top: 13%;
 
+<<<<<<< HEAD
 }
 
+=======
+
+}
+>>>>>>> cf69c84c4050bed39b3bf62825b433e285dc4b4e
 .span{
 	background-color: #00F501;
 	color: black;
