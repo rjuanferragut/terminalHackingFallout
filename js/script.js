@@ -81,7 +81,11 @@ function getPositionLetter(td_string){
     while(i < td_string.length){
         if(td_string[i].match(/[a-zA-Z ]+/)){
             array_first_positions.push(i);
-            i += 5;
+            if(i >= 0 && i<= 4 && !td_string[i + 1].match(/[a-zA-Z ]+/)){
+              i++;
+            }else{
+              i += 5;
+            }
         }else{
             i++;
         }
