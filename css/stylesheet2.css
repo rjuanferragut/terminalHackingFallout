@@ -16,7 +16,7 @@ p, table, tr, td{
 }
 
 .table{
-	
+
 	float: left;
 
 }
@@ -28,4 +28,9 @@ p, table, tr, td{
 	margin-left: 30%;
 	margin-top: 13%;
 
+}
+
+.span{
+	background-color: #00F501;
+	color: black;
 }
