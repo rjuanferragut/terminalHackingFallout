@@ -12,7 +12,7 @@ body{
 p, table, tr, td{
 	color: #00F501;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 96%;
+    font-size: 1vw;
 
 
 }
@@ -50,7 +50,7 @@ p, table, tr, td{
 }
 
 #prompt{
-	margin-top:1%;
+	/*margin-top:1%;*/
 }
 
 
