@@ -64,36 +64,35 @@
 		 		<p id="lifeCount">	Attempts remaining: <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> </p>
 		 	</div>
 	        	<div class="table">
-	            <table>
-	                <?php
-	                    //creación de las filas y columnas de la tabla
-	                    $horizontalLines = 16;
-	                    $verticalLines = 2;
-	                    $countLineCode = 1;
-	                    //empieza en el 1 para que coincida con el total de las strings de codigo
+		            <table>
+		                <?php
+		                    //creación de las filas y columnas de la tabla
+		                    $horizontalLines = 16;
+		                    $verticalLines = 2;
+		                    $countLineCode = 1;
+		                    //empieza en el 1 para que coincida con el ID de las strings de codigo
+		                    $countHexacode = 0;
 
-	                    $countHexacode = 0;
+		                    for ($i=0; $i < $horizontalLines; $i++) {
+		                        echo "<tr>";
 
-	                    for ($i=0; $i < $horizontalLines; $i++) {
-	                        echo "<tr>";
+		                            for ($j = 0; $j < $verticalLines; $j++) {
+		                                if($j % 2 == 0){
+		                                    echo "<td class='Hexade' id=".$array_hexadecimal[$countHexacode].">".$array_hexadecimal[$countHexacode];
+		                                    $countHexacode++;
+		                                }else{
+		                                    echo "<td class='code' id=".$countLineCode." >";
+		                                    $countLineCode++;
+		                                }
 
-	                            for ($j = 0; $j < $verticalLines; $j++) {
-	                                if($j % 2 == 0){
-	                                    echo "<td class='Hexade' id=".$array_hexadecimal[$countHexacode].">".$array_hexadecimal[$countHexacode];
-	                                    $countHexacode++;
-	                                }else{
-	                                    echo "<td class='code' id=".$countLineCode." >";
-	                                    $countLineCode++;
-	                                }
+		                                echo "</td>";
+		                            }
 
-	                                echo "</td>";
-	                            }
-
-	                        echo "</tr>";
-	                    }
-	                ?>
-	            </table>
-	        </div>
+		                        echo "</tr>";
+		                    }
+		                ?>
+		            </table>
+	        	</div>
 
 		        <div class="table">
 		            <table>
@@ -124,48 +123,47 @@
 		            </table>
 	        </div>
 	        <div id="prompt" class="table">
-	 		<table id="promptTable">
-	 			<tr id="tr6" class="trTable">
-	 				<td class="tdTable">>>prompt 6 <br/>
-	 					>>aaa<br/>
-	 					>>aaa<br/>
-	 				</td>
-	 			</tr>
-	 			<tr id="tr5" class="trTable">
-	 				<td class="tdTable">>>prompt 5 <br/>
-	 					>>aaa<br/>
-	 					>>aaa<br/>
-	 				</td>
-	 			</tr>
+		 		<table id="promptTable">
+		 			<tr id="tr6" class="trTable">
+		 				<td class="tdTable">>>prompt 6 <br/>
+		 					>>abc<br/>
+		 					>>abc<br/>
+		 				</td>
+		 			</tr>
+		 			<tr id="tr5" class="trTable">
+		 				<td class="tdTable">>>prompt 5 <br/>
+		 					>>abc<br/>
+		 					>>abc<br/>
+		 				</td>
+		 			</tr>
 
-	 			<tr id="tr4" class="trTable">
-	 				<td class="tdTable">>>prompt 4 <br/>
-	 					>>aaa<br/>
-	 					>>aaa<br/>
-	 				</td>
-	 			</tr>
+		 			<tr id="tr4" class="trTable">
+		 				<td class="tdTable">>>prompt 4 <br/>
+		 					>>abc<br/>
+		 					>>abc<br/>
+		 				</td>
+		 			</tr>
 
-	 			<tr id="tr3" class="trTable">
-	 				<td class="tdTable">>>prompt 3 <br/>
-	 					>>aaa<br/>
-	 					>>aaa<br/>
-	 				</td>
-	 			</tr>
+		 			<tr id="tr3" class="trTable">
+		 				<td class="tdTable">>>prompt 3 <br/>
+		 					>>abc<br/>
+		 					>>abc<br/>
+		 				</td>
+		 			</tr>
 
-	 			<tr id="tr2" class="trTable">
-	 				<td class="tdTable">>>prompt 2 <br/>
-	 					>>aaa<br/>
-	 					>>aaa<br/>
-	 				</td>
-	 			</tr>
+		 			<tr id="tr2" class="trTable">
+		 				<td class="tdTable">>>prompt 2 <br/>
+		 					>>abc<br/>
+		 					>>abc<br/>
+		 				</td>
+		 			</tr>
 
-	 			<tr id="tr1" class="trTable">
-	 				<td class="tdTable">>>prompt 1 <br/>
-	 					>>aaa<br/>
-	 				</td>
-	 			</tr>
-	 		</table>
-
+		 			<tr id="tr1" class="trTable">
+		 				<td class="tdTable">>>prompt 1 <br/>
+		 					>>text<br/>
+		 				</td>
+		 			</tr>
+		 		</table>
 	 	</div>
 	 	</div>
 

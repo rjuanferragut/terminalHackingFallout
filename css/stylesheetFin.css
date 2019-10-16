@@ -15,19 +15,12 @@ p, table, tr, td{
 }
 
 .table{
-	
 	float: left;
-
 }
+
 
 #container{
 	display:flex;
-	/*
-	width: 100%;
-	margin: 0 auto;
-	margin-left: 35%;
-	margin-top: 12%;
-	*/
 	position:absolute;
 	top: 25%;
 	left:35%;
@@ -76,10 +69,7 @@ p, table, tr, td{
 	.trtable{
 		margin-top:10px;
 	}
-/*
-	#prompt{
-		margin-top:4.5%;
-	}*/
+
 
 }
 @media (max-width:13in){
@@ -91,17 +81,12 @@ p, table, tr, td{
 	#prompt{
 		margin-top:8%;
 	}
+	
 	#container{
-	display:flex;
-	/*
-	width: 100%;
-	margin: 0 auto;
-	margin-left: 35%;
-	margin-top: 12%;
-	*/
-	position:absolute;
-	top: 10%;
-	left:35%;
-}
+		display:flex;
+		position:absolute;
+		top: 10%;
+		left:35%;
+	}
 	
 }
