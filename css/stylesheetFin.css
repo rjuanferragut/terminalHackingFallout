@@ -40,6 +40,7 @@ p, table, tr, td{
 
 #promptTable{
 	height:100%;
+	display:block;
 }
 
 .tdTable{
@@ -88,7 +89,7 @@ p, table, tr, td{
 	}
 
 	#prompt{
-		margin-top:7%;
+		margin-top:8%;
 	}
 	#container{
 	display:flex;
