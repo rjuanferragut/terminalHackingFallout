@@ -12,7 +12,7 @@ body{
 p, table, tr, td{
 	color: #00F501;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 85%;
+    font-size: 0.8vw;
 
 
 }
@@ -26,10 +26,15 @@ p, table, tr, td{
 
 #container{
 	display:flex;
+	/*
 	width: 70%;
 	margin: 0 auto;
 	margin-left: 35%;
-	margin-top: 12%;
+	margin-top: 15%;
+	*/
+	position:absolute;
+	top: 25%;
+	left:35%;
 }
 
 .span{
@@ -48,7 +53,7 @@ p, table, tr, td{
 	margin-top:10px;
 }
 #prompt{
-	margin-top:5%;
+	margin-top:4.5%;
 }
 
 
