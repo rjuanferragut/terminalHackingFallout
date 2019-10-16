@@ -8,12 +8,8 @@
 	-->
 	<meta charset="utf-8">
  	<title>fallout terminal</title>
- 	 <link rel="stylesheet" media="(min-width: 14in)" type="text/css" href="css/stylesheet.css">
-
- 	 <link rel="stylesheet" media="(max-width: 14in) and (min-width: 13in)" type="text/css" href="css/stylesheet2.css">
-
- 	 <link rel="stylesheet" media="(max-width:13in)" type="text/css" href="css/stylesheet3.css">
-
+ 	
+	<link rel="stylesheet" type="text/css" href="css/stylesheetFin.css">
 
  	 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
  	 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=device-dpi, width=device-width, user-scalable=no">
@@ -190,7 +186,6 @@
 
 	 			<tr id="tr1" class="trTable">
 	 				<td class="tdTable">>>prompt 1 <br/>
-	 					>>aaa<br/>
 	 					>>aaa<br/>
 	 				</td>
 	 			</tr>
