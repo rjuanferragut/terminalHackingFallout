@@ -31,10 +31,6 @@ function getTerminal(){
                 getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
 
                 if(getFirstPosition.length > 1){
-                    console.log("Primera posición de la primera letra: " + getFirstPosition[i]);
-                    console.log("Última posición de la primera letra: " + getLastPosition);
-                    console.log("Primra posición de la segunda letra: " + getFirstPosition[i + 1])
-                    console.log(getFirstPosition[i + 1] - getLastPosition)
                     td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
                     i++;
                 }else{
