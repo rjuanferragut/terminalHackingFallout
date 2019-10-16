@@ -82,6 +82,9 @@
         return $string;
     }
 
+    /*
+    * Método que añade las palabras en posiciones random del String.
+    */
     function setWords($array, $string){
         $max_length_string = strlen($string);
         $i = 0;
@@ -106,14 +109,15 @@
 
                 $i++;
             }
-
-
         }
 
-        // echo "<span style='color: yellow'>" . $string . "</span><br />";
         return $string;
     }
 
+    /*
+    * Método para revisar si encuentra una letra del alfabeto
+    * antes de añadir una palabra en el string.
+    */
     function hasLetter($string, $init, $last){
         // Si la posición es mayor que 0, compruebo que la posición
         // anterior al inicio no sea un caracter.
@@ -142,6 +146,10 @@
         return false;
     }
 
+    /*
+    * Método del cuál obtengo una palabra para usarla como
+    * contraseña.
+    */
     function getPassword($array){
         return $array[rand(0, (count($array) - 1))];
     }

@@ -10,35 +10,11 @@ window.addEventListener("load", function(event) {
     stringFromPHP = document.getElementById('string').innerText;
     password = document.getElementById('password').value;
 
-    // Método que obtiene la posición de inicio y final de cada palabra en el String.
-    calculatePositions();
     getTerminal();
 
 });
 
-
-function calculatePositions(){
-    var getFirst = 0;
-    var getLast = 0;
-
-		for (var i = 0; i < stringFromPHP.length; i++) {
-				if(stringFromPHP[i].match(/[a-zA-Z ]+/)){
-						if(getFirst == 0){
-								getFirst = i;
-						}else{
-								if(!stringFromPHP[i + 1].match(/[a-zA-Z ]+/)){
-										getLast = i;
-										positionsLetters.push(getFirst);
-										positionsLetters.push(getLast);
-
-										getFirst = 0;
-								}
-						}
-				}
-		}
-}
-
-
+// Método para montar la tabla que simulará el contenido del terminal.
 function getTerminal(){
     var countLine = 1;
     var countChar = 0;
@@ -48,7 +24,6 @@ function getTerminal(){
         var td_string = stringFromPHP.slice(countChar, countLastChar);
         getFirstPosition = getPositionLetter(td_string);
 
-        // console.log(getFirstPosition);
         for (var i = 0; i < getFirstPosition.length; i++) {
           // Si es mayor o igual a 0, es que ha encontrado una letra.
             if(getFirstPosition[i] >= 0){
