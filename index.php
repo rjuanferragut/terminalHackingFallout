@@ -8,16 +8,13 @@
 	-->
 	<meta charset="utf-8">
  	<title>fallout terminal</title>
- 	 <link rel="stylesheet" media="(min-width: 14in)" type="text/css" href="css/stylesheet.css">
-
- 	 <link rel="stylesheet" media="(max-width: 14in) and (min-width: 13in)" type="text/css" href="css/stylesheet2.css">
-
- 	 <link rel="stylesheet" media="(max-width:13in)" type="text/css" href="css/stylesheet3.css">
-
-
- 	 <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
- 	 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=device-dpi, width=device-width, user-scalable=no">
- 	  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+ 	<link rel="stylesheet" media="(min-width: 14in)" type="text/css" href="css/stylesheet.css">
+  <link rel="stylesheet" media="(max-width: 14in) and (min-width: 13in)" type="text/css" href="css/stylesheet2.css">
+  <link rel="stylesheet" media="(max-width:13in)" type="text/css" href="css/stylesheet3.css">
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=device-dpi, width=device-width, user-scalable=no">
+ 	<script src="js/script.js"></script>
 
  	<?php
 
@@ -58,7 +55,7 @@
 		 			<br />===============================<br />
 		 			Password is required <br />
 		 		</p>
-		 		<p id="lifeCount">	Attempts remaining:</p>
+		 		<p id="lifeCount">	Attempts remaining: <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> </p>
 		 	</div>
 	        	<div class="table">
 	            <table>
@@ -198,7 +195,7 @@
 
 	 	</div>
 	 	</div>
-	 	
+
  	</div>
  </body>
  </html>
