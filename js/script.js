@@ -34,7 +34,7 @@ function getTerminal(){
       if(getFirstPosition[i] >= 0){
         // Si cumple con este requisito, busco cual es la última posición
         getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
-
+// añadir numero de contador en span para diferenciar palabras y corregir que los puntos no se pasen de largo///////////////////////////////////////////////////////////////////////////////////////8
         if(getFirstPosition.length > 1){
           td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
           i++;
