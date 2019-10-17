@@ -1,0 +1,156 @@
+*, ::after, ::before{
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body{
+  background: #000;
+  border: 12px solid #222;
+  position: relative;
+}
+
+body::before{
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0.01em;
+  left: 0.01em;
+  right: 0.01em;
+  bottom: 0.01em;
+  border: 7px solid #282828;
+}
+
+table{
+  margin-left: 0;
+}
+
+.container{
+  color: #00F501;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 15px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.justify-content-center{
+  justify-content: center!important;
+}
+
+.col{
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.md-12, .md-3{
+  margin-left: 0;
+}
+
+.span:hover{
+  background: #00F501;
+  color: black;
+  cursor: pointer;
+}
+
+#prompt{
+  display: flex;
+  margin-left: 5px;
+}
+
+#prompt > div{
+  align-self: flex-end;
+  word-break: break-all;
+}
+
+#prompt .card{
+  margin-right: 0;
+}
+
+#prompt .input-prompt input{
+  background: transparent;
+  padding: 10px 0;
+  border: 0;
+  color: #00F501;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1em;
+}
+
+
+@media (min-width: 960px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin-top: 90px;
+      width: 80%;
+      padding: 25px;
+    }
+}
+
+@media (min-width: 1200px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin-top: 200px;
+      width: 70%;
+      padding: 25px;
+      font-size: 1.1em;
+    }
+}
+
+@media (min-width: 1400px){
+    body{
+      background-image: url("../img/foterminal.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin: 12% 30%;
+      padding: 35px;
+      font-size: 1vw;
+    }
+
+    #terminal-table.md-3{
+      margin: 0;
+    }
+
+    .col{
+      flex-basis: 0;
+      flex-grow: 0;
+    }
+
+    .card{
+      margin: 0;
+    }
+
+    table{
+      float: left;
+    }
+}
