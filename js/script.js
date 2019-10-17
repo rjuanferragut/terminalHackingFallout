@@ -12,6 +12,8 @@ window.addEventListener("load", function(event) {
 
     getTerminal();
 
+    document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square"></i> <i class="fas fa-square"></i> <i class="fas fa-square"></i> <i class="fas fa-square"></i>'
+
 });
 
 // Método para montar la tabla que simulará el contenido del terminal.
