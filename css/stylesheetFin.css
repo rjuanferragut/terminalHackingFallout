@@ -15,27 +15,21 @@ p, table, tr, td{
 }
 
 .table{
-	
 	float: left;
-
 }
 
 #container{
 	display:flex;
-	/*
-	width: 100%;
-	margin: 0 auto;
-	margin-left: 35%;
-	margin-top: 12%;
-	*/
 	position:absolute;
 	top: 25%;
 	left:35%;
 }
 
-.span{
+.span:hover{
 	background-color: #00F501;
 	color: black;
+  cursor: pointer;
+  transition: .2s;
 }
 
 #promptTable{
@@ -83,7 +77,7 @@ p, table, tr, td{
 
 }
 @media (max-width:13in){
-	
+
 	p, table, tr, td{
     	font-size: 1vw;
 	}
@@ -103,5 +97,5 @@ p, table, tr, td{
 	top: 10%;
 	left:35%;
 }
-	
+
 }
