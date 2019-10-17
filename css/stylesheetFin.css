@@ -3,27 +3,34 @@
 // Script creado por Alexis Mengual y Rafa Juan
 // *******************************
 */
+*{
+  margin: 0 auto;
+  padding: 0;
+}
+
 body{
  	background-color: black;
 }
+
 p, table, tr, td{
-	color: #00F501;
-    font-family: 'Share Tech Mono', monospace;
+  color: #00F501;
+  font-family: 'Share Tech Mono', monospace;
 }
-.code{
-	padding-right: 15px;
-}
-
-.table{
-	float: left;
-}
-
 
 #container{
 	display:flex;
 	position:absolute;
 	top: 25%;
 	left:35%;
+}
+
+.code{
+	padding-right: 15px;
+}
+
+.table{
+  margin-top: 15px;
+	float: left;
 }
 
 .span:hover{
@@ -83,7 +90,7 @@ p, table, tr, td{
 	#prompt{
 		margin-top:8%;
 	}
-	
+
 	#container{
 <<<<<<< HEAD
 	display:flex;
@@ -105,6 +112,6 @@ p, table, tr, td{
 		top: 10%;
 		left:35%;
 	}
-	
+
 }
 >>>>>>> 3515fd581f408afe7c971e56b75bbc70f82b5401
