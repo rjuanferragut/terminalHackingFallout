@@ -18,6 +18,7 @@ p, table, tr, td{
 	float: left;
 }
 
+
 #container{
 	display:flex;
 	position:absolute;
@@ -70,10 +71,7 @@ p, table, tr, td{
 	.trtable{
 		margin-top:10px;
 	}
-/*
-	#prompt{
-		margin-top:4.5%;
-	}*/
+
 
 }
 @media (max-width:13in){
@@ -85,7 +83,9 @@ p, table, tr, td{
 	#prompt{
 		margin-top:8%;
 	}
+	
 	#container{
+<<<<<<< HEAD
 	display:flex;
 	/*
 	width: 100%;
@@ -99,3 +99,12 @@ p, table, tr, td{
 }
 
 }
+=======
+		display:flex;
+		position:absolute;
+		top: 10%;
+		left:35%;
+	}
+	
+}
+>>>>>>> 3515fd581f408afe7c971e56b75bbc70f82b5401

@@ -55,7 +55,7 @@
 						Attempts remaining: <span id="lifesCount"></span>
 					</p>
 			</div>
-			
+
 			<div class="table">
 				<table>
 					<?php
