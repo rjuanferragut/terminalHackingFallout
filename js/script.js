@@ -15,7 +15,7 @@ window.addEventListener("load", function(event) {
 
 
   getTerminal();
-  document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i>'
+  document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i>';
 
 });
 
@@ -56,7 +56,7 @@ function getTerminal(){
 function checkWord(element){
   var length = 0;
   var pointSubs = "";
-
+  //var lifesCounting = 4;
   setInfoPrompt(element.innerText);
 
   if (element.innerText == password) {
@@ -68,6 +68,7 @@ function checkWord(element){
     element.innerHTML = pointSubs;
     element.classList = null;
     setInfoPrompt('Correct Password');
+    // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
     setInfoPrompt('Entry Denied');
@@ -78,7 +79,10 @@ function checkWord(element){
     }
     element.innerHTML = pointSubs;
     element.classList = null;
-    //cambia la clase span y la desactiva
+    /*
+    lifesCounting -= 1;
+    document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i>'.repeat(lifesCounting)+" ";//no funciona, se juntan y cunado se falla solo resta hasta tener 3 vidas, es decir la primera vez
+    */
   }
 }
 
