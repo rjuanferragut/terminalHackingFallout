@@ -25,21 +25,23 @@ function getTerminal(){
   var countLine = 1;
   var countChar = 0;
   var countLastChar = 12;
+  var countSpan = 0;
 
   for (countLine; countLine <= 32; countLine++){
     var td_string = stringFromPHP.slice(countChar, countLastChar);
     getFirstPosition = getPositionLetter(td_string);
-
     for (var i = 0; i < getFirstPosition.length; i++) {
       // Si es mayor o igual a 0, es que ha encontrado una letra.
       if(getFirstPosition[i] >= 0){
+        countSpan += 1;
         // Si cumple con este requisito, busco cual es la última posición
         getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
         if(getFirstPosition.length > 1){
-          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+countSpan+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" id="spanId'+countSpan+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
           i++;
+
         }else{
-          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length)
+          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+countSpan+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
         }
       }
     }
@@ -52,14 +54,23 @@ function getTerminal(){
 
 // Método para comprobar si la palabra correcta és la password y convertirlo en puntos si es incorrecto
 function checkWord(element){
-console.log(element.innerText);
-console.log(element.innerText == password);
+  console.log(element.innerText);
+  console.log(element.innerText == password);
+  console.log(element.innerHTML.length);
+  var i = 0;
+  var pointSubs = "";
 
   if (element.innerText == password) {
     //prueba
     element.innerHTML = "great";
   }else{
-    element.innerHTML = ".....";
+
+    while (i<element.innerHTML.length){
+      pointSubs += ".";
+      i += 1;
+    }
+    element.innerHTML = pointSubs;
+    
   }
 }
 
