@@ -62,11 +62,20 @@ function checkWord(element){
 
   if (element.innerText == password) {
     element.innerHTML = "great";
+    while (length < element.innerHTML.length){
+      pointSubs += ".";
+      length += 1;
+    }
+    element.innerHTML = pointSubs;
+    element.classList = null;
+    setInfoPrompt('CORRECT PASSWORD');
+
   }else{
     setInfoPrompt('Entry Denied');
     while (length < element.innerHTML.length){
       pointSubs += ".";
       length += 1;
+
     }
     element.innerHTML = pointSubs;
     element.classList = null;
