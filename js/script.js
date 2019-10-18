@@ -15,19 +15,19 @@ window.addEventListener("load", function(event) {
 
 
   getTerminal();
-
   document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i>'
 
 });
 
 // Método para montar la tabla que simulará el contenido del terminal.
 function getTerminal(){
+  var nameId = '';
   var countLine = 0;
   var countChar = 0;
   var countLastChar = 12;
   var countSpan = 0;
 
-  for (countLine; countLine <= 32; countLine++){
+  for (countLine; countLine < 32; countLine++){
     var td_string = stringFromPHP.slice(countChar, countLastChar);
     getFirstPosition = getPositionLetter(td_string);
     for (var i = 0; i < getFirstPosition.length; i++) {
