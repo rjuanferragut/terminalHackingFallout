@@ -53,6 +53,7 @@ function getTerminal(){
 }
 
 // Método para comprobar si la palabra correcta és la password y convertirlo en puntos si es incorrecto
+
 function checkWord(element){
   console.log(element.className);
   console.log(element.innerText == password);
@@ -70,7 +71,8 @@ function checkWord(element){
       i += 1;
     }
     element.innerHTML = pointSubs;
-
+    element.classList = null;
+    //cambiar la clase span para desactivar
   }
 }
 
