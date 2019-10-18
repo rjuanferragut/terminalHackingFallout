@@ -16,13 +16,13 @@ window.addEventListener("load", function(event) {
 
   getTerminal();
 
-  document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square"></i> <i class="fas fa-square"></i> <i class="fas fa-square"></i> <i class="fas fa-square"></i>'
+  document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i>'
 
 });
 
 // Método para montar la tabla que simulará el contenido del terminal.
 function getTerminal(){
-  var countLine = 1;
+  var countLine = 0;
   var countChar = 0;
   var countLastChar = 12;
   var countSpan = 0;
@@ -54,7 +54,7 @@ function getTerminal(){
 
 // Método para comprobar si la palabra correcta és la password y convertirlo en puntos si es incorrecto
 function checkWord(element){
-  console.log(element.innerText);
+  console.log(element.className);
   console.log(element.innerText == password);
   console.log(element.innerHTML.length);
   var i = 0;
@@ -70,7 +70,7 @@ function checkWord(element){
       i += 1;
     }
     element.innerHTML = pointSubs;
-    
+
   }
 }
 

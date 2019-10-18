@@ -142,8 +142,8 @@ table{
     }
 
     .col{
-      flex-basis: 0;
-      flex-grow: 0;
+      flex-basis: initial!important;
+      flex-grow: initial!important;
     }
 
     .card{
