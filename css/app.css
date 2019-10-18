@@ -70,7 +70,7 @@ table{
   margin-right: 0;
 }
 
-#prompt .input-prompt input{
+#prompt .input-prompt span{
   background: transparent;
   padding: 10px 0;
   border: 0;
@@ -79,6 +79,15 @@ table{
   font-size: 1em;
 }
 
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 
 @media (min-width: 960px){
     body{

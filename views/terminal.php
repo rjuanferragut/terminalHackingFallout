@@ -38,7 +38,7 @@
                       <div class="card">
                           <div class="content-prompt"></div>
                           <div class="input-prompt">
-                              <input type="text" value="Prompt"/>
+                              <span><i class="fas fa-square-full blink"></i></span>
                           </div>
                       </div>
                   </div>
