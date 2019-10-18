@@ -37,11 +37,11 @@ function getTerminal(){
         // Si cumple con este requisito, busco cual es la última posición
         getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
         if(getFirstPosition.length > 1){
-          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+countSpan+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" id="spanId'+countSpan+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span"  onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
           i++;
 
         }else{
-          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+countSpan+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
+          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span"  onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
         }
       }
     }
@@ -68,7 +68,7 @@ function checkWord(element){
     }
     element.innerHTML = pointSubs;
     element.classList = null;
-    setInfoPrompt('CORRECT PASSWORD');
+    setInfoPrompt('Correct Password');
 
   }else{
     setInfoPrompt('Entry Denied');
