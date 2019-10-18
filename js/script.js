@@ -72,7 +72,7 @@ function checkWord(element){
     }
     element.innerHTML = pointSubs;
     element.classList = null;
-    //cambiar la clase span para desactivar
+    //cambia la clase span y la desactiva
   }
 }
 
