@@ -53,7 +53,6 @@ function getTerminal(){
 }
 
 // Método para comprobar si la palabra correcta és la password y convertirlo en puntos si es incorrecto
-
 function checkWord(element){
   var length = 0;
   var pointSubs = "";
@@ -83,6 +82,7 @@ function checkWord(element){
   }
 }
 
+// Método para añadir el texto en el prompt
 function setInfoPrompt(text){
   document.getElementsByClassName('content-prompt')[0].innerHTML = document.getElementsByClassName('content-prompt')[0].innerHTML + '<p>>' + text + '</p>';
 }
