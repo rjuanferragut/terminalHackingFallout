@@ -55,25 +55,27 @@ function getTerminal(){
 // Método para comprobar si la palabra correcta és la password y convertirlo en puntos si es incorrecto
 
 function checkWord(element){
-  console.log(element.className);
-  console.log(element.innerText == password);
-  console.log(element.innerHTML.length);
-  var i = 0;
+  var length = 0;
   var pointSubs = "";
 
+  setInfoPrompt(element.innerText);
+
   if (element.innerText == password) {
-    //prueba
     element.innerHTML = "great";
   }else{
-
-    while (i<element.innerHTML.length){
+    setInfoPrompt('Entry Denied');
+    while (length < element.innerHTML.length){
       pointSubs += ".";
-      i += 1;
+      length += 1;
     }
     element.innerHTML = pointSubs;
     element.classList = null;
     //cambiar la clase span para desactivar
   }
+}
+
+function setInfoPrompt(text){
+  document.getElementsByClassName('content-prompt')[0].innerHTML = document.getElementsByClassName('content-prompt')[0].innerHTML + '<p>>' + text + '</p>';
 }
 
 

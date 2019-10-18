@@ -36,9 +36,7 @@
                   </div>
                   <div class="col md-3" id="prompt">
                       <div class="card">
-                          <div class="content-prompt">
-                              dfakjlsñflkajsñlkajsñlkfjañkslfa
-                          </div>
+                          <div class="content-prompt"></div>
                           <div class="input-prompt">
                               <input type="text" value="Prompt"/>
                           </div>
