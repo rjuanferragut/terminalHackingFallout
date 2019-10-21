@@ -39,7 +39,9 @@
                           <div class="content-prompt"></div>
                           <div class="input-prompt">
                               <span><i class="fas fa-square-full blink"></i></span>
-                              <input type="text" name="prompt" class="input-prompt">
+                              <form action="" method="post" style="display: inline">
+                                <input type="text" name="prompt" class="input-prompt">
+                              </form>
                           </div>
                       </div>
                   </div>
