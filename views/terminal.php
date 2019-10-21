@@ -13,6 +13,8 @@
                         Password is required
                         <br />
                         Attempts remaining: <span id="lifesCount"></span>
+                        <br />
+                        Game time: <span id="timer"></span>
                       </p>
                   </div>
               </div>
@@ -41,6 +43,7 @@
                               <span><i class="fas fa-square-full blink"></i></span>
                               <form action="views/register.php" method="post" style="display: inline">
                                   <input type="hidden" name="tries" value="0">
+                                  <input type="hidden" name="game_time" value="0">
                                   <input type="text" name="prompt" class="input-prompt" autocomplete="off">
                               </form>
                           </div>

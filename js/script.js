@@ -73,11 +73,13 @@ function checkWord(element){
   setInfoPrompt(element.innerText);
 
   if (element.innerText == password) {
-    setInfoPrompt('Correct Password');
-    setInfoPrompt('Introduce tu nombre:');
-    settingsInputPrompt("", false, true);
-    printResult("Enhorabuena, has acertado la palabra!");
-    // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
+      clearInterval(id);
+      document.getElementsByName('game_time')[0].value = document.getElementById('timer').innerText;
+      setInfoPrompt('Correct Password');
+      setInfoPrompt('Introduce tu nombre:');
+      settingsInputPrompt("", false, true);
+      printResult("Enhorabuena, has acertado la palabra!");
+      // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
 
