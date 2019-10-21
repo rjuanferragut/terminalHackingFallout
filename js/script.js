@@ -7,9 +7,10 @@ var positionsLetters = [];
 var lifes = 4;
 
 window.addEventListener("load", function(event) {
-  settingsInputPrompt("", true, false);
-  stringFromPHP = document.getElementById('string').innerText;
-  password = document.getElementById('password').value;
+    document.getElementsByName('tries')[0].value = 1
+    settingsInputPrompt("", true, false);
+    stringFromPHP = document.getElementById('string').innerText;
+    password = document.getElementById('password').value;
 
   //reemplaza los saltos de linea de la Password
   password = password.replace("\n", "");
@@ -82,10 +83,16 @@ function checkWord(element){
       // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
-
+    lifes -= 1;
+    if (lifes == 0){
+      printResult("Has perdido, terminal bloqueado.<br /> respuesta = "+ password);
+      clearInterval(id);
+    }
+    document.getElementsByName('tries')[0].value = parseInt(document.getElementsByName('tries')[0].value) + parseInt(1);
     setInfoPrompt('Entry Denied');
     setInfoPrompt('Likeness = '+ countSimilarAlpha(element.innerText, password));
     changeWordsForPoints(element);
+    printLifes();
   }
 }
 function countSimilarAlpha(word, password){
@@ -168,6 +175,7 @@ function printResult(text){
 }
 
 function printLifes(){
+  document.getElementById('lifesCount').innerHTML = '';
   for (var i = 0; i < lifes; i++) {
     document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
   }
