@@ -54,7 +54,6 @@ function getTerminal(){
         }else{
           if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition)!=5){
             td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
-            countSpan += 1;
           }else{
             td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
             countSpan += 1;
