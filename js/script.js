@@ -4,19 +4,18 @@
 
 var stringFromPHP, password;
 var positionsLetters = [];
+var lifes = 4;
 
 window.addEventListener("load", function(event) {
+    settingsInputPrompt("", true, false);
+    stringFromPHP = document.getElementById('string').innerText;
+    password = document.getElementById('password').value;
 
-  stringFromPHP = document.getElementById('string').innerText;
-  password = document.getElementById('password').value;
+    //reemplaza los saltos de linea de la Password
+    password = password.replace("\n", "");
 
-  //reemplaza los saltos de linea de la Password
-  password = password.replace("\n", "");
-
-
-  getTerminal();
-  document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i>';
-
+    getTerminal();
+    printLifes();
 });
 
 // Método para montar la tabla que simulará el contenido del terminal.
@@ -71,36 +70,20 @@ function getTerminal(){
 
 // Método para comprobar si la palabra correcta és la password y convertirlo en puntos si es incorrecto
 function checkWord(element){
-  var length = 0;
-  var pointSubs = "";
-  //var lifesCounting = 4;
   setInfoPrompt(element.innerText);
 
   if (element.innerText == password) {
-    element.innerHTML = "great";
-    while (length < element.innerHTML.length){
-      pointSubs += ".";
-      length += 1;
-    }
-    element.innerHTML = pointSubs;
-    element.classList = null;
-    setInfoPrompt('Correct Password');
-    // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
+      changeWordsForPoints(element);
+      setInfoPrompt('Correct Password');
+      setInfoPrompt('Introduce tu nombre:');
+      settingsInputPrompt("", false, true);
+      printResult("Enhorabuena, has acertado la palabra!");
+      // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
-    setInfoPrompt('Entry Denied');
-    while (length < element.innerHTML.length){
-      pointSubs += ".";
-      length += 1;
-
+      changeWordsForPoints(element);
+      setInfoPrompt('Entry Denied');
     }
-    element.innerHTML = pointSubs;
-    element.classList = null;
-    /*
-    lifesCounting -= 1;
-    document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i>'.repeat(lifesCounting)+" ";//no funciona, se juntan y cunado se falla solo resta hasta tener 3 vidas, es decir la primera vez
-    */
-  }
 }
 
 // Método para añadir el texto en el prompt
@@ -131,15 +114,46 @@ function getPositionLetter(td_string){
 
 // Método para obtener la última posición de la letra en el string
 function getLastPositionLetter(td_string, firstPosition){
-  for (var i = firstPosition; i < td_string.length; i++) {
-    if((i + 1) < td_string.length){
-      if(!td_string[i + 1].match(/[a-zA-Z ]+/)){
-        return i;
-      }
+    for (var i = firstPosition; i < td_string.length; i++) {
+        if((i + 1) < td_string.length){
+            if(!td_string[i + 1].match(/[a-zA-Z ]+/)){
+                return i;
+            }
+        }
     }
+
+    return td_string.length;
+}
+
+function changeWordsForPoints(element){
+  var pointSubs = "";
+  var length = 0;
+
+  while (length < element.innerHTML.length){
+      pointSubs += ".";
+      length += 1;
   }
 
-  return td_string.length;
+  element.innerHTML = pointSubs;
+  element.classList = null;
+}
+
+function settingsInputPrompt(text, isReadOnly, isFocus){
+    document.getElementsByName('prompt')[0].value = text;
+    document.getElementsByName('prompt')[0].readOnly = isReadOnly;
+    if(isFocus){
+      document.getElementsByName('prompt')[0].focus();
+    }
+}
+
+function printResult(text){
+  document.getElementById('terminal-table').innerHTML = "<h4>" + text + "</h4>"
+}
+
+function printLifes(){
+    for (var i = 0; i < lifes; i++) {
+      document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
+    }
 }
 //Metodo que cuenta
 function countCharacter(firstPosition, lastPosition){
