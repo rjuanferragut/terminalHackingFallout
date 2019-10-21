@@ -26,6 +26,10 @@ table{
   margin-right:0.8vw;
 }
 
+input{
+  box-shadow: none!important;
+}
+
 .container{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
@@ -51,7 +55,7 @@ table{
   margin-left: 0;
 }
 
-.span:hover{
+.hover{
   background: #00F501;
   color: black;
   cursor: pointer;
