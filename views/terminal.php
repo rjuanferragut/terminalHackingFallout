@@ -39,6 +39,7 @@
                           <div class="content-prompt"></div>
                           <div class="input-prompt">
                               <span><i class="fas fa-square-full blink"></i></span>
+                              <input type="text" name="prompt" class="input-prompt">
                           </div>
                       </div>
                   </div>

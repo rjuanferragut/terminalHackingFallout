@@ -71,11 +71,11 @@ table{
   margin-right: 0;
 }
 
-#prompt .input-prompt span{
+#prompt .input-prompt{
   background: transparent;
-  padding: 10px 0;
   border: 0;
   color: #00F501;
+  text-transform: uppercase;
   font-family: 'Share Tech Mono', monospace;
   font-size: 1em;
 }

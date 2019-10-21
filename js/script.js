@@ -6,7 +6,7 @@ var stringFromPHP, password;
 var positionsLetters = [];
 
 window.addEventListener("load", function(event) {
-
+  settingsInputPrompt("", true, false);
   stringFromPHP = document.getElementById('string').innerText;
   password = document.getElementById('password').value;
 
@@ -68,6 +68,8 @@ function checkWord(element){
     element.innerHTML = pointSubs;
     element.classList = null;
     setInfoPrompt('Correct Password');
+    setInfoPrompt('Introduce tu nombre:');
+    settingsInputPrompt("", false, true);
     // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
@@ -123,4 +125,13 @@ function getLastPositionLetter(td_string, firstPosition){
   }
 
   return td_string.length;
+}
+
+
+function settingsInputPrompt(text, isReadOnly, isFocus){
+    document.getElementsByName('prompt')[0].value = text;
+    document.getElementsByName('prompt')[0].readOnly = isReadOnly;
+    if(isFocus){
+      document.getElementsByName('prompt')[0].focus();
+    }
 }
