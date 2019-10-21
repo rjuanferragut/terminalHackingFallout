@@ -7,7 +7,7 @@ var positionsLetters = [];
 var lifes = 4;
 
 window.addEventListener("load", function(event) {
-    document.getElementsByName('tries')[0].value = 0
+    document.getElementsByName('tries')[0].value = 1
     settingsInputPrompt("", true, false);
     stringFromPHP = document.getElementById('string').innerText;
     password = document.getElementById('password').value;
@@ -164,6 +164,5 @@ function printLifes(){
 }
 //Metodo que cuenta
 function countCharacter(firstPosition, lastPosition){
-
     return lastPosition - firstPosition;
   }
