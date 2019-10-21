@@ -4,19 +4,18 @@
 
 var stringFromPHP, password;
 var positionsLetters = [];
+var lifes = 4;
 
 window.addEventListener("load", function(event) {
-  settingsInputPrompt("", true, false);
-  stringFromPHP = document.getElementById('string').innerText;
-  password = document.getElementById('password').value;
+    settingsInputPrompt("", true, false);
+    stringFromPHP = document.getElementById('string').innerText;
+    password = document.getElementById('password').value;
 
-  //reemplaza los saltos de linea de la Password
-  password = password.replace("\n", "");
+    //reemplaza los saltos de linea de la Password
+    password = password.replace("\n", "");
 
-
-  getTerminal();
-  document.getElementById('lifesCount').innerHTML = '<i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i> <i class="fas fa-square-full"></i>';
-
+    getTerminal();
+    printLifes();
 });
 
 // Método para montar la tabla que simulará el contenido del terminal.
@@ -61,6 +60,7 @@ function checkWord(element){
       setInfoPrompt('Correct Password');
       setInfoPrompt('Introduce tu nombre:');
       settingsInputPrompt("", false, true);
+      printResult("Enhorabuena, has acertado la palabra!");
       // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
@@ -126,5 +126,15 @@ function settingsInputPrompt(text, isReadOnly, isFocus){
     document.getElementsByName('prompt')[0].readOnly = isReadOnly;
     if(isFocus){
       document.getElementsByName('prompt')[0].focus();
+    }
+}
+
+function printResult(text){
+  document.getElementById('terminal-table').innerHTML = "<h4>" + text + "</h4>"
+}
+
+function printLifes(){
+    for (var i = 0; i < lifes; i++) {
+      document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
     }
 }
