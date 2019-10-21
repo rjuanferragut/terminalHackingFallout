@@ -7,16 +7,15 @@ var positionsLetters = [];
 var lifes = 4;
 
 window.addEventListener("load", function(event) {
-    document.getElementsByName('tries')[0].value = 0
-    settingsInputPrompt("", true, false);
-    stringFromPHP = document.getElementById('string').innerText;
-    password = document.getElementById('password').value;
+  settingsInputPrompt("", true, false);
+  stringFromPHP = document.getElementById('string').innerText;
+  password = document.getElementById('password').value;
 
-    //reemplaza los saltos de linea de la Password
-    password = password.replace("\n", "");
+  //reemplaza los saltos de linea de la Password
+  password = password.replace("\n", "");
 
-    getTerminal();
-    printLifes();
+  getTerminal();
+  printLifes();
 });
 
 // Método para montar la tabla que simulará el contenido del terminal.
@@ -74,20 +73,31 @@ function checkWord(element){
   setInfoPrompt(element.innerText);
 
   if (element.innerText == password) {
-      changeWordsForPoints(element);
-      setInfoPrompt('Correct Password');
-      setInfoPrompt('Introduce tu nombre:');
-      settingsInputPrompt("", false, true);
-      printResult("Enhorabuena, has acertado la palabra!");
-      // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
+    setInfoPrompt('Correct Password');
+    setInfoPrompt('Introduce tu nombre:');
+    settingsInputPrompt("", false, true);
+    printResult("Enhorabuena, has acertado la palabra!");
+    // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
-      lifes -= 1;
-      document.getElementsByName('tries')[0].value = parseInt(document.getElementsByName('tries')[0].value) + parseInt(1);
-      changeWordsForPoints(element);
-      setInfoPrompt('Entry Denied');
-      printLifes();
+
+    setInfoPrompt('Entry Denied');
+    setInfoPrompt('Likeness = '+ countSimilarAlpha(element.innerText, password));
+    changeWordsForPoints(element);
+  }
+}
+function countSimilarAlpha(word, password){
+  var countSimilarity = 0;
+  var charWord = "";
+  var charpass = "";
+  for(var i = 0; i < 5; i++){
+    charWord = word[i];
+    charPass = password[i];
+    if(charWord ==  charPass){
+      countSimilarity += 1;
     }
+  }
+  return countSimilarity;
 }
 
 // Método para añadir el texto en el prompt
@@ -118,15 +128,15 @@ function getPositionLetter(td_string){
 
 // Método para obtener la última posición de la letra en el string
 function getLastPositionLetter(td_string, firstPosition){
-    for (var i = firstPosition; i < td_string.length; i++) {
-        if((i + 1) < td_string.length){
-            if(!td_string[i + 1].match(/[a-zA-Z ]+/)){
-                return i;
-            }
-        }
+  for (var i = firstPosition; i < td_string.length; i++) {
+    if((i + 1) < td_string.length){
+      if(!td_string[i + 1].match(/[a-zA-Z ]+/)){
+        return i;
+      }
     }
+  }
 
-    return td_string.length;
+  return td_string.length;
 }
 
 function changeWordsForPoints(element){
@@ -134,20 +144,21 @@ function changeWordsForPoints(element){
   var length = 0;
 
   while (length < element.innerHTML.length){
-      pointSubs += ".";
-      length += 1;
+    pointSubs += ".";
+    length += 1;
   }
 
   element.innerHTML = pointSubs;
   element.classList = null;
+  element.onclick=null;
 }
 
 function settingsInputPrompt(text, isReadOnly, isFocus){
-    document.getElementsByName('prompt')[0].value = text;
-    document.getElementsByName('prompt')[0].readOnly = isReadOnly;
-    if(isFocus){
-      document.getElementsByName('prompt')[0].focus();
-    }
+  document.getElementsByName('prompt')[0].value = text;
+  document.getElementsByName('prompt')[0].readOnly = isReadOnly;
+  if(isFocus){
+    document.getElementsByName('prompt')[0].focus();
+  }
 }
 
 function printResult(text){
@@ -155,13 +166,12 @@ function printResult(text){
 }
 
 function printLifes(){
-    document.getElementById('lifesCount').innerHTML = "";
-    for (var i = 0; i < lifes; i++) {
-      document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
-    }
+  for (var i = 0; i < lifes; i++) {
+    document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
+  }
 }
 //Metodo que cuenta
 function countCharacter(firstPosition, lastPosition){
 
-    return lastPosition - firstPosition;
-  }
+  return lastPosition - firstPosition;
+}
