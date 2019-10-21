@@ -7,6 +7,7 @@ var positionsLetters = [];
 var lifes = 4;
 
 window.addEventListener("load", function(event) {
+    document.getElementsByName('tries')[0].value = 0
     settingsInputPrompt("", true, false);
     stringFromPHP = document.getElementById('string').innerText;
     password = document.getElementById('password').value;
@@ -64,8 +65,11 @@ function checkWord(element){
       // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
+      lifes -= 1;
+      document.getElementsByName('tries')[0].value = parseInt(document.getElementsByName('tries')[0].value) + parseInt(1);
       changeWordsForPoints(element);
       setInfoPrompt('Entry Denied');
+      printLifes();
     }
 }
 
@@ -134,6 +138,7 @@ function printResult(text){
 }
 
 function printLifes(){
+    document.getElementById('lifesCount').innerHTML = "";
     for (var i = 0; i < lifes; i++) {
       document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
     }
