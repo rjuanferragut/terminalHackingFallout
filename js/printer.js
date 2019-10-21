@@ -15,17 +15,15 @@ function printLifes(){
 }
 
 function hoverSpanOn(element){
-  var classname = element.className.split(" ");
-  var allSpansWithClassName = document.getElementsByClassName(classname[1]);
-  for (var i = 0; i < allSpansWithClassName.length; i++) {
-    allSpansWithClassName[i].classList.add('hover')
+  var classname = getSpansByClassName(element.className.split(" ")[1])
+  for (var i = 0; i < classname.length; i++) {
+    classname[i].classList.add('hover')
   }
 }
 
 function hoverSpanOff(element){
-  var classname = element.className.split(" ");
-  var allSpansWithClassName = document.getElementsByClassName(classname[1]);
-  for (var i = 0; i < allSpansWithClassName.length; i++) {
-    allSpansWithClassName[i].classList.remove('hover')
+  var classname = getSpansByClassName(element.className.split(" ")[1])
+  for (var i = 0; i < classname.length; i++) {
+    classname[i].classList.remove('hover')
   }
 }
