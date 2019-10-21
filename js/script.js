@@ -33,17 +33,34 @@ function getTerminal(){
     for (var i = 0; i < getFirstPosition.length; i++) {
       // Si es mayor o igual a 0, es que ha encontrado una letra.
       if(getFirstPosition[i] >= 0){
-        countSpan += 1;
+
         // Si cumple con este requisito, busco cual es la última posición
         getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
+
         if(getFirstPosition.length > 1){
-          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" id="spanId'+(countSpan+1)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+          console.log(countCharacter(getFirstPosition[i], getLastPosition));
+          if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition)!=12){
+            //si una palabra cae al final de la linea, cuenta mal y repite id
+            td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" id="spanId'+(countSpan+1)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+            countSpan += 1;
+          }else{
+            td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span" id="spanId'+(countSpan+1)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+            countSpan += 1;
+          }
           i++;
 
+
         }else{
-          td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
+          if(getLastPosition == 12){
+            td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
+          }else{
+            td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span" id="spanId'+(countSpan)+'" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
+            countSpan += 1;
+          }
         }
+
       }
+
     }
 
     countChar = countLastChar;
@@ -143,3 +160,8 @@ function printLifes(){
       document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
     }
 }
+//Metodo que cuenta
+function countCharacter(firstPosition, lastPosition){
+
+    return lastPosition - firstPosition;
+  }
