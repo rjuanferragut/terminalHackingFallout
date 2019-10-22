@@ -9,7 +9,7 @@
     */
     function loadFile($array){
         $count = 0;
-        $fileOpen = fopen("words.txt", "r");
+        $fileOpen = fopen((dirname(__FILE__)."/words.txt"), "r");
 
         while (!feof($fileOpen)){
             $linea = fgets($fileOpen);
