@@ -66,7 +66,8 @@ input{
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
 }
-.menu a{
+
+a, .menu a{
   background: #00F501;
   color: black;
   text-decoration: none;
@@ -75,7 +76,14 @@ input{
   width: 200px;
   margin-bottom: 5px;
   text-align:center;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: .3s;
+}
 
+a, .menu a:hover{
+  background: #00c900;
+  transition: .3s;
 }
 
 #prompt{
@@ -178,6 +186,7 @@ input{
       margin: 12% 30%;
       padding: 35px;
       font-size: 1vw;
+      width: auto;
     }
 
     #terminal-table.md-3{

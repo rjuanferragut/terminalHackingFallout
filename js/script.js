@@ -38,6 +38,7 @@ function getTerminal(){
         getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
 
         if(getFirstPosition.length > 1){
+          console.log("Linea " + countLine + ": " + countCharacter(getFirstPosition[i], getLastPosition));
           if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition)!=5){
             //si una palabra cae al final de la linea, cuenta mal y repite id
             td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
