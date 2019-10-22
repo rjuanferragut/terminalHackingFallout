@@ -21,7 +21,6 @@ window.addEventListener("load", function(event) {
 
 // Método para montar la tabla que simulará el contenido del terminal.
 function getTerminal(){
-  var nameId = '';
   var countLine = 0;
   var countChar = 0;
   var countLastChar = 12;
@@ -48,8 +47,6 @@ function getTerminal(){
             countSpan += 1;
           }
           i++;
-
-
         }else{
           if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition)!=5){
             td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
