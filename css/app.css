@@ -61,6 +61,23 @@ input{
   cursor: pointer;
 }
 
+.menu{
+  color: #00F501;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 15px;
+}
+.menu a{
+  background: #00F501;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  width: 200px;
+  margin-bottom: 5px;
+  text-align:center;
+
+}
+
 #prompt{
   display: flex;
   margin-left: 5px;
@@ -111,6 +128,12 @@ input{
       width: 80%;
       padding: 25px;
     }
+    .menu{
+      margin-top:30%;
+    }
+    .menu a{
+      font-size: 1em;
+    }
 }
 
 @media (min-width: 1200px){
@@ -130,6 +153,12 @@ input{
       width: 70%;
       padding: 25px;
       font-size: 1.1em;
+    }
+    .menu{
+      margin-top:25%;
+    }
+    .menu a{
+      font-size: 1em;
     }
 }
 
