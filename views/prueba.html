@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+  <html lang="es">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=device-dpi, width=device-width, user-scalable=no">
+
+        <title>Terminal Fallout</title>
+
+
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+
+        <style> *, ::after, ::before{
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+body{
+  background: #000;
+  border: 12px solid #222;
+  position: relative;
+}
+body::before{
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0.01em;
+  left: 0.01em;
+  right: 0.01em;
+  bottom: 0.01em;
+  border: 7px solid #282828;
+}
+table{
+  margin-left: 0;
+  margin-right:0.8vw;
+}
+input{
+  box-shadow: none!important;
+}
+.container{
+  color: #00F501;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 15px;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+.justify-content-center{
+  justify-content: center!important;
+}
+.col{
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.md-12, .md-3{
+  margin-left: 0;
+}
+.hover{
+  background: #00F501;
+  color: black;
+  cursor: pointer;
+}
+.menu{
+  color: #00F501;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 15px;
+}
+a, .menu a{
+  background: #00F501;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  width: 200px;
+  margin-bottom: 5px;
+  text-align:center;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: .3s;
+}
+a, .menu a:hover{
+  background: #00c900;
+  transition: .3s;
+}
+#prompt{
+  display: flex;
+  margin-left: 5px;
+}
+#prompt > div{
+  align-self: flex-end;
+  word-break: break-all;
+}
+#prompt .card{
+  margin-right: 0;
+}
+#prompt .input-prompt{
+  background: transparent;
+  border: 0;
+  color: #00F501;
+  text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1em;
+}
+.blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+@media (min-width: 960px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+    body::before{
+      border: 0;
+    }
+    .container{
+      margin-top: 90px;
+      width: 80%;
+      padding: 25px;
+    }
+    .menu{
+      margin-top:30%;
+    }
+    .menu a{
+      font-size: 1em;
+    }
+}
+@media (min-width: 1200px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+    body::before{
+      border: 0;
+    }
+    .container{
+      margin-top: 200px;
+      width: 70%;
+      padding: 25px;
+      font-size: 1.1em;
+    }
+    .menu{
+      margin-top:25%;
+    }
+    .menu a{
+      font-size: 1em;
+    }
+}
+@media (min-width: 1400px){
+    body{
+      background-image: url("../img/foterminal.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+    body::before{
+      border: 0;
+    }
+    .container{
+      margin: 12% 30%;
+      padding: 35px;
+      font-size: 1vw;
+      width: auto;
+    }
+    #terminal-table.md-3{
+      margin: 0;
+    }
+    .col{
+      flex-basis: initial!important;
+      flex-grow: initial!important;
+    }
+    .card{
+      margin: 0;
+    }
+    table{
+      float: left;
+    }
+}
+</style>
+
+<script src="../js/script.js"></script>
+        <script> // Método para añadir el texto en el prompt
+function setInfoPrompt(text){
+  document.getElementsByClassName('content-prompt')[0].innerHTML = document.getElementsByClassName('content-prompt')[0].innerHTML + '<p>>' + text + '</p>';
+}
+function printResult(text){
+  document.getElementById('terminal-table').innerHTML = "<h4>" + text + "</h4>"
+}
+function printLifes(){
+  document.getElementById('lifesCount').innerHTML = '';
+  for (var i = 0; i < lifes; i++) {
+    document.getElementById('lifesCount').innerHTML += '<i class="fas fa-square-full"></i> ';
+  }
+}
+function hoverSpanOn(element){
+  var classname = getSpansByClassName(element.className.split(" ")[1])
+  for (var i = 0; i < classname.length; i++) {
+    classname[i].classList.add('hover')
+  }
+}
+function hoverSpanOff(element){
+  var classname = getSpansByClassName(element.className.split(" ")[1])
+  for (var i = 0; i < classname.length; i++) {
+    classname[i].classList.remove('hover')
+  }
+}
+</script>
+        <script> var h = 0;
+var i = 0;
+var s = 0;
+var m = 0;
+window.addEventListener("load", function(event) {
+    document.getElementById("timer").innerHTML = "00:00:00:00";
+    cronometer();
+});
+function cronometer(){
+  id = setInterval(printTime,15);
+}
+function printTime(){
+  var hAux, iAux, sAux, mAux;
+    m++;
+    if (m>59){s++;m=0;}
+    if (s>59){i++;s=0;}
+    if (i>59){h++;i=0;}
+    if (h>24){h=0;}
+    if (m<10){mAux="0"+m;}else{mAux=m;}
+    if (s<10){sAux="0"+s;}else{sAux=s;}
+    if (i<10){iAux="0"+i;}else{iAux=i;}
+    if (h<10){hAux="0"+h;}else{hAux=h;}
+    document.getElementById("timer").innerHTML = hAux + ":" + iAux + ":" + sAux + ":" + mAux;
+}
+</script>
+
+              </head>
+          <div class="container">
+              <div>
+          			<input type="hidden" name="password" id="password" value="MARTE
+">
+          			<span id="string" style="display: none">:$%.:(|(!{=$/!'%=@[$!?/|){##{?-+%?'|--.[+||-|:$-=-+,?]%?!{,]$(+[.?|:%)?={+(+.)[[CONDE,ALMAS$.(!/$.=(]$@]{|'#]$.'[!/{]%-:$(}+-$'/[]@-}]@{=]{$[|))[%-)[)!.-@!?|$:#!@MARTE%[(![|)#||?-({+$#,+.[/!:'}$/+#$+,:[.%#!POBRE{'!-$.}}]!},)=/)?@:$,,-!!,{+++=]{$#$$!}$@]-{!{..{.!]:{?}{/{[@$[TRONO]('##+.$')#(%$++=]?,(!,${+'}#,{#%((:+]+++[#%,/]//$(:,)?/VIDEO!]!:+)/{+]:-{+{$%(!.:(+@:]|'|$.[[?!$$$,(-]{?</span>
+          		</div>
+              <div class="row">
+                  <div class="col md-12">
+                      <p>
+                        Welcome to ROBCO Industries (TM) Termlink
+                        <br />
+                        ===============================
+                        <br />
+                        Password is required
+                        <br />
+                        Attempts remaining: <span id="lifesCount"></span>
+                        <br />
+                        Game time: <span id="timer"></span>
+                      </p>
+                  </div>
+              </div>
+              <div class="row justify-content-center">
+                  <div class="col md-3" id="terminal-table">
+                    <div style="display: inline-block"><table><tbody><tr><td class="hexacode">0x7400</td><td class="code" id="row-codification-0"></td></tr><tr><td class="hexacode">0x74C0</td><td class="code" id="row-codification-1"></td></tr><tr><td class="hexacode">0X740C</td><td class="code" id="row-codification-2"></td></tr><tr><td class="hexacode">0x74CC</td><td class="code" id="row-codification-3"></td></tr><tr><td class="hexacode">0x7418</td><td class="code" id="row-codification-4"></td></tr><tr><td class="hexacode">0x74D0</td><td class="code" id="row-codification-5"></td></tr><tr><td class="hexacode">0x7424</td><td class="code" id="row-codification-6"></td></tr><tr><td class="hexacode">0x74E4</td><td class="code" id="row-codification-7"></td></tr><tr><td class="hexacode">0x7430</td><td class="code" id="row-codification-8"></td></tr><tr><td class="hexacode">0x74F0</td><td class="code" id="row-codification-9"></td></tr><tr><td class="hexacode">0x743C</td><td class="code" id="row-codification-10"></td></tr><tr><td class="hexacode">0x74FC</td><td class="code" id="row-codification-11"></td></tr><tr><td class="hexacode">0x7448</td><td class="code" id="row-codification-12"></td></tr><tr><td class="hexacode">0x7500</td><td class="code" id="row-codification-13"></td></tr><tr><td class="hexacode">0x7454</td><td class="code" id="row-codification-14"></td></tr><tr><td class="hexacode">0x7514</td><td class="code" id="row-codification-15"></td></tr></tbody></table></div><div style="display: inline-block"><table><tbody><tr><td class="hexacode">0x7460</td><td class="code" id="row-codification-16"></td></tr><tr><td class="hexacode">0x7520</td><td class="code" id="row-codification-17"></td></tr><tr><td class="hexacode">0x746C</td><td class="code" id="row-codification-18"></td></tr><tr><td class="hexacode">0x752C</td><td class="code" id="row-codification-19"></td></tr><tr><td class="hexacode">0x7478</td><td class="code" id="row-codification-20"></td></tr><tr><td class="hexacode">0x7530</td><td class="code" id="row-codification-21"></td></tr><tr><td class="hexacode">0x7484</td><td class="code" id="row-codification-22"></td></tr><tr><td class="hexacode">0x7544</td><td class="code" id="row-codification-23"></td></tr><tr><td class="hexacode">0x7490</td><td class="code" id="row-codification-24"></td></tr><tr><td class="hexacode">0x7550</td><td class="code" id="row-codification-25"></td></tr><tr><td class="hexacode">0x749C</td><td class="code" id="row-codification-26"></td></tr><tr><td class="hexacode">0x755C</td><td class="code" id="row-codification-27"></td></tr><tr><td class="hexacode">0x74A8</td><td class="code" id="row-codification-28"></td></tr><tr><td class="hexacode">0x7560</td><td class="code" id="row-codification-29"></td></tr><tr><td class="hexacode">0x74B4</td><td class="code" id="row-codification-30"></td></tr><tr><td class="hexacode">0x7574</td><td class="code" id="row-codification-31"></td></tr></tbody></table></div>                  </div>
+                  <div class="col md-3" id="prompt">
+                      <div class="card">
+                          <div class="content-prompt"></div>
+                          <div class="input-prompt">
+                              <span><i class="fas fa-square-full blink"></i></span>
+                              <form action="../views/register.php" method="post" style="display: inline">
+                                  <input type="hidden" name="tries" value="0">
+                                  <input type="hidden" name="game_time" value="0">
+                                  <input type="text" name="prompt" class="input-prompt" autocomplete="off">
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
