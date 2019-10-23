@@ -1,6 +1,0 @@
-¿Que ha ido mal?
-  He escrito código repetitivo, el cual da problemas en la lectura general para entender y arreglar cosas, y
-  me ha costado a la hora de aplicar la lógica en Javascript de manera que he tardado mucho tiempo en hacer ciertas especificaciones
-
-¿Como mejorarlo o arreglarlo?
-  Me falta experiencia en Javascript, por lo tanto, he de practicar más y hacer más ejercicios con el fin también de mejorar con la lógica.

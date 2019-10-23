@@ -1,0 +1,6 @@
+Plan de acciones de mejora:
+  - Calcular mejor las horas de las especificaciones.
+  - Mejorar la comunicación en equipo en el reparto de tareas.
+
+Nuevas Prácticas:
+  - Optimizar más el código por la parte de cliente para que sea más fácil de modificar en futuras actualizaciones.

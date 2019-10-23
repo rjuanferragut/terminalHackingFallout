@@ -1,0 +1,6 @@
+Plan de acciones de mejora:
+  - He escrito código repetitivo, el cual da problemas en la lectura general para entender y arreglar cosas.
+  - He tenido dificultades a la hora de analizar la funcionalidad, de manera que he tardado mucho tiempo en hacer ciertas especificaciones.
+
+Nuevas Prácticas:
+  - Me falta experiencia en el uso de Javascript, por lo tanto, he de practicar más y hacer más ejercicios con el fin también de mejorar con la lógica.
