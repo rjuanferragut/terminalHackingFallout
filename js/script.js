@@ -49,7 +49,7 @@ function getTerminal(){
                     console.log('Primera posición: ' + getFirstPosition[1]);
                     console.log('Última posición: ' + getLastPositionSecondWord);
                     console.log(countCharacter(getFirstPosition[1], getLastPositionSecondWord));
-                    if(countCharacter(getFirstPosition[1], getLastPositionSecondWord) == 4 || countCharacter(getFirstPosition[1], getLastPositionSecondWord) == 5){
+                    if(getLastPositionSecondWord != 12 && countCharacter(getFirstPosition[1], getLastPositionSecondWord) == 4 || countCharacter(getFirstPosition[1], getLastPositionSecondWord) == 5){
                       countSpan += 2;
                     }else{
                       countSpan += 1;
