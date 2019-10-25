@@ -34,6 +34,7 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
+
 }
 
 .row{
@@ -65,6 +66,9 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
+}
+.inner{
+  z-index:1;
 }
 
 a, .menu a{
@@ -118,91 +122,119 @@ a, .menu a:hover{
     opacity: 0;
   }
 }
+.cascade{
+
+  background: rgba(0,245,1,0.75);
+  background: -moz-linear-gradient(top, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,245,1,0.75)), color-stop(10%, rgba(0,245,1,0.69)), color-stop(35%, rgba(0,245,1,0.69)), color-stop(100%, rgba(210,255,82,0.69)));
+  background: -webkit-linear-gradient(top, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
+  background: -o-linear-gradient(top, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
+  background: -ms-linear-gradient(top, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
+  background: linear-gradient(to bottom, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f501', endColorstr='#d2ff52', GradientType=0 );
+  height:15px;
+  top:0;
+  opacity:0.5;
+  filter:blur(3px);
+  animation: cascade 3s infinite;
+  z-index:999;
+}
+@keyframes cascade {
+  100%{
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  25%{
+    opacity: 0.2;
+  }
+}
 
 @media (min-width: 960px){
-    body{
-      background-image: url("../img/terminal-sm.jpg");
-      background-size: 100%;
-      background-repeat: no-repeat;
-      border: 0;
-    }
+  body{
+    background-image: url("../img/terminal-sm.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 0;
+  }
 
-    body::before{
-      border: 0;
-    }
+  body::before{
+    border: 0;
+  }
 
-    .container{
-      margin-top: 90px;
-      width: 80%;
-      padding: 25px;
-    }
-    .menu{
-      margin-top:30%;
-    }
-    .menu a{
-      font-size: 1em;
-    }
+  .container{
+    margin-top: 90px;
+    width: 80%;
+    padding: 25px;
+  }
+  .menu{
+    margin-top:30%;
+  }
+  .menu a{
+    font-size: 1em;
+  }
 }
 
 @media (min-width: 1200px){
-    body{
-      background-image: url("../img/terminal-sm.jpg");
-      background-size: 100%;
-      background-repeat: no-repeat;
-      border: 0;
-    }
+  body{
+    background-image: url("../img/terminal-sm.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 0;
+  }
 
-    body::before{
-      border: 0;
-    }
+  body::before{
+    border: 0;
+  }
 
-    .container{
-      margin-top: 200px;
-      width: 70%;
-      padding: 25px;
-      font-size: 1.1em;
-    }
-    .menu{
-      margin-top:25%;
-    }
-    .menu a{
-      font-size: 1em;
-    }
+  .container{
+    margin-top: 200px;
+    width: 70%;
+    padding: 25px;
+    font-size: 1.1em;
+  }
+  .menu{
+    margin-top:25%;
+  }
+  .menu a{
+    font-size: 1em;
+  }
 }
 
 @media (min-width: 1400px){
-    body{
-      background-image: url("../img/foterminal.jpg");
-      background-size: 100%;
-      background-repeat: no-repeat;
-      border: 0;
-    }
+  body{
+    background-image: url("../img/foterminal.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 0;
+  }
 
-    body::before{
-      border: 0;
-    }
+  body::before{
+    border: 0;
+  }
 
-    .container{
-      margin: 12% 30%;
-      padding: 35px;
-      font-size: 1vw;
-      width: auto;
-    }
+  .container{
+    margin: 12% 30%;
+    padding: 35px;
+    font-size: 1vw;
+    width: auto;
+  }
 
-    #terminal-table.md-3{
-      margin: 0;
-    }
+  #terminal-table.md-3{
+    margin: 0;
+  }
 
-    .col{
-      flex-basis: initial!important;
-      flex-grow: initial!important;
-    }
+  .col{
+    flex-basis: initial!important;
+    flex-grow: initial!important;
+  }
 
-    .card{
-      margin: 0;
-    }
+  .card{
+    margin: 0;
+  }
 
-    table{
-      float: left;
-    }
+  table{
+    float: left;
+  }
 }
