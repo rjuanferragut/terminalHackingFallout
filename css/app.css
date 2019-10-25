@@ -8,6 +8,7 @@ body{
   background: #000;
   border: 12px solid #222;
   position: relative;
+  z-index: 5;
 }
 
 body::before{
@@ -66,11 +67,13 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
+  position:relative;
+  z-index: 1;
 
 }
 .inner{
   position: relative;
-  z-index:3;
+  z-index:1;
 }
 
 a, .menu a{
@@ -139,8 +142,8 @@ a, .menu a:hover{
   opacity:0.5;
   filter:blur(3px);
   animation: cascade 10s infinite;
-  z-index:1;
-  position: absolute;
+  z-index:2;
+  position: relative;
 }
 @keyframes cascade {
   100%{
@@ -153,6 +156,9 @@ a, .menu a:hover{
   25%{
     top:0%;
     opacity: 0.2;
+  }
+  0%{
+    opacity: 0;
   }
 }
 
