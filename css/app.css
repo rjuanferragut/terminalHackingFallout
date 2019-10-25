@@ -66,9 +66,11 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
+
 }
 .inner{
-  z-index:1;
+  position: relative;
+  z-index:3;
 }
 
 a, .menu a{
@@ -136,17 +138,20 @@ a, .menu a:hover{
   top:0;
   opacity:0.5;
   filter:blur(3px);
-  animation: cascade 3s infinite;
-  z-index:999;
+  animation: cascade 10s infinite;
+  z-index:1;
+  position: absolute;
 }
 @keyframes cascade {
   100%{
     opacity: 0.2;
+    top:100%;
   }
   50% {
     opacity: 0.5;
   }
   25%{
+    top:0%;
     opacity: 0.2;
   }
 }
@@ -168,9 +173,11 @@ a, .menu a:hover{
     width: 80%;
     padding: 25px;
   }
+
   .menu{
     margin-top:30%;
   }
+
   .menu a{
     font-size: 1em;
   }
@@ -200,6 +207,7 @@ a, .menu a:hover{
   .menu a{
     font-size: 1em;
   }
+
 }
 
 @media (min-width: 1400px){
@@ -233,6 +241,7 @@ a, .menu a:hover{
   .card{
     margin: 0;
   }
+
 
   table{
     float: left;
