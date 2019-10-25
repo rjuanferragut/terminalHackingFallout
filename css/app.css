@@ -35,7 +35,7 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
-
+  z-index:1;
 }
 
 .row{
@@ -138,20 +138,22 @@ a, .menu a:hover{
   background: linear-gradient(to bottom, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f501', endColorstr='#d2ff52', GradientType=0 );
   height:15px;
-  top:0;
-  opacity:0.5;
-  filter:blur(3px);
+  opacity:0.2;
+  filter:blur(6px);
   animation: cascade 10s infinite;
-  z-index:2;
+  z-index:-1;
   position: relative;
 }
 @keyframes cascade {
   100%{
-    opacity: 0.2;
+    opacity: 0;
     top:100%;
   }
+  75%{
+    opacity: 0.2;
+  }
   50% {
-    opacity: 0.5;
+    opacity: 0.4;
   }
   25%{
     top:0%;
@@ -209,6 +211,9 @@ a, .menu a:hover{
   }
   .menu{
     margin-top:25%;
+
+    margin-left:25%;
+    margin-right:25%;
   }
   .menu a{
     font-size: 1em;
@@ -229,7 +234,7 @@ a, .menu a:hover{
   }
 
   .container{
-    margin: 12% 30%;
+    margin: 15% 27%;
     padding: 35px;
     font-size: 1vw;
     width: auto;
