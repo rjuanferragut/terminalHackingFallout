@@ -11,5 +11,6 @@
     <h4 style="text-transform: uppercase; text-align: center">Tiempo: <?php echo $_POST['game_time'] ?></h4>
     <br />
     <a href="terminal.php">Volver a Jugar</a>
+    <a href="ranking.php">Ver Ranking</a>
     <a href="../index.php">Página Principal</a>
  </div>

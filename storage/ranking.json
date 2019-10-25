@@ -1,5 +1,62 @@
-{
-  "nombre" : "Alexis",
-  "tiempo" : "00:00:01:56",
-  "intentos" : "4"
-}
+[
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  },
+  {
+    "name" : "Alexis",
+    "tries" : "4",
+    "time" : "00:00:01:56"
+  }
+]
