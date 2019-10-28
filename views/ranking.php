@@ -10,6 +10,7 @@ $participants = getArrayFromJSON();
         table-layout: fixed;
         overflow-wrap: break-word;
         text-align: center;
+        text-transform: uppercase;
     }
 </style>
 

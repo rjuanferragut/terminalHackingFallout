@@ -87,6 +87,7 @@ function checkWord(element){
   if (text == password) {
     clearInterval(id);
     document.getElementsByName('game_time')[0].value = document.getElementById('timer').innerText;
+    document.getElementsByClassName('input-prompt')[1].type = 'text';
     setInfoPrompt('Correct Password');
     setInfoPrompt('Introduce tu nombre:');
     settingsInputPrompt("", false, true);

@@ -36,24 +36,22 @@
     function setJSONParticipants($participants){
       $order_participants = getOrderParticipants($participants, 'tries', SORT_ASC, 'time', SORT_ASC, 'name', SORT_ASC, 'id', SORT_ASC);
       $json = json_encode($order_participants, JSON_PRETTY_PRINT);
-      //var_dump($json);
-      //comprobador de string del ranking en register.php
       file_put_contents('../storage/ranking.json', $json);
     }
 
     function getOrderParticipants(){
-      $args = func_get_args();
-		    $data = array_shift($args);
-		    foreach ($args as $n => $field) {
-		        if (is_string($field)) {
-		            $tmp = array();
-		            foreach ($data as $key => $row)
-		                $tmp[$key] = $row[$field];
-		            $args[$n] = $tmp;
-		            }
-		    }
-		    $args[] = &$data;
-		    call_user_func_array('array_multisort', $args);
-		    return array_pop($args);
+        $args = func_get_args();
+        $data = array_shift($args);
+        foreach ($args as $n => $field) {
+            if (is_string($field)) {
+                $tmp = array();
+                foreach ($data as $key => $row)
+                    $tmp[$key] = $row[$field];
+                    $args[$n] = $tmp;
+                }
+            }
+            $args[] = &$data;
+            call_user_func_array('array_multisort', $args);
+            return array_pop($args);
     }
 ?>

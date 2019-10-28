@@ -1,14 +1,17 @@
-<?php require_once('layouts/header.php');
-    if(isset($_POST["prompt"]) OR isset($_POST["tries"]) OR isset($_POST["game_time"])){
-      require_once('../controllers/RankingController.php');
-      $prompt = $_POST['prompt'];
-      $tries = $_POST['tries'];
-      $time = $_POST['game_time'];
-      $participants = getArrayFromJSON();
-      $id = getIdFromArray($participants);
-      $register_participant = setRegister($id, $prompt, $tries, $time);
-      array_push($participants, $register_participant);
-      setJSONParticipants($participants);
+<?php
+      session_start();
+      require_once('layouts/header.php');
+      if(isset($_POST["prompt"]) OR isset($_POST["tries"]) OR isset($_POST["game_time"])){
+          require_once('../controllers/RankingController.php');
+          $prompt = $_POST['prompt'];
+          $_SESSION['prompt'] = $prompt;
+          $tries = $_POST['tries'];
+          $time = $_POST['game_time'];
+          $participants = getArrayFromJSON();
+          $id = getIdFromArray($participants);
+          $register_participant = setRegister($id, $prompt, $tries, $time);
+          array_push($participants, $register_participant);
+          setJSONParticipants($participants);
     }
 ?>
 
