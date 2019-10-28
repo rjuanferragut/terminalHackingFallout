@@ -7,11 +7,11 @@ setwordLength($word_length);
 $array_words = array();
 $array_select_words = array();
 
-$array_words = loadFile($array_words);
-$array_select_words = selectRandomWords($array_words);
+$array_words = loadFile($array_words, '7chars.txt');
+$array_select_words = selectRandomWords($array_words, 10);
 
 $string = generateSymbolsString();
-$string = setWords($array_select_words, $string);
+$string = setWords($array_select_words, $string, 10);
 
 //array de los codigos hexadecimales ORDENADO POR LINEAS EN HORIZONTAL
 $array_hexadecimal = array('0x7400','0x74C0','0X740C','0x74CC','0x7418','0x74D0','0x7424','0x74E4','0x7430','0x74F0','0x743C','0x74FC','0x7448','0x7500','0x7454','0x7514','0x7460','0x7520','0x746C','0x752C','0x7478','0x7530','0x7484','0x7544','0x7490','0x7550','0x749C','0x755C','0x74A8','0x7560','0x74B4','0x7574');
