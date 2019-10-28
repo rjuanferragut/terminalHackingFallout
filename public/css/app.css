@@ -35,7 +35,7 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
-  z-index:1;
+  position:relative;
 }
 
 .row{

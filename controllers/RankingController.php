@@ -36,7 +36,8 @@
     function setJSONParticipants($participants){
       $order_participants = getOrderParticipants($participants, 'tries', SORT_ASC, 'time', SORT_ASC, 'name', SORT_ASC, 'id', SORT_ASC);
       $json = json_encode($order_participants, JSON_PRETTY_PRINT);
-      var_dump($json);
+      //var_dump($json);
+      //comprobador de string del ranking en register.php
       file_put_contents('../storage/ranking.json', $json);
     }
 
