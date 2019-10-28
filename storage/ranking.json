@@ -1,15 +1,9 @@
 [
     {
         "id": 1,
-<<<<<<< HEAD
-        "name": "dsaa",
-        "tries": "4",
-        "time": "00:00:06:15"
-=======
-        "name": "rafa",
-        "tries": "2",
-        "time": "00:00:07:52",
+        "name": "qdwsadas",
+        "tries": "3",
+        "time": "00:00:05:23",
         "difficulty": "normal"
->>>>>>> 77c1541a437ccdceff672253a91570528de44415
     }
 ]
