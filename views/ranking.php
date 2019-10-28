@@ -1,4 +1,8 @@
-<?php require_once('layouts/header.php'); ?>
+<?php
+require_once('layouts/header.php');
+require_once('../controllers/RankingController.php');
+$participants = getArrayFromJSON();
+?>
 
 <style type="text/css">
     table{
@@ -18,11 +22,14 @@
     </thead>
     <tbody>
         <?php
-            for ($i = 0; $i < 1; $i++) {
-              echo '<tr>';
-              echo '<td>'.($i + 1).'</td>';
-              echo '</tr>';
-            }
+        for ($i = 0; $i < count($participants); $i++) {
+          echo '<tr>';
+          echo '<td>'.($i + 1).'</td>';
+          echo '<td>'.$participants[$i]['name'].'</td>';
+          echo '<td>'.$participants[$i]['tries'].'</td>';
+          echo '<td>'.$participants[$i]['time'].'</td>';
+          echo '</tr>';
+        }
         ?>
     </tbody>
 </table>

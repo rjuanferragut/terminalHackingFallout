@@ -1,5 +1,20 @@
-{
-  "nombre" : "Alexis",
-  "tiempo" : "00:00:01:56",
-  "intentos" : "4"
-}
+[
+    {
+        "id": 1,
+        "name": "alexis",
+        "tries": "2",
+        "time": "00:00:03:54"
+    },
+    {
+        "id": 2,
+        "name": "roger",
+        "tries": "2",
+        "time": "00:00:19:35"
+    },
+    {
+        "id": 3,
+        "name": "rafa",
+        "tries": "4",
+        "time": "00:00:04:00"
+    }
+]
