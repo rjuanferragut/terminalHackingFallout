@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('layouts/header.php');
 require_once('../controllers/TerminalController.php');
 $array_words = array();
@@ -60,7 +61,7 @@ $password = getPassword($array_select_words);
             <form action="register.php" method="post" style="display: inline">
               <input type="hidden" name="tries" value="0">
               <input type="hidden" name="game_time" value="0">
-              <input type="text" name="prompt" class="input-prompt" autocomplete="off">
+              <input type="hidden" name="prompt" placeholder="<?php echo $_SESSION['prompt']; ?>" class="input-prompt" autocomplete="off">
             </form>
           </div>
         </div>

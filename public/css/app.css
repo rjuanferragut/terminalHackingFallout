@@ -29,6 +29,7 @@ table{
 
 input{
   box-shadow: none!important;
+  outline: none!important;
 }
 
 .container{
