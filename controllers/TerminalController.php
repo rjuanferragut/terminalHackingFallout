@@ -1,7 +1,5 @@
 <?php
-    /*
-    * @author Alexis Mengual, Rafa Juan
-    */
+    /* @author Alexis Mengual, Rafa Juan */
 
     /*
     * Método que hace la lectura del archivo y recoge el contenido
@@ -9,7 +7,7 @@
     */
     function loadFile($array){
         $count = 0;
-        $fileOpen = fopen((dirname(__FILE__)."/words.txt"), "r");
+        $fileOpen = fopen("../storage/words.txt", "r");
 
         while (!feof($fileOpen)){
             $linea = fgets($fileOpen);
@@ -61,7 +59,6 @@
     * Método para ver el contenido del array con las
     * palabras seleccionadas del archivo
     */
-
     function printArray($array_words){
         for ($i = 0; $i < count($array_words); $i++) {
             echo $array_words[$i] . "<br />";
