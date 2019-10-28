@@ -5,12 +5,15 @@
 var stringFromPHP, password;
 var positionsLetters = [];
 var lifes = 4;
+var word_length = 0;
 
 window.addEventListener("load", function(event) {
   document.getElementsByName('tries')[0].value = 1
   settingsInputPrompt("", true, false);
   stringFromPHP = document.getElementById('string').innerText;
   password = document.getElementById('password').value;
+  word_length = parseInt(document.getElementById('word_length').innerText);
+  console.log(word_length);
 
   //reemplaza los saltos de linea de la Password
   password = password.replace("\n", "");
@@ -38,18 +41,18 @@ function getTerminal(){
 
         // Si el array es tiene más de un valor:
         if(getFirstPosition.length > 1){
-            if(countCharacter(getFirstPosition[i], getLastPosition) != 5){
+            if(countCharacter(getFirstPosition[i], getLastPosition) != word_length){
                 if(getLastPosition == 12){
-                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + word_length) + '</span>' + td_string.substring(getFirstPosition[i + 1] + word_length, td_string.length);
                     countSpan += 1;
                 }else{
                     td_string_copy = td_string;
-                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[1], getFirstPosition[i + 1] + 5) + '</span>' + td_string.substring(getFirstPosition[i + 1] + 5, td_string.length);
+                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[1], getFirstPosition[i + 1] + word_length) + '</span>' + td_string.substring(getFirstPosition[i + 1] + word_length, td_string.length);
                     getLastPositionSecondWord = getLastPositionLetter(td_string_copy, getFirstPosition[1]);
                     console.log('Primera posición: ' + getFirstPosition[1]);
                     console.log('Última posición: ' + getLastPositionSecondWord);
                     console.log(countCharacter(getFirstPosition[1], getLastPositionSecondWord));
-                    if(getLastPositionSecondWord != 12 && countCharacter(getFirstPosition[1], getLastPositionSecondWord) == 4 || countCharacter(getFirstPosition[1], getLastPositionSecondWord) == 5){
+                    if(getLastPositionSecondWord != 12 && countCharacter(getFirstPosition[1], getLastPositionSecondWord) == word_length - 1 || countCharacter(getFirstPosition[1], getLastPositionSecondWord) == word_length){
                       countSpan += 2;
                     }else{
                       countSpan += 1;
@@ -58,7 +61,7 @@ function getTerminal(){
             }
             i++;
         }else{
-          if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition) != 5){
+          if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition) != word_length){
             td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
           }else{
               td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
@@ -111,7 +114,7 @@ function countSimilarAlpha(word, password){
   var countSimilarity = 0;
   var charWord = "";
   var charpass = "";
-  for(var i = 0; i < 5; i++){
+  for(var i = 0; i < word_length; i++){
     charWord = word[i];
     charPass = password[i];
     if(charWord ==  charPass){
@@ -132,7 +135,7 @@ function getPositionLetter(td_string){
       if(i >= 0 && i<= 4 && !td_string[i + 1].match(/[a-zA-Z ]+/)){
         i++;
       }else{
-        i += 5;
+        i += word_length;
       }
     }else{
       i++;

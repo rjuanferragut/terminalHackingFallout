@@ -5,6 +5,12 @@
     * Método que hace la lectura del archivo y recoge el contenido
     * @return un array con todas las palabras del archivo
     */
+    $GLOBALS['word_length'] = 0;
+
+    function setwordLength($value){
+      $GLOBALS['word_length'] = $value;
+    }
+
     function loadFile($array){
         $count = 0;
         $fileOpen = fopen("../storage/words.txt", "r");
@@ -89,7 +95,7 @@
         while($i < 6){
             $word = $array[$i];
             $initString = rand(0, ($max_length_string) - 6);
-            $lastString = $initString + 5;
+            $lastString = $initString + $GLOBALS['word_length'];
 
             if(!hasLetter($string, $initString, $lastString)){
                 $pos = 0;

@@ -7,9 +7,10 @@
           $_SESSION['prompt'] = $prompt;
           $tries = $_POST['tries'];
           $time = $_POST['game_time'];
+          $difficulty = $_POST['difficulty'];
           $participants = getArrayFromJSON();
           $id = getIdFromArray($participants);
-          $register_participant = setRegister($id, $prompt, $tries, $time);
+          $register_participant = setRegister($id, $prompt, $tries, $time, $difficulty);
           array_push($participants, $register_participant);
           setJSONParticipants($participants);
     }
