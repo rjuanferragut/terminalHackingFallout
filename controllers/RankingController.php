@@ -24,12 +24,13 @@
       return $id;
     }
 
-    function setRegister($id, $name, $tries, $time){
+    function setRegister($id, $name, $tries, $time, $difficulty){
         return array(
           'id' => $id,
           'name' => $name,
           'tries' => $tries,
-          'time' => $time
+          'time' => $time,
+          'difficulty' => $difficulty
         );
     }
 

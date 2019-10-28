@@ -2,6 +2,8 @@
 session_start();
 require_once('layouts/header.php');
 require_once('../controllers/TerminalController.php');
+$word_length = 7;
+setwordLength($word_length);
 $array_words = array();
 $array_select_words = array();
 
@@ -18,6 +20,7 @@ $password = getPassword($array_select_words);
   <div class="inner">
     <div>
       <input type="hidden" name="password" id="password" value="<?php echo $password ?>">
+      <span id="word_length" style="display: none"><?php echo $word_length ?></span>
       <span id="string" style="display: none"><?php echo $string?></span>
     </div>
     <div class="row">
@@ -61,6 +64,7 @@ $password = getPassword($array_select_words);
             <form action="register.php" method="post" style="display: inline">
               <input type="hidden" name="tries" value="0">
               <input type="hidden" name="game_time" value="0">
+              <input type="hidden" name="difficulty" value="normal">
               <input type="hidden" name="prompt" placeholder="<?php echo $_SESSION['prompt']; ?>" class="input-prompt" autocomplete="off">
             </form>
           </div>

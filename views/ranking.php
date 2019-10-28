@@ -20,6 +20,7 @@ $participants = getArrayFromJSON();
         <th scope="col">Nombre</th>
         <th scope="col">Intentos</th>
         <th scope="col">Tiempo</th>
+        <th scope="col">Dificultad</th>
     </thead>
     <tbody>
         <?php
@@ -29,6 +30,7 @@ $participants = getArrayFromJSON();
           echo '<td>'.$participants[$i]['name'].'</td>';
           echo '<td>'.$participants[$i]['tries'].'</td>';
           echo '<td>'.$participants[$i]['time'].'</td>';
+          echo '<td>'.$participants[$i]['difficulty'].'</td>';
           echo '</tr>';
         }
         ?>
