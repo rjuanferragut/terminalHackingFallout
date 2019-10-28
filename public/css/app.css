@@ -35,6 +35,7 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
+  width: 100%;
   position:relative;
 }
 
@@ -129,8 +130,6 @@ a, .menu a:hover{
 }
 .cascade{
   position: absolute;
-  top: 0;
-  left: 0;
   background: rgba(0,245,1,0.75);
   background: -moz-linear-gradient(top, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,245,1,0.75)), color-stop(10%, rgba(0,245,1,0.69)), color-stop(35%, rgba(0,245,1,0.69)), color-stop(100%, rgba(210,255,82,0.69)));
@@ -140,7 +139,8 @@ a, .menu a:hover{
   background: linear-gradient(to bottom, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f501', endColorstr='#d2ff52', GradientType=0 );
   filter:blur(6px);
-  width: 100%;
+  width: 90%;
+  top: 0;
   height: 15px;
   animation: cascade 15s linear infinite;
 }
@@ -237,7 +237,7 @@ a, .menu a:hover{
   }
 
   .container{
-    margin: 15% 27%;
+    margin: 13% 27%;
     padding: 35px;
     font-size: 1vw;
     width: auto;
