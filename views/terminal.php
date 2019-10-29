@@ -87,6 +87,7 @@ $password = getPassword($array_select_words);
               <input type="hidden" name="tries" value="0">
               <input type="hidden" name="game_time" value="0">
               <input type="hidden" name="difficult" value="<?php echo $difficult ?>">
+              <input type="hidden" name="difficult_value" value="<?php echo $_POST['difficult'] ?>">
               <input type="hidden" name="prompt" placeholder="<?php echo $_SESSION['prompt']; ?>" class="input-prompt" autocomplete="off">
             </form>
           </div>

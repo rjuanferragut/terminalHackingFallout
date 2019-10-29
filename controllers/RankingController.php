@@ -24,18 +24,19 @@
       return $id;
     }
 
-    function setRegister($id, $name, $tries, $time, $difficulty){
+    function setRegister($id, $name, $tries, $time, $difficulty, $difficulty_value){
         return array(
           'id' => $id,
           'name' => $name,
           'tries' => $tries,
           'time' => $time,
-          'difficulty' => $difficulty
+          'difficulty' => $difficulty,
+          'difficulty_value' => $difficulty_value
         );
     }
 
     function setJSONParticipants($participants){
-      $order_participants = getOrderParticipants($participants, 'tries', SORT_ASC, 'time', SORT_ASC, 'name', SORT_ASC, 'id', SORT_ASC);
+      $order_participants = getOrderParticipants($participants, 'difficulty_value', SORT_DESC, 'tries', SORT_ASC, 'time', SORT_ASC, 'name', SORT_ASC, 'id', SORT_ASC);
       $json = json_encode($order_participants, JSON_PRETTY_PRINT);
       file_put_contents('../storage/ranking.json', $json);
     }
