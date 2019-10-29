@@ -6,19 +6,21 @@ $word_length = 5;
 $helps_available = 3;
 $total_words = 6;
 $filename = "5chars.txt";
+$difficult = "easy";
 
 if(isset($_POST["difficult"])){
-    // echo $_POST['difficult'];
     if($_POST["difficult"] == 2){
         $word_length = 7;
         $helps_available = 2;
         $total_words = 10;
         $filename = "7chars.txt";
+        $difficult = "normal";
     }else if($_POST["difficult"] == 3){
         $word_length = 7;
         $helps_available = 1;
         $total_words = 10;
         $filename = "7chars.txt";
+        $difficult = "hard";
     }
 }
 
@@ -84,7 +86,7 @@ $password = getPassword($array_select_words);
             <form action="register.php" method="post" style="display: inline">
               <input type="hidden" name="tries" value="0">
               <input type="hidden" name="game_time" value="0">
-              <input type="hidden" name="difficulty" value="normal">
+              <input type="hidden" name="difficult" value="<?php echo $difficult ?>">
               <input type="hidden" name="prompt" placeholder="<?php echo $_SESSION['prompt']; ?>" class="input-prompt" autocomplete="off">
             </form>
           </div>
