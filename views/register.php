@@ -1,18 +1,25 @@
 <?php
       session_start();
       require_once('layouts/header.php');
-      if(isset($_POST["prompt"]) AND isset($_POST["tries"]) AND isset($_POST["game_time"]) AND isset($_POST["difficult"])){
+      if(isset($_POST["prompt"]) AND isset($_POST["tries"]) AND isset($_POST["game_time"]) AND isset($_POST["difficult"]) AND isset($_POST["difficult_value"])){
           require_once('../controllers/RankingController.php');
           $prompt = $_POST['prompt'];
-          $_SESSION['prompt'] = $prompt;
           $tries = $_POST['tries'];
           $time = $_POST['game_time'];
           $difficulty = $_POST['difficult'];
+          $difficulty_value = $_POST['difficult_value'];
+
           $participants = getArrayFromJSON();
           $id = getIdFromArray($participants);
-          $register_participant = setRegister($id, $prompt, $tries, $time, $difficulty);
+          $register_participant = setRegister($id, $prompt, $tries, $time, $difficulty, $difficulty_value);
+
           array_push($participants, $register_participant);
           setJSONParticipants($participants);
+
+          // Guardamos la coockie;
+          $_SESSION['prompt'] = $prompt;
+    }else{
+      echo "Error";
     }
 ?>
 

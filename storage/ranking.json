@@ -128,8 +128,22 @@
 =======
         "name": "alexis",
         "tries": "1",
+<<<<<<< HEAD
         "time": "00:00:04:44",
         "difficulty": "hard"
 >>>>>>> 9ca62622c221ed962a34c111851196fed251bffb
+=======
+        "time": "00:00:06:48",
+        "difficulty": "hard",
+        "difficulty_value": "3"
+    },
+    {
+        "id": 2,
+        "name": "roger",
+        "tries": "1",
+        "time": "00:00:06:24",
+        "difficulty": "easy",
+        "difficulty_value": "1"
+>>>>>>> 8bc8e7d48e2c1dfc894b38b7ef4203874cf74e78
     }
 ]
