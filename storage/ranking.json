@@ -1,149 +1,42 @@
 [
     {
-        "id": 1,
-<<<<<<< HEAD
-        "name": "qdwsadas",
-        "tries": "3",
-        "time": "00:00:05:23",
-        "difficulty": "normal"
+        "id": 4,
+        "name": "asd",
+        "tries": "1",
+        "time": "00:00:07:28",
+        "difficulty": "easy",
+        "difficulty_value": "<br \/>\r\n<b>Notice<\/b>:  Undefined index: difficult in <b>\/var\/www\/html\/terminalHackingFallout\/views\/terminal.php<\/b> on line <b>90<\/b><br \/>\r\n"
     },
     {
         "id": 2,
-        "name": "alexis",
-        "tries": "3",
-        "time": "00:00:10:47",
-        "difficulty": "normal"
-    },
-    {
-        "id": 15,
-        "name": "sas",
-        "tries": "3",
-        "time": "00:00:22:05",
-        "difficulty": "normal"
-    },
-    {
-        "id": 16,
-        "name": "sas",
-        "tries": "3",
-        "time": "00:00:22:05",
-        "difficulty": "normal"
-    },
-    {
-        "id": 17,
-        "name": "sas",
-        "tries": "3",
-        "time": "00:00:22:05",
-        "difficulty": "normal"
-    },
-    {
-        "id": 18,
-        "name": "sas",
-        "tries": "3",
-        "time": "00:00:22:05",
-        "difficulty": "normal"
+        "name": "dsaaasd",
+        "tries": "1",
+        "time": "00:00:12:55",
+        "difficulty": "normal",
+        "difficulty_value": "2"
     },
     {
         "id": 3,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 4,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
+        "name": "dsaaasd",
+        "tries": "1",
+        "time": "00:00:12:55",
+        "difficulty": "normal",
+        "difficulty_value": "2"
     },
     {
         "id": 5,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 6,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 7,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 8,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 9,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 10,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 11,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 12,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 13,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-    },
-    {
-        "id": 14,
-        "name": "sdasd",
-        "tries": "4",
-        "time": "00:00:08:15",
-        "difficulty": "normal"
-=======
-        "name": "alexis",
+        "name": "dsaaasd",
         "tries": "1",
-<<<<<<< HEAD
-        "time": "00:00:04:44",
-        "difficulty": "hard"
->>>>>>> 9ca62622c221ed962a34c111851196fed251bffb
-=======
-        "time": "00:00:06:48",
-        "difficulty": "hard",
-        "difficulty_value": "3"
+        "time": "00:00:12:55",
+        "difficulty": "normal",
+        "difficulty_value": "2"
     },
     {
-        "id": 2,
-        "name": "roger",
+        "id": 1,
+        "name": "sadas",
         "tries": "1",
-        "time": "00:00:06:24",
+        "time": "00:00:00:58",
         "difficulty": "easy",
         "difficulty_value": "1"
->>>>>>> 8bc8e7d48e2c1dfc894b38b7ef4203874cf74e78
     }
 ]

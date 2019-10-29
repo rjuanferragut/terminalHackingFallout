@@ -36,7 +36,7 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
-  width: 100%;
+  width: 90%;
   position:relative;
 }
 
@@ -100,6 +100,7 @@ a, .menu a:hover{
 #prompt{
   display: flex;
   margin-left: 5px;
+  margin: 30% auto;
 }
 
 #prompt > div{
@@ -108,7 +109,8 @@ a, .menu a:hover{
 }
 
 #prompt .card{
-  margin-right: 0;
+  margin: 11% auto;
+
 }
 
 #prompt .input-prompt{
@@ -140,9 +142,9 @@ a, .menu a:hover{
   background: linear-gradient(to bottom, rgba(0,245,1,0.75) 0%, rgba(0,245,1,0.69) 10%, rgba(0,245,1,0.69) 35%, rgba(210,255,82,0.69) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f501', endColorstr='#d2ff52', GradientType=0 );
   filter:blur(6px);
-  width: 96%;
+  width: 90%;
   top: 0;
-  height: 15px;
+  height: 10px;
   animation: cascade 7s linear infinite;
 }
 @keyframes cascade {
@@ -154,7 +156,7 @@ a, .menu a:hover{
     opacity: 0.2;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.3;
   }
   25%{
     top:0%;
@@ -170,13 +172,16 @@ a, .menu a:hover{
 .imgWin{
   animation: blinker 2s linear infinite;
   animation: zooming 1s linear infinite;
-  position:relative;
+  /*position:absolute;*/
+  display:block;
+  margin:0 auto;
 }
 @keyframes zooming{
   50%{
-    width: 25%;
+    width: 45%;
   }
-}
+}}
+
 
 @media (min-width: 960px){
   body{
@@ -191,8 +196,8 @@ a, .menu a:hover{
   }
 
   .container{
-    margin-top: 90px;
-    width: 80%;
+    margin-top: 5%;
+    width: 70%;
     padding: 25px;
   }
 
@@ -220,7 +225,7 @@ a, .menu a:hover{
   }
 
   .container{
-    margin-top: 200px;
+    margin-top: 10%;
     width: 70%;
     padding: 25px;
     font-size: 1.1em;
@@ -252,10 +257,11 @@ a, .menu a:hover{
   }
 
   .container{
-    margin: 11% 27%;
+    margin: 12% 27%;
     padding: 35px;
     font-size: 1vw;
     width: auto;
+  
   }
 
   #terminal-table.md-3{
@@ -269,7 +275,7 @@ a, .menu a:hover{
   }
 
   .card{
-    margin: 0;
+    /*margin: 0;*/
   }
   .cascade{
   width: 92%;

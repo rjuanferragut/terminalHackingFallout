@@ -95,7 +95,11 @@ function checkWord(element){
     setInfoPrompt('Introduce tu nombre:');
     settingsInputPrompt("", false, true);
   //  printResult("Enhorabuena, has acertado la palabra!");
-    printResult('<img class="imgWin" src="../public/img/register.png" alt="WELL DONE" style="width: 30%; display: block; margin: 10px auto;">');
+    //
+
+
+    document.getElementsByClassName('col md-12')[0].innerText = "";
+    printResult('<img class="imgWin" src="../public/img/register.png" alt="WELL DONE" style="width: 30%;">');
     // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
 
   }else{
