@@ -16,7 +16,6 @@
     }
 ?>
 
-  <img class="imgWin" src="../public/img/register.png" alt="" style="width: 30%; display: block; margin: 10px auto;">
   <h3 style="text-align: center;">¡Tu registro se ha completado correctamente!</h3>
   <hr style="padding: 2px; background: #00F501; border: 0; margin: 15px auto;" />
   <h4 style="text-transform: uppercase; text-align: center">Nombre: <?php echo $_POST['prompt'] ?></h4>
