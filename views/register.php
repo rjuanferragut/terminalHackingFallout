@@ -1,13 +1,13 @@
 <?php
       session_start();
       require_once('layouts/header.php');
-      if(isset($_POST["prompt"]) OR isset($_POST["tries"]) OR isset($_POST["game_time"])){
+      if(isset($_POST["prompt"]) AND isset($_POST["tries"]) AND isset($_POST["game_time"]) AND isset($_POST["difficult"])){
           require_once('../controllers/RankingController.php');
           $prompt = $_POST['prompt'];
           $_SESSION['prompt'] = $prompt;
           $tries = $_POST['tries'];
           $time = $_POST['game_time'];
-          $difficulty = $_POST['difficulty'];
+          $difficulty = $_POST['difficult'];
           $participants = getArrayFromJSON();
           $id = getIdFromArray($participants);
           $register_participant = setRegister($id, $prompt, $tries, $time, $difficulty);

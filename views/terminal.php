@@ -1,17 +1,39 @@
 <?php
-session_start();
 require_once('layouts/header.php');
 require_once('../controllers/TerminalController.php');
-$word_length = 7;
+
+$word_length = 5;
+$helps_available = 3;
+$total_words = 6;
+$filename = "5chars.txt";
+$difficult = "easy";
+
+if(isset($_POST["difficult"])){
+    if($_POST["difficult"] == 2){
+        $word_length = 7;
+        $helps_available = 2;
+        $total_words = 10;
+        $filename = "7chars.txt";
+        $difficult = "normal";
+    }else if($_POST["difficult"] == 3){
+        $word_length = 7;
+        $helps_available = 1;
+        $total_words = 10;
+        $filename = "7chars.txt";
+        $difficult = "hard";
+    }
+}
+
+session_start();
 setwordLength($word_length);
 $array_words = array();
 $array_select_words = array();
 
-$array_words = loadFile($array_words, '7chars.txt');
-$array_select_words = selectRandomWords($array_words, 10);
+$array_words = loadFile($array_words, $filename);
+$array_select_words = selectRandomWords($array_words, $total_words);
 
 $string = generateSymbolsString();
-$string = setWords($array_select_words, $string, 10);
+$string = setWords($array_select_words, $string, $total_words);
 
 //array de los codigos hexadecimales ORDENADO POR LINEAS EN HORIZONTAL
 $array_hexadecimal = array('0x7400','0x74C0','0X740C','0x74CC','0x7418','0x74D0','0x7424','0x74E4','0x7430','0x74F0','0x743C','0x74FC','0x7448','0x7500','0x7454','0x7514','0x7460','0x7520','0x746C','0x752C','0x7478','0x7530','0x7484','0x7544','0x7490','0x7550','0x749C','0x755C','0x74A8','0x7560','0x74B4','0x7574');
@@ -64,7 +86,7 @@ $password = getPassword($array_select_words);
             <form action="register.php" method="post" style="display: inline">
               <input type="hidden" name="tries" value="0">
               <input type="hidden" name="game_time" value="0">
-              <input type="hidden" name="difficulty" value="normal">
+              <input type="hidden" name="difficult" value="<?php echo $difficult ?>">
               <input type="hidden" name="prompt" placeholder="<?php echo $_SESSION['prompt']; ?>" class="input-prompt" autocomplete="off">
             </form>
           </div>

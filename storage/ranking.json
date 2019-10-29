@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+<<<<<<< HEAD
         "name": "qdwsadas",
         "tries": "3",
         "time": "00:00:05:23",
@@ -124,5 +125,11 @@
         "tries": "4",
         "time": "00:00:08:15",
         "difficulty": "normal"
+=======
+        "name": "alexis",
+        "tries": "1",
+        "time": "00:00:04:44",
+        "difficulty": "hard"
+>>>>>>> 9ca62622c221ed962a34c111851196fed251bffb
     }
 ]
