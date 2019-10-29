@@ -1,35 +1,40 @@
 <?php
-    require_once('header.php');
- ?>
-<div class="container">
-  <table style="width: 100%; table-layout: fixed; overflow-wrap: break-word">
+require_once('layouts/header.php');
+require_once('../controllers/RankingController.php');
+$participants = getArrayFromJSON();
+?>
+
+<style type="text/css">
+    table{
+        width:100%;
+        table-layout: fixed;
+        overflow-wrap: break-word;
+        text-align: center;
+        text-transform: uppercase;
+    }
+</style>
+
+<table>
     <thead>
-      <th scope="col" style="padding: 10px; text-align: center; border-bottom: 1px solid green">#</th>
-      <th scope="col" style="padding: 10px; text-align: center; border-bottom: 1px solid green">Nombre</th>
-      <th scope="col" style="padding: 10px; text-align: center; border-bottom: 1px solid green">Intentos</th>
-      <th scope="col" style="padding: 10px; text-align: center; border-bottom: 1px solid green">Tiempo</th>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Intentos</th>
+        <th scope="col">Tiempo</th>
+        <th scope="col">Dificultad</th>
     </thead>
     <tbody>
-      <?php
-      $participants = getArrayFromJson();
-
-      for ($i=0; $i < count($participants); $i++) {
-        echo '<tr>';
-
-        echo '<td style="padding: 10px; text-align: center">' . ($i + 1) . '</td>';
-        echo '<td style="padding: 10px; text-align: center">' . $participants[$i]['name'] . '</td>';
-        echo '<td style="padding: 10px; text-align: center">' . $participants[$i]['tries'] . '</td>';
-        echo '<td style="padding: 10px; text-align: center">' . $participants[$i]['time'] . '</td>';
-
-        echo '</tr>';
-      }
-
-      function getArrayFromJson(){
-        $json = file_get_contents('../storage/ranking.json');
-        return json_decode($json, true);
-      }
-
-      ?>
+        <?php
+        for ($i = 0; $i < count($participants); $i++) {
+          echo '<tr>';
+          echo '<td>'.($i + 1).'</td>';
+          echo '<td>'.$participants[$i]['name'].'</td>';
+          echo '<td>'.$participants[$i]['tries'].'</td>';
+          echo '<td>'.$participants[$i]['time'].'</td>';
+          echo '<td>'.$participants[$i]['difficulty'].'</td>';
+          echo '</tr>';
+        }
+        ?>
     </tbody>
-  </table>
-</div>
+</table>
+
+<?php require_once('layouts/footer.php'); ?>

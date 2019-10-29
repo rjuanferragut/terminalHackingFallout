@@ -1,15 +1,19 @@
 <?php
-    /*
-    * @author Alexis Mengual, Rafa Juan
-    */
+    /* @author Alexis Mengual, Rafa Juan */
 
     /*
     * Método que hace la lectura del archivo y recoge el contenido
     * @return un array con todas las palabras del archivo
     */
-    function loadFile($array){
+    $GLOBALS['word_length'] = 0;
+
+    function setwordLength($value){
+      $GLOBALS['word_length'] = $value;
+    }
+
+    function loadFile($array, $filename){
         $count = 0;
-        $fileOpen = fopen((dirname(__FILE__)."/words.txt"), "r");
+        $fileOpen = fopen("../storage/".$filename, "r");
 
         while (!feof($fileOpen)){
             $linea = fgets($fileOpen);
@@ -23,15 +27,15 @@
     }
 
     /*
-    * Método que selecciona de manera aleatoria 6 palabras
+    * Método que selecciona de manera aleatoria X palabras
     * del Array que le pasamos.
-    * @return pasamos un nuevo array con 6 palabras aleatorias.
+    * @return pasamos un nuevo array con X palabras aleatorias.
     */
-    function selectRandomWords($array){
+    function selectRandomWords($array, $total_words){
         $select = array();
         $count = 0;
 
-        while($count != 6){
+        while($count != $total_words){
             $random = rand(0, 19);
             if(!existInArray($select, $array[$random])){
               $select[$count] = $array[$random];
@@ -61,7 +65,6 @@
     * Método para ver el contenido del array con las
     * palabras seleccionadas del archivo
     */
-
     function printArray($array_words){
         for ($i = 0; $i < count($array_words); $i++) {
             echo $array_words[$i] . "<br />";
@@ -85,14 +88,14 @@
     /*
     * Método que añade las palabras en posiciones random del String.
     */
-    function setWords($array, $string){
+    function setWords($array, $string, $total_words){
         $max_length_string = strlen($string);
         $i = 0;
 
-        while($i < 6){
+        while($i < $total_words){
             $word = $array[$i];
-            $initString = rand(0, ($max_length_string) - 6);
-            $lastString = $initString + 5;
+            $initString = rand(0, ($max_length_string) - ($total_words + 1));
+            $lastString = $initString + $GLOBALS['word_length'];
 
             if(!hasLetter($string, $initString, $lastString)){
                 $pos = 0;
