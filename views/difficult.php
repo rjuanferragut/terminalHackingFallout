@@ -10,7 +10,7 @@
           <input type="radio" name="difficult" value="3"> Hard
         </div>
         <div style="margin: 0 auto; margin-bottom: 15px; width: 50%;">
-          <input type="submit" name="submit" value="Jugar">
+          <input style="padding: 10px 15px; float: right; text-transform: uppercase; font-family: 'Share Tech Mono', monospace; background: #00F501; border: 0" type="submit" name="submit" value="Jugar">
         </div>
     </form>
 <?php require_once('layouts/footer.php') ?>

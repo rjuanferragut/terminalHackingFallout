@@ -8,6 +8,14 @@
         "difficulty_value": "3"
     },
     {
+        "id": 3,
+        "name": "alexis",
+        "tries": "2",
+        "time": "00:00:15:06",
+        "difficulty": "normal",
+        "difficulty_value": "2"
+    },
+    {
         "id": 2,
         "name": "roger",
         "tries": "1",
