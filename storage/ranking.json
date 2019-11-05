@@ -8,6 +8,22 @@
         "difficulty_value": "3"
     },
     {
+        "id": 7,
+        "name": "aLESI",
+        "tries": "1",
+        "time": "00:00:08:19",
+        "difficulty": "hard",
+        "difficulty_value": "3"
+    },
+    {
+        "id": 10,
+        "name": "RAUL",
+        "tries": "3",
+        "time": "00:00:18:19",
+        "difficulty": "hard",
+        "difficulty_value": "3"
+    },
+    {
         "id": 3,
         "name": "alexis",
         "tries": "2",
@@ -16,10 +32,50 @@
         "difficulty_value": "2"
     },
     {
+        "id": 4,
+        "name": "roger",
+        "tries": "1",
+        "time": "00:00:05:57",
+        "difficulty": "easy",
+        "difficulty_value": "1"
+    },
+    {
         "id": 2,
         "name": "roger",
         "tries": "1",
         "time": "00:00:06:24",
+        "difficulty": "easy",
+        "difficulty_value": "1"
+    },
+    {
+        "id": 5,
+        "name": "PEPITO",
+        "tries": "1",
+        "time": "00:00:08:23",
+        "difficulty": "easy",
+        "difficulty_value": "1"
+    },
+    {
+        "id": 6,
+        "name": "PEPITO",
+        "tries": "1",
+        "time": "00:00:08:23",
+        "difficulty": "easy",
+        "difficulty_value": "1"
+    },
+    {
+        "id": 8,
+        "name": "ALESI",
+        "tries": "3",
+        "time": "00:00:24:36",
+        "difficulty": "easy",
+        "difficulty_value": "1"
+    },
+    {
+        "id": 9,
+        "name": "ALESI",
+        "tries": "3",
+        "time": "00:00:24:36",
         "difficulty": "easy",
         "difficulty_value": "1"
     }
