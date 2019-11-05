@@ -36,7 +36,7 @@ input{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
   padding: 15px;
-  width: 100%;
+  width: 90%;
   position:relative;
 }
 
@@ -108,7 +108,8 @@ a, .menu a:hover{
 }
 
 #prompt .card{
-  margin-right: 0;
+  margin: 0;
+
 }
 
 #prompt .input-prompt{
@@ -142,8 +143,8 @@ a, .menu a:hover{
   filter:blur(6px);
   width: 90%;
   top: 0;
-  height: 15px;
-  animation: cascade 15s linear infinite;
+  height: 10px;
+  animation: cascade 7s linear infinite;
 }
 @keyframes cascade {
   100%{
@@ -154,7 +155,7 @@ a, .menu a:hover{
     opacity: 0.2;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.3;
   }
   25%{
     top:0%;
@@ -166,99 +167,119 @@ a, .menu a:hover{
   }
 }
 
-@media (min-width: 960px){
-  body{
-    background-image: url("../img/terminal-sm.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: 0;
-  }
 
-  body::before{
-    border: 0;
-  }
-
-  .container{
-    margin-top: 90px;
-    width: 80%;
-    padding: 25px;
-  }
-
-  .menu{
-    margin-top:30%;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  .menu a{
-    font-size: 1em;
-  }
+.imgWin{
+  animation: blinker 2s linear infinite;
+  animation: zooming 2s linear infinite;
+  /*position:absolute;*/
+  display:block;
+  margin:0 auto;
 }
+@keyframes zooming{
+  50%{
+    width: 35%;
+  }
+  }}
 
-@media (min-width: 1200px){
-  body{
-    background-image: url("../img/terminal-sm.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: 0;
+
+  @media (min-width: 960px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin-top: 5%;
+      width: 70%;
+      padding: 25px;
+    }
+
+    .menu{
+      margin-top:30%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .menu a{
+      font-size: 1em;
+    }
   }
 
-  body::before{
-    border: 0;
+  @media (min-width: 1200px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin-top: 10%;
+      width: 70%;
+      padding: 25px;
+      font-size: 1.1em;
+    }
+    .menu{
+      margin-top:25%;
+      margin-left:25%;
+      margin-right:25%;
+    }
+    .menu a{
+      font-size: 1em;
+    }
+    .cascade{
+      width: 100%;
+    }
+
   }
 
-  .container{
-    margin-top: 200px;
-    width: 70%;
-    padding: 25px;
-    font-size: 1.1em;
-  }
-  .menu{
-    margin-top:25%;
-    margin-left:25%;
-    margin-right:25%;
-  }
-  .menu a{
-    font-size: 1em;
-  }
+  @media (min-width: 1400px){
+    body{
+      background-image: url("../img/foterminal.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin: 12% 27%;
+      padding: 35px;
+      font-size: 1vw;
+      width: auto;
+
+    }
+
+    #terminal-table.md-3{
+      margin: 0;
+      position:relative;
+    }
+
+    .col{
+      flex-basis: initial!important;
+      flex-grow: initial!important;
+    }
 
 
-}
+    .cascade{
+      width: 92%;
+    }
 
-@media (min-width: 1400px){
-  body{
-    background-image: url("../img/foterminal.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: 0;
+
+    table{
+      float: left;
+    }
   }
-
-  body::before{
-    border: 0;
-  }
-
-  .container{
-    margin: 13% 27%;
-    padding: 35px;
-    font-size: 1vw;
-    width: auto;
-  }
-
-  #terminal-table.md-3{
-    margin: 0;
-  }
-
-  .col{
-    flex-basis: initial!important;
-    flex-grow: initial!important;
-  }
-
-  .card{
-    margin: 0;
-  }
-
-
-  table{
-    float: left;
-  }
-}
