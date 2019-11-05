@@ -128,27 +128,27 @@
         return $string;
     }
 
-    function setHelps($string, $array_helps){
-        $max_length_string = strlen($string);
-        $i = 0;
-
-        while($i < count($array_helps)){
-            $current_help = $array_helps[$i];
-            $initString = rand(0, $max_length_string - strlen($current_help));
-            $lastString = $initString + strlen($current_help);
-
-            if(!hasLetter($string, $initString, $lastString)){
-              $pos = 0;
-                for ($j = $initString; $j < $lastString; $j++) {
-                    $string[$j] = $current_help[$pos];
-                    $pos = $pos + 1;
-                }
-            $i++;
-            }
-        }
-
-        return $string;
-    }
+    // function setHelps($string, $array_helps){
+    //     $max_length_string = strlen($string);
+    //     $i = 0;
+    //
+    //     while($i < count($array_helps)){
+    //         $current_help = $array_helps[$i];
+    //         $initString = rand(0, $max_length_string - strlen($current_help));
+    //         $lastString = $initString + strlen($current_help);
+    //
+    //         if(!hasLetter($string, $initString, $lastString)){
+    //           $pos = 0;
+    //             for ($j = $initString; $j < $lastString; $j++) {
+    //                 $string[$j] = $current_help[$pos];
+    //                 $pos = $pos + 1;
+    //             }
+    //         $i++;
+    //         }
+    //     }
+    //
+    //     return $string;
+    // }
 
     /*
     * Método para revisar si encuentra una letra del alfabeto

@@ -6,6 +6,8 @@ var stringFromPHP, password;
 var positionsLetters = [];
 var lifes = 4;
 var word_length = 0;
+var helpers = "";
+var helpers_available = 0;
 
 window.addEventListener("load", function(event) {
   document.getElementsByName('tries')[0].value = 1
@@ -13,42 +15,118 @@ window.addEventListener("load", function(event) {
   stringFromPHP = document.getElementById('string').innerText;
   password = document.getElementById('password').value;
   word_length = parseInt(document.getElementById('word_length').innerText);
-  console.log(word_length);
 
   //reemplaza los saltos de linea de la Password
   password = password.replace("\n", "");
+  helpers = document.getElementById('helpers').innerText;
+  helpers = helpers.split(",");
+
+  helpers_available = document.getElementById('helpers_available').innerText;
 
   getTerminal();
   printLifes();
 });
 
-// Método para montar la tabla que simulará el contenido del terminal.
 function getTerminal(){
+  var countLine = 0;
+  var countChar = 0;
+  var countLastChar = 12;
+  var countSpan = 0;
+  var countHelpers = 0;
+
+  for(countLine; countLine < 32; countLine++){
+    // Guardo cada separación de línea en la variable row
+    var row = stringFromPHP.slice(countChar, countLastChar);
+    getFirstPosition = getPositionLetter(row);
+
+    // Método para la gestión de las palabras
+    if(getFirstPosition.length != 0){
+      for (var i = 0; i < getFirstPosition.length; i++) {
+        // Si es mayor o igual a 0, es que ha encontrado una letra.
+        if(getFirstPosition[i] >= 0){
+
+          // Si cumple con este requisito, busco cual es la última posición
+          getLastPosition = getLastPositionLetter(row, getFirstPosition[i]);
+
+          // Si el array es tiene más de un valor:
+          if(getFirstPosition.length > 1){
+              if(countCharacter(getFirstPosition[i], getLastPosition) != word_length){
+                  if(getLastPosition == 12){
+                      row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + word_length) + '</span>' + row.substring(getFirstPosition[i + 1] + word_length, row.length);
+                      countSpan += 1;
+                  }else{
+                      row_copy = row;
+                      row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[1], getFirstPosition[i + 1] + word_length) + '</span>' + row.substring(getFirstPosition[i + 1] + word_length, row.length);
+                      getLastPositionSecondWord = getLastPositionLetter(row_copy, getFirstPosition[1]);
+                      console.log('Primera posición: ' + getFirstPosition[1]);
+                      console.log('Última posición: ' + getLastPositionSecondWord);
+                      console.log(countCharacter(getFirstPosition[1], getLastPositionSecondWord));
+                      if(getLastPositionSecondWord != 12 && countCharacter(getFirstPosition[1], getLastPositionSecondWord) == word_length - 1 || countCharacter(getFirstPosition[1], getLastPositionSecondWord) == word_length){
+                        countSpan += 2;
+                      }else{
+                        countSpan += 1;
+                      }
+                  }
+              }
+              i++;
+          }else{
+            if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition) != word_length){
+              row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, row.length);
+            }else{
+                row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, row.length);
+                countSpan += 1;
+            }
+          }
+        }
+      }
+    }else{
+      if(countHelpers != helpers_available){
+        var current_help = helpers[countHelpers];
+        current_help = current_help.replace(/\s/g, '');
+        var length_help = current_help.length;
+        current_help = "(" + current_help.substring(1, current_help.length - 1) + ")";
+        current_help = '<span class="helper" style="background: yellow" onclick="getHelp(this)">' + current_help + '</span>';
+
+        row = row.substring(length_help, row.length);
+        row = current_help + row;
+
+        countHelpers++;
+      }
+    }
+
+    countChar = countLastChar;
+    countLastChar += 12;
+    document.getElementById('row-codification-'+countLine).innerHTML = row;
+  }
+}
+
+// Método para montar la tabla que simulará el contenido del terminal.
+function getTerminalOld(){
   var countLine = 0;
   var countChar = 0;
   var countLastChar = 12;
   var countSpan = 0;
 
   for (countLine; countLine < 32; countLine++){
-    var td_string = stringFromPHP.slice(countChar, countLastChar);
-    getFirstPosition = getPositionLetter(td_string);
+    var row = stringFromPHP.slice(countChar, countLastChar);
+    getFirstPosition = getPositionLetter(row);
     for (var i = 0; i < getFirstPosition.length; i++) {
       // Si es mayor o igual a 0, es que ha encontrado una letra.
       if(getFirstPosition[i] >= 0){
 
         // Si cumple con este requisito, busco cual es la última posición
-        getLastPosition = getLastPositionLetter(td_string, getFirstPosition[i]);
+        getLastPosition = getLastPositionLetter(row, getFirstPosition[i]);
 
         // Si el array es tiene más de un valor:
         if(getFirstPosition.length > 1){
             if(countCharacter(getFirstPosition[i], getLastPosition) != word_length){
                 if(getLastPosition == 12){
-                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + word_length) + '</span>' + td_string.substring(getFirstPosition[i + 1] + word_length, td_string.length);
+                    row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i + 1], getFirstPosition[i + 1] + word_length) + '</span>' + row.substring(getFirstPosition[i + 1] + word_length, row.length);
                     countSpan += 1;
                 }else{
-                    td_string_copy = td_string;
-                    td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[1], getFirstPosition[i + 1] + word_length) + '</span>' + td_string.substring(getFirstPosition[i + 1] + word_length, td_string.length);
-                    getLastPositionSecondWord = getLastPositionLetter(td_string_copy, getFirstPosition[1]);
+                    row_copy = row;
+                    row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, getFirstPosition[i + 1]) + '<span class="span spanId'+(countSpan+1)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[1], getFirstPosition[i + 1] + word_length) + '</span>' + row.substring(getFirstPosition[i + 1] + word_length, row.length);
+                    getLastPositionSecondWord = getLastPositionLetter(row_copy, getFirstPosition[1]);
                     console.log('Primera posición: ' + getFirstPosition[1]);
                     console.log('Última posición: ' + getLastPositionSecondWord);
                     console.log(countCharacter(getFirstPosition[1], getLastPositionSecondWord));
@@ -62,9 +140,9 @@ function getTerminal(){
             i++;
         }else{
           if(getLastPosition == 12 && countCharacter(getFirstPosition[i], getLastPosition) != word_length){
-            td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
+            row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, row.length);
           }else{
-              td_string = td_string.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + td_string.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + td_string.substring(getLastPosition + 1, td_string.length);
+              row = row.substring(0, getFirstPosition[i]) + '<span class="span spanId'+(countSpan)+'" onmouseover="hoverSpanOn(this)" onmouseout="hoverSpanOff(this)" onclick="checkWord(this)">' + row.substring(getFirstPosition[i], getLastPosition + 1) + '</span>' + row.substring(getLastPosition + 1, row.length);
               countSpan += 1;
           }
         }
@@ -72,7 +150,7 @@ function getTerminal(){
     }
   countChar = countLastChar;
   countLastChar += 12;
-  document.getElementById('row-codification-'+countLine).innerHTML = td_string;
+  document.getElementById('row-codification-'+countLine).innerHTML = row;
   }
 }
 
@@ -129,6 +207,7 @@ function checkWord(element){
     }
   }
 }
+
 function countSimilarAlpha(word, password){
   var countSimilarity = 0;
   var charWord = "";
@@ -145,13 +224,13 @@ function countSimilarAlpha(word, password){
 
 
 // Método para obtener la primera posición de la letra en el string
-function getPositionLetter(td_string){
+function getPositionLetter(row){
   var array_first_positions = [];
   var i = 0;
-  while(i < td_string.length){
-    if(td_string[i].match(/[a-zA-Z ]+/)){
+  while(i < row.length){
+    if(row[i].match(/[a-zA-Z ]+/)){
       array_first_positions.push(i);
-      if(i >= 0 && i<= 4 && !td_string[i + 1].match(/[a-zA-Z ]+/)){
+      if(i >= 0 && i<= 4 && !row[i + 1].match(/[a-zA-Z ]+/)){
         i++;
       }else{
         i += word_length;
@@ -164,23 +243,22 @@ function getPositionLetter(td_string){
 }
 
 // Método para obtener la última posición de la letra en el string
-function getLastPositionLetter(td_string, firstPosition){
-  for (var i = firstPosition; i < td_string.length; i++) {
-    if((i + 1) < td_string.length){
-      if(!td_string[i + 1].match(/[a-zA-Z ]+/)){
+function getLastPositionLetter(row, firstPosition){
+  for (var i = firstPosition; i < row.length; i++) {
+    if((i + 1) < row.length){
+      if(!row[i + 1].match(/[a-zA-Z ]+/)){
         return i;
       }
     }
   }
 
-  return td_string.length;
+  return row.length;
 }
 
 function changeWordsForPoints(classname){
   for (var i = 0; i < classname.length; i++) {
     var pointSubs = "";
 
-    console.log("Palabra: " + classname[i].innerText + "\nTamaño: " + classname[i].innerText.length)
     for (var j = 0; j < classname[i].innerText.length; j++) {
       pointSubs += ".";
     }
@@ -215,4 +293,20 @@ function settingsInputPrompt(text, isReadOnly, isFocus){
 
 function getSpansByClassName(classname){
   return document.getElementsByClassName(classname);
+}
+
+function getHelp(elem){
+  var random = Math.floor(Math.random() * (2 - 0)) + 0;
+  console.log(random)
+  if(random == 1){
+    setInfoPrompt("Ejecutando Ayuda de Tipo 1");
+    setInfoPrompt("Restableciendo vidas...");
+    lifes = 4;
+    printLifes();
+  }else{
+    setInfoPrompt("Ejecutando Ayuda de Tipo 2");
+  }
+
+  elem.onclick = null;
+  elem.class = null;
 }
