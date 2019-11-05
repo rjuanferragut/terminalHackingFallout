@@ -1,17 +1,24 @@
 <?php
     /* @author Alexis Mengual, Rafa Juan */
 
-    /*
-    * Método que hace la lectura del archivo y recoge el contenido
-    * @return un array con todas las palabras del archivo
-    */
+    define('SYMBOLS', ".,='+-$!(){}[]$@:%#?/|");
     $GLOBALS['word_length'] = 0;
 
+    /*
+    * Método para actualizar el valor de $GLOBALS['word_length']
+    * @param El valor que se usará para determinal el tamaño máximo de las letras.
+    */
     function setwordLength($value){
       $GLOBALS['word_length'] = $value;
     }
 
-    function loadFile($array, $filename){
+    /*
+    * Método que lee el archivo que le indicamos y lo carga en un array.
+    * @param Le pasamos el nombre del fichero que necesitamos.
+    * @return el array con todas las palabras del fichero.
+    */
+    function loadFile($filename){
+        $array = array();
         $count = 0;
         $fileOpen = fopen("../storage/".$filename, "r");
 
@@ -61,25 +68,29 @@
         return false;
     }
 
-    /*
-    * Método para ver el contenido del array con las
-    * palabras seleccionadas del archivo
-    */
-    function printArray($array_words){
-        for ($i = 0; $i < count($array_words); $i++) {
-            echo $array_words[$i] . "<br />";
+    function getHelpsAvailables($helps_available){
+        $array = array();
+        for ($i = 0; $i < $helps_available; $i++) {
+            $content_help_length = rand(1, 10);
+            $string = "1";
+            for ($j = 0; $j < $content_help_length; $j++) {
+                $random = rand(0, (strlen(SYMBOLS) - 1));
+                $string = $string . SYMBOLS[$random];
+            }
+
+            $string = $string . "1";
+            array_push($array, $string);
         }
+
+        return $array;
     }
 
-
     function generateSymbolsString(){
-        // Se han quitado los símbolos <> porque dan problemas al pasar el string *e imprimirlo
-        $symbols = ".,='+-$!(){}[]$@:%#?/|";
         $string = "";
         for ($i = 0; $i < 16; $i++) {
             for ($j = 0; $j < 24; $j++) {
-                $random = rand(0, (strlen($symbols) - 1));
-                $string = $string . $symbols[$random];
+                $random = rand(0, (strlen(SYMBOLS) - 1));
+                $string = $string . SYMBOLS[$random];
             }
         }
         return $string;
@@ -111,6 +122,28 @@
 
 
                 $i++;
+            }
+        }
+
+        return $string;
+    }
+
+    function setHelps($string, $array_helps){
+        $max_length_string = strlen($string);
+        $i = 0;
+
+        while($i < count($array_helps)){
+            $current_help = $array_helps[$i];
+            $initString = rand(0, $max_length_string - strlen($current_help));
+            $lastString = $initString + strlen($current_help);
+
+            if(!hasLetter($string, $initString, $lastString)){
+              $pos = 0;
+                for ($j = $initString; $j < $lastString; $j++) {
+                    $string[$j] = $current_help[$pos];
+                    $pos = $pos + 1;
+                }
+            $i++;
             }
         }
 

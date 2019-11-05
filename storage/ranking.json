@@ -8,6 +8,14 @@
         "difficulty_value": "<br \/>\r\n<b>Notice<\/b>:  Undefined index: difficult in <b>\/var\/www\/html\/terminalHackingFallout\/views\/terminal.php<\/b> on line <b>90<\/b><br \/>\r\n"
     },
     {
+        "id": 3,
+        "name": "alexis",
+        "tries": "2",
+        "time": "00:00:15:06",
+        "difficulty": "normal",
+        "difficulty_value": "2"
+    },
+    {
         "id": 2,
         "name": "dsaaasd",
         "tries": "1",
