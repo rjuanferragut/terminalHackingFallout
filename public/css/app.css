@@ -65,6 +65,12 @@ input{
   cursor: pointer;
 }
 
+.helper:hover{
+  background: #00F501;
+  color: black;
+  cursor: pointer;
+}
+
 .menu{
   color: #00F501;
   font-family: 'Share Tech Mono', monospace;
