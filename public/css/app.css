@@ -169,9 +169,13 @@ a, .menu a:hover{
 
 
 .imgWin{
-  animation: blinker 2s linear infinite;
-  animation: zooming 2s linear infinite;
-  /*position:absolute;*/
+  /*animation: zooming 2s linear infinite;*/
+  filter:sepia() saturate(830%) hue-rotate(51deg);
+  display:block;
+  margin:0 auto;
+}
+.imgLose{
+  filter:sepia() saturate(830%) hue-rotate(51deg);
   display:block;
   margin:0 auto;
 }
