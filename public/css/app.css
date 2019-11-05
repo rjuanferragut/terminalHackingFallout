@@ -100,7 +100,6 @@ a, .menu a:hover{
 #prompt{
   display: flex;
   margin-left: 5px;
-  margin: 30% auto;
 }
 
 #prompt > div{
@@ -109,7 +108,7 @@ a, .menu a:hover{
 }
 
 #prompt .card{
-  margin: 11% auto;
+  margin: 0;
 
 }
 
@@ -171,118 +170,116 @@ a, .menu a:hover{
 
 .imgWin{
   animation: blinker 2s linear infinite;
-  animation: zooming 1s linear infinite;
+  animation: zooming 2s linear infinite;
   /*position:absolute;*/
   display:block;
   margin:0 auto;
 }
 @keyframes zooming{
   50%{
-    width: 45%;
+    width: 35%;
   }
-}}
+  }}
 
 
-@media (min-width: 960px){
-  body{
-    background-image: url("../img/terminal-sm.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: 0;
+  @media (min-width: 960px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin-top: 5%;
+      width: 70%;
+      padding: 25px;
+    }
+
+    .menu{
+      margin-top:30%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .menu a{
+      font-size: 1em;
+    }
   }
 
-  body::before{
-    border: 0;
+  @media (min-width: 1200px){
+    body{
+      background-image: url("../img/terminal-sm.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
+
+    body::before{
+      border: 0;
+    }
+
+    .container{
+      margin-top: 10%;
+      width: 70%;
+      padding: 25px;
+      font-size: 1.1em;
+    }
+    .menu{
+      margin-top:25%;
+      margin-left:25%;
+      margin-right:25%;
+    }
+    .menu a{
+      font-size: 1em;
+    }
+    .cascade{
+      width: 100%;
+    }
+
   }
 
-  .container{
-    margin-top: 5%;
-    width: 70%;
-    padding: 25px;
-  }
+  @media (min-width: 1400px){
+    body{
+      background-image: url("../img/foterminal.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: 0;
+    }
 
-  .menu{
-    margin-top:30%;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
+    body::before{
+      border: 0;
+    }
 
-  .menu a{
-    font-size: 1em;
-  }
-}
+    .container{
+      margin: 12% 27%;
+      padding: 35px;
+      font-size: 1vw;
+      width: auto;
 
-@media (min-width: 1200px){
-  body{
-    background-image: url("../img/terminal-sm.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: 0;
-  }
+    }
 
-  body::before{
-    border: 0;
-  }
+    #terminal-table.md-3{
+      margin: 0;
+      position:relative;
+    }
 
-  .container{
-    margin-top: 10%;
-    width: 70%;
-    padding: 25px;
-    font-size: 1.1em;
-  }
-  .menu{
-    margin-top:25%;
-    margin-left:25%;
-    margin-right:25%;
-  }
-  .menu a{
-    font-size: 1em;
-  }
-  .cascade{
-  width: 100%;
-  }
-
-}
-
-@media (min-width: 1400px){
-  body{
-    background-image: url("../img/foterminal.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: 0;
-  }
-
-  body::before{
-    border: 0;
-  }
-
-  .container{
-    margin: 12% 27%;
-    padding: 35px;
-    font-size: 1vw;
-    width: auto;
-  
-  }
-
-  #terminal-table.md-3{
-    margin: 0;
-    position:relative;
-  }
-
-  .col{
-    flex-basis: initial!important;
-    flex-grow: initial!important;
-  }
-
-  .card{
-    /*margin: 0;*/
-  }
-  .cascade{
-  width: 92%;
-  }
+    .col{
+      flex-basis: initial!important;
+      flex-grow: initial!important;
+    }
 
 
-  table{
-    float: left;
+    .cascade{
+      width: 92%;
+    }
+
+
+    table{
+      float: left;
+    }
   }
-}

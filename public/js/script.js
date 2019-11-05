@@ -90,29 +90,42 @@ function checkWord(element){
   if (text == password) {
     clearInterval(id);
     document.getElementsByName('game_time')[0].value = document.getElementById('timer').innerText;
+
+    document.getElementsByClassName('content-prompt')[0].innerText = "";
     document.getElementsByClassName('input-prompt')[1].type = 'text';
     setInfoPrompt('Correct Password');
     setInfoPrompt('Introduce tu nombre:');
     settingsInputPrompt("", false, true);
   //  printResult("Enhorabuena, has acertado la palabra!");
-    //
-
 
     document.getElementsByClassName('col md-12')[0].innerText = "";
+    document.getElementsByClassName('container')[0].style = "margin-top: 22%; display:block;";
     printResult('<img class="imgWin" src="../public/img/register.png" alt="WELL DONE" style="width: 30%;">');
-    // Si la password es correcta añadir un input o destapar un input hidden en el que se pueda meter el nombre y guardarlo en un fichero
+    document.getElementById('prompt').style = "display:block;margin-top:4%;";
+
 
   }else{
     lifes -= 1;
     if (lifes == 0){
-      printResult("Has perdido, terminal bloqueado.<br />Respuesta = "+ password);
+
       clearInterval(id);
-    }
+      document.getElementsByClassName('col md-12')[0].innerText = "";
+      document.getElementsByClassName('content-prompt')[0].innerText = "";
+      document.getElementsByClassName('container')[0].style = "margin-top: 22%; display:block;";
+      document.getElementById('prompt').style = "display:block;margin-top:3%;";
+
+      setInfoPrompt('Wrong Password');
+      setInfoPrompt("terminal bloqued");
+      setInfoPrompt("Respuesta = "+ password);
+      printResult('<img class="imgWin" src="../public/img/register.png" alt="GAME OVER" style="width: 30%;">');
+
+    }else{
     document.getElementsByName('tries')[0].value = parseInt(document.getElementsByName('tries')[0].value) + parseInt(1);
     setInfoPrompt('Entry Denied');
     setInfoPrompt('Likeness = '+ countSimilarAlpha(text, password));
     changeWordsForPoints(classname);
     printLifes();
+    }
   }
 }
 function countSimilarAlpha(word, password){
