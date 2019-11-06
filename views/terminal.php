@@ -17,7 +17,7 @@
     </div>
     <div class="row">
       <div class="col md-12">
-        <p>
+        <p class="typewriting">
           Welcome to ROBCO Industries (TM) Termlink
           <br />
           ===============================

@@ -18,6 +18,8 @@
 
           // Guardamos la coockie;
           $_SESSION['prompt'] = $prompt;
+          $_SESSION['string'] = $stringSession;
+          //$_SESSION['lives'] = $livesSession;
     }else{
       echo "Error";
     }
