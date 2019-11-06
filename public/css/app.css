@@ -84,6 +84,7 @@ input{
   z-index:1;
 }
 
+
 a, .menu a{
   background: #00F501;
   color: black;
@@ -189,107 +190,124 @@ a, .menu a:hover{
   50%{
     width: 35%;
   }
-  }}
+}
+.typewriting{
+  animation: typewriter 4s steps(40);
+  overflow:hidden;
+  white-space: nowrap;
+  margin-left:0%
+
+}
+
+@keyframes typewriter{
+  0%{
+    width:0ch;
+  }
+  100%{
+    width:40ch;
+  }
+}
+}
 
 
-  @media (min-width: 960px){
-    body{
-      background-image: url("../img/terminal-sm.jpg");
-      background-size: 100%;
-      background-repeat: no-repeat;
-      border: 0;
-    }
-
-    body::before{
-      border: 0;
-    }
-
-    .container{
-      margin-top: 5%;
-      width: 70%;
-      padding: 25px;
-    }
-
-    .menu{
-      margin-top:30%;
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-
-    .menu a{
-      font-size: 1em;
-    }
+@media (min-width: 960px){
+  body{
+    background-image: url("../img/terminal-sm.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 0;
   }
 
-  @media (min-width: 1200px){
-    body{
-      background-image: url("../img/terminal-sm.jpg");
-      background-size: 100%;
-      background-repeat: no-repeat;
-      border: 0;
-    }
+  body::before{
+    border: 0;
+  }
 
-    body::before{
-      border: 0;
-    }
+  .container{
+    margin-top: 5%;
+    width: 70%;
+    padding: 25px;
+  }
 
-    .container{
-      margin-top: 10%;
-      width: 70%;
-      padding: 25px;
-      font-size: 1.1em;
-    }
-    .menu{
-      margin-top:25%;
-      margin-left:25%;
-      margin-right:25%;
-    }
-    .menu a{
-      font-size: 1em;
-    }
-    .cascade{
-      width: 100%;
-    }
+  .menu{
+    margin-top:30%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .menu a{
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1200px){
+  body{
+    background-image: url("../img/terminal-sm.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 0;
+  }
+
+  body::before{
+    border: 0;
+  }
+
+  .container{
+    margin-top: 10%;
+    width: 70%;
+    padding: 25px;
+    font-size: 1.1em;
+  }
+  .menu{
+    margin-top:25%;
+    margin-left:25%;
+    margin-right:25%;
+  }
+  .menu a{
+    font-size: 1em;
+  }
+  .cascade{
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 1400px){
+  body{
+    background-image: url("../img/foterminal.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 0;
+  }
+
+  body::before{
+    border: 0;
+  }
+
+  .container{
+    margin: 12% 27%;
+    padding: 35px;
+    font-size: 1vw;
+    width: auto;
 
   }
 
-  @media (min-width: 1400px){
-    body{
-      background-image: url("../img/foterminal.jpg");
-      background-size: 100%;
-      background-repeat: no-repeat;
-      border: 0;
-    }
-
-    body::before{
-      border: 0;
-    }
-
-    .container{
-      margin: 12% 27%;
-      padding: 35px;
-      font-size: 1vw;
-      width: auto;
-
-    }
-
-    #terminal-table.md-3{
-      margin: 0;
-      position:relative;
-    }
-
-    .col{
-      flex-basis: initial!important;
-      flex-grow: initial!important;
-    }
-
-
-    .cascade{
-      width: 92%;
-    }
-
-
-    table{
-      float: left;
-    }
+  #terminal-table.md-3{
+    margin: 0;
+    position:relative;
   }
+
+  .col{
+    flex-basis: initial!important;
+    flex-grow: initial!important;
+  }
+
+
+  .cascade{
+    width: 92%;
+  }
+
+
+  table{
+    float: left;
+  }
+}
