@@ -71,7 +71,7 @@
     function getHelpsAvailables($helps_available){
         $array = array();
         for ($i = 0; $i < $helps_available; $i++) {
-            $content_help_length = rand(1, 10);
+            $content_help_length = rand(2, 10);
             $string = "1";
             for ($j = 0; $j < $content_help_length; $j++) {
                 $random = rand(0, (strlen(SYMBOLS) - 1));
