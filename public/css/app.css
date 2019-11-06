@@ -84,6 +84,7 @@ input{
   z-index:1;
 }
 
+
 a, .menu a{
   background: #00F501;
   color: black;
@@ -197,6 +198,7 @@ a, .menu a:hover{
   margin-left:0%
 
 }
+
 @keyframes typewriter{
   0%{
     width:0ch;
