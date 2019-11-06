@@ -190,11 +190,4 @@
         return $array[rand(0, (count($array) - 1))];
     }
 
-    // function getTerminalCode(){
-    //   for($i = 0; $i <= 32;$i++){
-    //
-    //   }
-    //   return
-    // }
-
  ?>
