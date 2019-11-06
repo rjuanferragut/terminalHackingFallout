@@ -46,7 +46,7 @@ $array_helps = getHelpsAvailables($helps_available);
 $string = generateSymbolsString();
 //$string = setWords($array_select_words, $string, $total_words);
 if(isset($_SESSION['string'])){
-  $string = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+  $string = "Aaaaaaaaaaaaaaaaaaaaaaaaaaa";
 }else{
   $string = setWords($array_select_words, $string, $total_words);
 }

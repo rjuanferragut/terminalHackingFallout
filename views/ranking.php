@@ -36,7 +36,7 @@ table{
     ?>
   </tbody>
 </table>
-<div id="rankButtons" style="margin: 50% auto;">
+<div id="rankButtons" style="margin: 25% auto;">
   <a href="terminal.php">Volver a Jugar</a>
   <a href="ranking.php">Ver Ranking</a>
   <a href="index.php">Página Principal</a>
