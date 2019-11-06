@@ -8,6 +8,7 @@ var lifes = 4;
 var word_length = 0;
 var helpers = "";
 var helpers_available = 0;
+var numHelps = 0;
 
 window.addEventListener("load", function(event) {
   document.getElementsByName('tries')[0].value = 1
@@ -87,7 +88,7 @@ function getTerminal(){
         console.log(current_help)
         var length_help = current_help.length;
         current_help = "(" + current_help.substring(1, current_help.length - 1) + ")";
-        current_help = '<span class="helper" onclick="getHelp(this)">' + current_help + '</span>';
+        current_help = '<span id="helper-'+countHelpers+'" class="helper" onclick="getHelp(this)">' + current_help + '</span>';
 
         row = row.substring(length_help, row.length);
         row = current_help + row;
@@ -153,7 +154,7 @@ function checkWord(element){
     document.getElementsByName('tries')[0].value = parseInt(document.getElementsByName('tries')[0].value) + parseInt(1);
     setInfoPrompt('Entry Denied');
     setInfoPrompt('Likeness = '+ countSimilarAlpha(text, password));
-    changeWordsForPoints(classname);
+    changeWordsForPoints(classname, true);
     printLifes();
     }
   }
@@ -206,18 +207,27 @@ function getLastPositionLetter(row, firstPosition){
   return row.length;
 }
 
-function changeWordsForPoints(classname){
-  for (var i = 0; i < classname.length; i++) {
-    var pointSubs = "";
+function changeWordsForPoints(name, isClass){
+  console.log(name + " - " + isClass)
+  if(isClass){
+    for (var i = 0; i < name.length; i++) {
+      var pointSubs = "";
+      for (var j = 0; j < name[i].innerText.length; j++) {
+        pointSubs += ".";
+      }
+      name[i].innerHTML = pointSubs;
+    }
 
-    for (var j = 0; j < classname[i].innerText.length; j++) {
+    removeAttributesOfClass(name);
+  }else{
+    var pointSubs = "";
+    // console.log(name.innerText);
+    for (var i = 0; i < name.innerText.length; i++) {
       pointSubs += ".";
     }
 
-    classname[i].innerHTML = pointSubs;
+    name.innerHTML = pointSubs;
   }
-
-  removeAttributesOfClass(classname);
 }
 
 function removeAttributesOfClass(classname){
@@ -247,29 +257,53 @@ function getSpansByClassName(classname){
 }
 
 function getHelp(elem){
-  var random = Math.floor(Math.random() * (2 - 0)) + 0;
-  console.log(random)
-  if(random == 1){
-    setInfoPrompt("Ejecutando Ayuda de Tipo 1");
-    setInfoPrompt("Restableciendo vidas...");
-    lifes = 4;
-    printLifes();
+  if(numHelps % 2 == 0){
+    callHelp1(elem);
   }else{
-    setInfoPrompt("Ejecutando Ayuda de Tipo 2");
-    var randomId = Math.floor(Math.random() * (6 - 0)) + 0;
-    var getSpanId = "spanId" + randomId;
-    var classElements = getSpansByClassName(getSpanId);
-    var stringFromClass = "";
-    for (var i = 0; i < classElements.length; i++) {
-      stringFromClass = stringFromClass + classElements[i].innerText;
-    }
-
-    if(stringFromClass != password){
-      setInfoPrompt("Eliminando la palabra '" + stringFromClass + "'");
-      changeWordsForPoints(classElements);
-    }
+    callHelp2(elem);
   }
 
+  numHelps++;
+
   elem.onclick = null;
-  elem.class = null;
+  elem.classList = null;
+}
+
+function callHelp1(elem){
+  setInfoPrompt("Ejecutando Ayuda de Tipo 1");
+  setInfoPrompt("Restableciendo vidas...");
+  lifes = 4;
+  printLifes();
+  changeWordsForPoints(elem, false);
+}
+
+function callHelp2(elem){
+  setInfoPrompt("Ejecutando Ayuda de Tipo 2");
+  var info = getRandomWordForHelp2();
+
+  while(info[1].includes('.')){
+    info = getRandomWordForHelp2();
+  }
+
+  if(info[1] != password){
+    setInfoPrompt("Eliminando la palabra '" + info[1] + "'");
+    changeWordsForPoints(info[0], true);
+    changeWordsForPoints(elem, false);
+  }
+}
+
+function getRandomWordForHelp2(){
+  var info = [];
+  var stringFromClass = "";
+  var randomId = Math.floor(Math.random() * (6 - 0)) + 0;
+  var getSpanId = "spanId" + randomId;
+  var classElements = getSpansByClassName(getSpanId);
+  for (var i = 0; i < classElements.length; i++) {
+    stringFromClass = stringFromClass + classElements[i].innerText;
+  }
+
+  info.push(classElements);
+  info.push(stringFromClass);
+
+  return info;
 }
