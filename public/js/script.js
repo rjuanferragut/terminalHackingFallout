@@ -314,7 +314,7 @@ function getRandomWordForHelp2(){
 
 function getCodeTerminal(){
   var code = "";
-  for(var i = 0; i <= document.getElementsByClassName("code").length; i++){
+  for(var i = 0; i < document.getElementsByClassName("code").length; i++){
     code += document.getElementsByClassName("code")[i].innerText;
   }
   document.getElementById('string').innerText = code;
