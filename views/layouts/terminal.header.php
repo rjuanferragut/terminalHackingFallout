@@ -44,9 +44,11 @@ $array_select_words = selectRandomWords($array_words, $total_words);
 $array_helps = getHelpsAvailables($helps_available);
 
 $string = generateSymbolsString();
-//$string = setWords($array_select_words, $string, $total_words);
+$string = setWords($array_select_words, $string, $total_words);
+
 if(isset($_SESSION['string'])){
-  $string = "Aaaaaaaaaaaaaaaaaaaaaaaaaaa";
+  //$string = getCodeTerminal();
+  $string = setWords($array_select_words, $string, $total_words);
 }else{
   $string = setWords($array_select_words, $string, $total_words);
 }
