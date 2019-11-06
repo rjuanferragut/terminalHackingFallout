@@ -177,9 +177,10 @@ function checkWord(element){
   //  printResult("Enhorabuena, has acertado la palabra!");
 
     document.getElementsByClassName('col md-12')[0].innerText = "";
-    document.getElementsByClassName('container')[0].style = "margin-top: 22%; display:block;";
+    document.getElementsByClassName('container')[0].style = "margin-top: 18%; display:block;";
     printResult('<img class="imgWin" src="../public/img/giphyWin2.gif" alt="WELL DONE" style="width: 75%;">');
     document.getElementById('prompt').style = "display:block;margin-top:10%;";
+    document.getElementsByClassName('row justify-content-center')[0].style = "margin-left: 18%";
 
 
   }else{
@@ -189,7 +190,7 @@ function checkWord(element){
       clearInterval(id);
       document.getElementsByClassName('col md-12')[0].innerText = "";
       document.getElementsByClassName('content-prompt')[0].innerText = "";
-      document.getElementsByClassName('container')[0].style = "margin-top: 22%; display:block;";
+      document.getElementsByClassName('container')[0].style = "margin-top: 15%; display:block;";
       document.getElementById('prompt').style = "display:block;margin-top:10%;";
       document.getElementById('terminal-table').style = "margin:0 auto;";
 
@@ -197,6 +198,8 @@ function checkWord(element){
       setInfoPrompt("terminal bloqued");
       setInfoPrompt("Respuesta = "+ password);
       printResult('<img class="imgLose" src="../public/img/giphyLose2.gif" alt="GAME OVER" style="width:75%;">');
+      document.getElementsByClassName('container')[0].innerHTML +='<div id="buttons"> <a href="terminal.php">Volver a Jugar</a>  <a href="ranking.php">Ver Ranking</a> <a href="index.php">Página Principal</a></div>'
+
 
     }else{
     document.getElementsByName('tries')[0].value = parseInt(document.getElementsByName('tries')[0].value) + parseInt(1);
