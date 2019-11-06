@@ -10,19 +10,19 @@ $filename = "5chars.txt";
 $difficult = "easy";
 
 if(isset($_POST["difficult"])){
-    if($_POST["difficult"] == 2){ // Si el usuario ha seleccionado la dificultad 'Normal', los valores se modifican por los siguientes:
-        $word_length = 7;
-        $helps_available = 2;
-        $total_words = 10;
-        $filename = "7chars.txt";
-        $difficult = "normal";
-    }else if($_POST["difficult"] == 3){ // El mismo caso pero para la dificultad 'Dificil'
-        $word_length = 7;
-        $helps_available = 1;
-        $total_words = 10;
-        $filename = "7chars.txt";
-        $difficult = "hard";
-    }
+  if($_POST["difficult"] == 2){ // Si el usuario ha seleccionado la dificultad 'Normal', los valores se modifican por los siguientes:
+    $word_length = 7;
+    $helps_available = 2;
+    $total_words = 10;
+    $filename = "7chars.txt";
+    $difficult = "normal";
+  }else if($_POST["difficult"] == 3){ // El mismo caso pero para la dificultad 'Dificil'
+    $word_length = 7;
+    $helps_available = 1;
+    $total_words = 10;
+    $filename = "7chars.txt";
+    $difficult = "hard";
+  }
 }else{
   // Si el usuario ha accedido por $_GET se le redirige a la pantalla de dificultad.
   header('Location: difficult.php');
@@ -44,9 +44,11 @@ $array_select_words = selectRandomWords($array_words, $total_words);
 $array_helps = getHelpsAvailables($helps_available);
 
 $string = generateSymbolsString();
-//$string = setWords($array_select_words, $string, $total_words);
+$string = setWords($array_select_words, $string, $total_words);
+
 if(isset($_SESSION['string'])){
-  $string = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+  //$string = getCodeTerminal();
+  $string = setWords($array_select_words, $string, $total_words);
 }else{
   $string = setWords($array_select_words, $string, $total_words);
 }

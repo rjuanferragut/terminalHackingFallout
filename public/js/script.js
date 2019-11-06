@@ -130,6 +130,7 @@ function checkWord(element){
     printResult('<img class="imgWin" src="../public/img/giphyWin2.gif" alt="WELL DONE" style="width: 75%;">');
     document.getElementById('prompt').style = "display:block;margin-top:10%;";
     document.getElementsByClassName('row justify-content-center')[0].style = "margin-left: 18%";
+    getCodeTerminal();
 
 
   }else{
@@ -147,7 +148,8 @@ function checkWord(element){
       setInfoPrompt("terminal bloqued");
       setInfoPrompt("Respuesta = "+ password);
       printResult('<img class="imgLose" src="../public/img/giphyLose2.gif" alt="GAME OVER" style="width:75%;">');
-      document.getElementsByClassName('container')[0].innerHTML +='<div id="buttons"> <a href="terminal.php">Volver a Jugar</a>  <a href="ranking.php">Ver Ranking</a> <a href="index.php">Página Principal</a></div>'
+      document.getElementsByClassName('container')[0].innerHTML +='<div id="buttons"> <a href="terminal.php">Volver a Jugar</a>  <a href="ranking.php">Ver Ranking</a> <a href="index.php">Página Principal</a></div>';
+      getCodeTerminal();
 
 
     }else{
@@ -156,6 +158,8 @@ function checkWord(element){
     setInfoPrompt('Likeness = '+ countSimilarAlpha(text, password));
     changeWordsForPoints(classname, true);
     printLifes();
+    getCodeTerminal();
+
     }
   }
 }
@@ -306,4 +310,12 @@ function getRandomWordForHelp2(){
   info.push(stringFromClass);
 
   return info;
+}
+
+function getCodeTerminal(){
+  var code = "";
+  for(var i = 0; i <= document.getElementsByClassName("code").length; i++){
+    code += document.getElementsByClassName("code")[i].innerText;
+  }
+  document.getElementById('string').innerText = code;
 }
