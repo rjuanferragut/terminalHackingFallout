@@ -85,7 +85,7 @@ function getTerminal(){
       if(countHelpers != helpers_available){
         var current_help = helpers[countHelpers];
         current_help = current_help.replace(/\s/g, '');
-        console.log(current_help)
+        //console.log(current_help)
         var length_help = current_help.length;
         current_help = "(" + current_help.substring(1, current_help.length - 1) + ")";
         current_help = '<span id="helper-'+countHelpers+'" class="helper" onclick="getHelp(this)">' + current_help + '</span>';
@@ -131,6 +131,7 @@ function checkWord(element){
     document.getElementById('prompt').style = "display:block;margin-top:10%;";
     document.getElementsByClassName('row justify-content-center')[0].style = "margin-left: 18%";
     getCodeTerminal();
+    console.log(document.getElementById('string'));
 
 
   }else{
@@ -150,6 +151,7 @@ function checkWord(element){
       printResult('<img class="imgLose" src="../public/img/giphyLose2.gif" alt="GAME OVER" style="width:75%;">');
       document.getElementsByClassName('container')[0].innerHTML +='<div id="buttons"> <a href="terminal.php">Volver a Jugar</a>  <a href="ranking.php">Ver Ranking</a> <a href="index.php">Página Principal</a></div>';
       getCodeTerminal();
+      console.log(document.getElementById('string'));
 
 
     }else{
@@ -159,6 +161,7 @@ function checkWord(element){
     changeWordsForPoints(classname, true);
     printLifes();
     getCodeTerminal();
+    console.log(document.getElementById('string'));
 
     }
   }
