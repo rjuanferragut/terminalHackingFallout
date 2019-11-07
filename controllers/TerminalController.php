@@ -158,7 +158,7 @@
         // Si la posición es mayor que 0, compruebo que la posición
         // anterior al inicio no sea un caracter.
         if($init > 0){
-            $before = $init - 2;
+            $before = $init - 1;
 
             if(ctype_alpha($string[$before])){
                 return true;
@@ -166,7 +166,7 @@
         }
 
         // Compruebo si la posición de después contiene una letra.
-        $after = $last + 2;
+        $after = $last + 1;
         if($after < 384){
           if(ctype_alpha($string[$after])){
             return true;
