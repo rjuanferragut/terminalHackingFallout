@@ -37,7 +37,7 @@ table{
   </tbody>
 </table>
 </div>
-<div id="rankButtons" style="margin: 25% auto;">
+<div id="rankButtons" style="margin: 5% auto;">
   <a href="index.php">Página Principal</a>
 </div>
 <?php require_once('layouts/footer.php'); ?>
