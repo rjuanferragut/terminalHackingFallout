@@ -13,7 +13,7 @@ table{
   text-transform: uppercase;
 }
 </style>
-
+<div id="rankingTable">
 <table>
   <thead>
     <th scope="col">#</th>
@@ -36,6 +36,7 @@ table{
     ?>
   </tbody>
 </table>
+</div>
 <div id="rankButtons" style="margin: 25% auto;">
   <a href="index.php">Página Principal</a>
 </div>

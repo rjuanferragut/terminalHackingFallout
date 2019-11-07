@@ -103,6 +103,10 @@ a, .menu a:hover{
   background: #00c900;
   transition: .3s;
 }
+#rankingTable{
+  height:300px;
+  overflow-y: scroll;
+}
 
 #prompt{
   display: flex;
