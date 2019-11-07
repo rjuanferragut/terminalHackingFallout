@@ -1,0 +1,6 @@
+Plan de acciones de mejora:
+  - He tenido problemas a la hora de maquetar y colocar según que animaciones
+  - He tenido dificultades con PHP y JavaScript al realizar concretamente la especificación de la sesión, ya que surgieron algunos problemas y esta no se pudo realizar a tiempo.
+
+Nuevas Prácticas:
+  - Me falta experiencia en el uso de JavaScript y PHP, por lo tanto, he de practicar más y hacer más ejercicios con el fin también de mejorar con la lógica.
